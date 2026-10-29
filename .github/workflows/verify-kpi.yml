@@ -47,14 +47,16 @@ jobs:
             const hasExternalApproval = [...approvals.entries()].some(([login,state]) => login.toLowerCase() !== pr.user.login.toLowerCase() && state === 'APPROVED');
             if (!hasExternalApproval) return fail('El PR necesita la aprobación vigente de otra persona antes de contar como KPI.');
             const previouslyVerified = context.payload.issue.labels.some(label => label.name === 'kpi-verified');
-            await github.rest.issues.setLabels({owner:context.repo.owner,repo:context.repo.repo,issue_number:context.issue.number,labels:['kpi-report','kpi-verified']});
-            await github.rest.issues.createComment({owner:context.repo.owner,repo:context.repo.repo,issue_number:context.issue.number,body:`✅ **KPI validado.** PR #${number} está fusionado, tiene cambios y corresponde a @${actor}.`});
             if (previouslyVerified) return;
             const file = await github.rest.repos.getContent({owner:context.repo.owner,repo:context.repo.repo,path:'data/team.json',ref:'main'});
             const dashboard = JSON.parse(Buffer.from(file.data.content, 'base64').toString('utf8'));
             const person = dashboard.team.find(p => p.name.toLowerCase() === member.toLowerCase());
             if (!person) return fail(`No encontré a ${member} en data/team.json.`);
+            if (!person.login || person.login === 'por-asignar') return fail(`Aún no se ha configurado el usuario de GitHub para ${person.name}.`);
+            if (person.login.toLowerCase() !== actor.toLowerCase()) return fail(`Este reporte es de ${person.name}, pero fue abierto por @${actor}.`);
             person.verified_progress = progress;
             person.verified_prs = (person.verified_prs || 0) + 1;
             person.open_reports = Math.max(0, (person.open_reports || 0) - 1);
             await github.rest.repos.createOrUpdateFileContents({owner:context.repo.owner,repo:context.repo.repo,path:'data/team.json',sha:file.data.sha,message:`chore(kpi): registra avance validado de ${person.name}`,content:Buffer.from(JSON.stringify(dashboard,null,2)+'\\n').toString('base64'),branch:'main'});
+            await github.rest.issues.setLabels({owner:context.repo.owner,repo:context.repo.repo,issue_number:context.issue.number,labels:['kpi-report','kpi-verified']});
+            await github.rest.issues.createComment({owner:context.repo.owner,repo:context.repo.repo,issue_number:context.issue.number,body:`✅ **KPI validado.** PR #${number} está fusionado, tiene cambios, aprobación externa y corresponde a @${actor}.`});
