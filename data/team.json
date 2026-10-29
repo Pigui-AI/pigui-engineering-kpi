@@ -1,5 +1,5 @@
 {
-  "period": "Semana actual",
+  "period": "26–29 oct 2026",
   "source_repository": "Pigui-AI/api-pigui-backend",
   "qa_delegates": ["SergiorCode", "americabalderas-del"],
   "team": [
@@ -7,42 +7,86 @@
       "name": "Marco",
       "role": "Desarrollador móvil",
       "login": "marcopigui",
-      "verified_progress": 0,
+      "verified_progress": null,
       "verified_prs": 0,
-      "open_reports": 0
+      "open_reports": 0,
+      "counted_prs": []
     },
     {
       "name": "América",
       "role": "Desarrollador fullstack móvil",
       "login": "americabalderas-del",
-      "verified_progress": 0,
-      "verified_prs": 0,
-      "open_reports": 0
+      "verified_progress": null,
+      "verified_prs": 11,
+      "open_reports": 0,
+      "shared_evidence_group": "america-ever",
+      "shared_accounts": ["americabalderas-del", "everbecerra0"],
+      "counted_prs": [
+        "Pigui-AI/api-pigui-backend#645",
+        "Pigui-AI/api-pigui-backend#644",
+        "Pigui-AI/api-pigui-backend#643",
+        "Pigui-AI/api-pigui-backend#642",
+        "Pigui-AI/api-pigui-backend#641",
+        "Pigui-AI/api-pigui-backend#640",
+        "Pigui-AI/api-pigui-backend#639",
+        "Pigui-AI/api-pigui-backend#638",
+        "Pigui-AI/api-pigui-backend#637",
+        "Pigui-AI/api-pigui-backend#636",
+        "Pigui-AI/api-pigui-backend#635"
+      ]
     },
     {
       "name": "Ricardo",
       "role": "Fullstack Sr.",
       "login": "ricardogallardo-pigui",
-      "verified_progress": 0,
+      "verified_progress": null,
       "verified_prs": 0,
-      "open_reports": 0
+      "open_reports": 0,
+      "counted_prs": []
     },
     {
       "name": "Yestzanetli",
       "role": "QA",
       "login": null,
       "reporting_mode": "qa-delegated",
-      "verified_progress": 0,
+      "verified_progress": null,
       "verified_prs": 0,
-      "open_reports": 0
+      "open_reports": 0,
+      "counted_prs": []
     },
     {
       "name": "Ever",
       "role": "Backend",
       "login": "everbecerra0",
-      "verified_progress": 0,
-      "verified_prs": 0,
-      "open_reports": 0
+      "verified_progress": null,
+      "verified_prs": 11,
+      "open_reports": 0,
+      "shared_evidence_group": "america-ever",
+      "shared_accounts": ["americabalderas-del", "everbecerra0"],
+      "counted_prs": [
+        "Pigui-AI/api-pigui-backend#645",
+        "Pigui-AI/api-pigui-backend#644",
+        "Pigui-AI/api-pigui-backend#643",
+        "Pigui-AI/api-pigui-backend#642",
+        "Pigui-AI/api-pigui-backend#641",
+        "Pigui-AI/api-pigui-backend#640",
+        "Pigui-AI/api-pigui-backend#639",
+        "Pigui-AI/api-pigui-backend#638",
+        "Pigui-AI/api-pigui-backend#637",
+        "Pigui-AI/api-pigui-backend#636",
+        "Pigui-AI/api-pigui-backend#635"
+      ]
     }
+  ],
+  "audit_file": "data/github-audit.json",
+  "source_repositories": [
+    "Pigui-AI/app-pigui-b2c",
+    "Pigui-AI/api-pigui-backend",
+    "Pigui-AI/front-b2b",
+    "Pigui-AI/pigui-rewardstore",
+    "Pigui-AI/pigui-conect",
+    "Pigui-AI/pigui-network-map",
+    "Pigui-AI/app-pigui-scanapp",
+    "Pigui-AI/Motor-chats"
   ]
 }

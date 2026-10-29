@@ -1,0 +1,81 @@
+.audit-filters {
+  display: flex;
+  gap: 14px;
+  padding: 18px 20px 0;
+}
+.audit-filters label {
+  font-size: 11px;
+  color: var(--muted);
+  display: grid;
+  gap: 6px;
+  min-width: 210px;
+}
+.evidence-date {
+  display: block;
+  margin-top: 5px;
+  font-size: 10px;
+  color: var(--muted);
+  white-space: normal;
+}
+.mini-person .evidence-date {
+  color: #ffffffa6;
+  font-size: 9px;
+  min-height: 24px;
+}
+.audit-score {
+  margin-top: 20px;
+}
+.member-evidence-links {
+  display: grid;
+  gap: 9px;
+  font-size: 11px;
+  color: var(--accent);
+}
+.member-evidence-links a {
+  overflow-wrap: anywhere;
+}
+.setup-banner > .text-link {
+  margin-left: auto;
+}
+.chart-bars .chart-bar {
+  max-width: 80px;
+  width: 65px;
+}
+.data-table .badge {
+  white-space: normal;
+}
+.data-table td:nth-child(3) {
+  min-width: 175px;
+}
+.audit-filters select {
+  font-size: 12px;
+}
+.person-card .badge {
+  white-space: normal;
+  max-width: 100%;
+}
+@media (max-width: 760px) {
+  .audit-filters {
+    flex-direction: column;
+    padding: 17px;
+  }
+  .audit-filters label {
+    min-width: 0;
+    width: 100%;
+  }
+  .setup-banner > .text-link {
+    display: none;
+  }
+  .mini-score {
+    font-size: 23px;
+  }
+  .chart-foot {
+    gap: 16px;
+  }
+  .chart-foot > span {
+    max-width: 65%;
+  }
+}
+.chart-bars {
+  inset: 0 5px 24px 35px;
+}

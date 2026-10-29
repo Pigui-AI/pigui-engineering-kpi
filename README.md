@@ -1,5 +1,13 @@
 # Pigui Engineering KPI
 
+## Corte validado del 29 de octubre, 12:36 CDMX
+
+La vista principal carga `data/github-audit.json`: 54 PR revisados en 8 repositorios, 51 fusionados, 11 fusionados con cambios y aprobación externa sobre el head, 13 con fallos técnicos y 12 sin señal de CI. Se muestran las alertas, no se convierten en una aprobación de calidad. Es un corte puntual, no una sincronización automática ni una auditoría completa del código.
+
+América y Ever comparten evidencias por confirmación expresa de la persona responsable. Sus fichas repiten el mismo grupo, pero cada PR cuenta una sola vez en los totales. Fuente de autoría: la cuenta GitHub original. Marco: 1 merge; Ricardo: 10; América/Ever: 40. QA: sin reporte atribuible en GitHub al corte. El bot `piguiai` está excluido.
+
+La cobertura de aprobación es 11 / 51 = 21.6%, no un porcentaje de cumplimiento de metas. Los porcentajes de avance de objetivos se dejan sin dato hasta tener metas acordadas. El snapshot guarda sólo enlaces y metadata de PR/checks, sin código, cuerpos de comentarios ni credenciales. Los repositorios privados siguen requiriendo sus permisos al abrir los enlaces.
+
 Interfaz inspirada visualmente en Vitrea, implementada con HTML/CSS/JS propios, sin copiar sus recursos ni su plantilla comercial. Vistas: Resumen, Equipo, Evidencias y Criterios. Incluye tema claro/oscuro, búsqueda (⌘/Ctrl K), detalle de integrante, exportación CSV y formulario de reportes.
 
 ## Equipo y QA

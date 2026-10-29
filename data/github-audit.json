@@ -1,0 +1,2415 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-29T18:36:02Z",
+  "timezone": "America/Mexico_City",
+  "since": "2026-10-26T00:00:00-06:00",
+  "until": "2026-10-29T12:36:02-06:00",
+  "period_label": "26–29 oct 2026",
+  "scope": "PR con actividad de las cuentas indicadas en Pigui-AI; búsqueda de GitHub updated:>=2026-10-26, contrastada por PR. Sólo repositorios accesibles a la conexión.",
+  "method": "Merge + archivos modificados + aprobación externa vigente sobre el head consultado. Los checks se informan aparte y no se vuelven a ejecutar. La tasa de aprobación no representa avance de objetivos ni calificación personal.",
+  "qa_status": "Sin reportes QA atribuibles a Yestzanetli en GitHub. Las menciones QA de los títulos no se le atribuyen.",
+  "shared_group": {
+    "id": "america-ever",
+    "members": ["América", "Ever"],
+    "accounts": ["americabalderas-del", "everbecerra0"],
+    "basis": "La persona responsable confirmó en este chat que el trabajo de América y Ever es el mismo. Las evidencias se comparten sin duplicar los totales."
+  },
+  "records": [
+    {
+      "key": "Pigui-AI/app-pigui-b2c#389",
+      "repo": "Pigui-AI/app-pigui-b2c",
+      "number": 389,
+      "url": "https://github.com/Pigui-AI/app-pigui-b2c/pull/389",
+      "author": "marcopigui",
+      "state": "MERGED",
+      "created_at": "2026-10-28T20:23:25Z",
+      "updated_at": "2026-10-28T20:25:39Z",
+      "merged_at": "2026-10-28T20:24:37Z",
+      "closed_at": "2026-10-28T20:24:37Z",
+      "head_sha": "6e3953279a913b6a047dab0592956fe5e3a36cb1",
+      "changed_files": 4,
+      "additions": 124,
+      "deletions": 3,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze and test",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "qa-ui",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Semgrep Scan",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Autoria de los commits",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#647",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 647,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/647",
+      "author": "americabalderas-del",
+      "state": "OPEN",
+      "created_at": "2026-10-29T18:31:38Z",
+      "updated_at": "2026-10-29T18:31:38Z",
+      "merged_at": null,
+      "closed_at": null,
+      "head_sha": "62486de623469ea969b6f76147a2400c9c7c8b5e",
+      "changed_files": 6,
+      "additions": 647,
+      "deletions": 18,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Suite completa",
+          "state": "IN_PROGRESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "IN_PROGRESS"
+        },
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "PostgreSQL real (15 + PostGIS)",
+          "state": "IN_PROGRESS"
+        },
+        {
+          "name": "docker-build (ai-service, services/ai-service/Dockerfile, ., ai_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (auth-service, services/auth-service/Dockerfile, ., auth_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2o-service, services/b2o-service/Dockerfile, ., b2o_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2c-service, services/b2c-service/Dockerfile, ., b2c_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2b-service, services/b2b-service/Dockerfile, ., b2b_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (public-service, services/public-service/Dockerfile, ., public_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (notifications-service, services/notifications-service/Dockerfile, ., notifications_...",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (gateway, gateway/Dockerfile, gateway, main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (help-center-service, services/help-center-service/Dockerfile, ., help_center_servic...",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Contratos y capas",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#646",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 646,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/646",
+      "author": "americabalderas-del",
+      "state": "OPEN",
+      "created_at": "2026-10-29T18:31:36Z",
+      "updated_at": "2026-10-29T18:31:36Z",
+      "merged_at": null,
+      "closed_at": null,
+      "head_sha": "ef167a32c7835f6bf21c178759870689a7df25d3",
+      "changed_files": 13,
+      "additions": 2646,
+      "deletions": 24,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Suite completa",
+          "state": "IN_PROGRESS"
+        },
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "PostgreSQL real (15 + PostGIS)",
+          "state": "IN_PROGRESS"
+        },
+        {
+          "name": "docker-build (ai-service, services/ai-service/Dockerfile, ., ai_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (auth-service, services/auth-service/Dockerfile, ., auth_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2o-service, services/b2o-service/Dockerfile, ., b2o_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2c-service, services/b2c-service/Dockerfile, ., b2c_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2b-service, services/b2b-service/Dockerfile, ., b2b_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (public-service, services/public-service/Dockerfile, ., public_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (notifications-service, services/notifications-service/Dockerfile, ., notifications_...",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (gateway, gateway/Dockerfile, gateway, main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (help-center-service, services/help-center-service/Dockerfile, ., help_center_servic...",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Contratos y capas",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/front-b2b#694",
+      "repo": "Pigui-AI/front-b2b",
+      "number": 694,
+      "url": "https://github.com/Pigui-AI/front-b2b/pull/694",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-12T23:48:43Z",
+      "updated_at": "2026-10-29T18:07:28Z",
+      "merged_at": "2026-10-29T18:07:28Z",
+      "closed_at": "2026-10-29T18:07:28Z",
+      "head_sha": "eb21b2bbcf76883105b87468de83463361fd4bc1",
+      "changed_files": 566,
+      "additions": 108206,
+      "deletions": 2,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Analyze (javascript-typescript)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Semgrep Scan",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/pigui-rewardstore#7",
+      "repo": "Pigui-AI/pigui-rewardstore",
+      "number": 7,
+      "url": "https://github.com/Pigui-AI/pigui-rewardstore/pull/7",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-29T17:29:58Z",
+      "updated_at": "2026-10-29T17:38:37Z",
+      "merged_at": "2026-10-29T17:38:36Z",
+      "closed_at": "2026-10-29T17:38:36Z",
+      "head_sha": "9062e78e040bf8dcf4fdee49a1fb1718ebdcfbba",
+      "changed_files": 2,
+      "additions": 15,
+      "deletions": 0,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "MISSING",
+      "technical_checks": [],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#645",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 645,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/645",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-29T07:55:09Z",
+      "updated_at": "2026-10-29T17:13:40Z",
+      "merged_at": "2026-10-29T17:13:39Z",
+      "closed_at": "2026-10-29T17:13:39Z",
+      "head_sha": "7505c9a5b155ab5cbcb8621817a7d8d6222682c4",
+      "changed_files": 25,
+      "additions": 2711,
+      "deletions": 40,
+      "external_approval": true,
+      "reviewers": ["SergiorCode"],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Suite completa",
+          "state": "FAILURE"
+        },
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "PostgreSQL real (15 + PostGIS)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (ai-service, services/ai-service/Dockerfile, ., ai_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (auth-service, services/auth-service/Dockerfile, ., auth_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2o-service, services/b2o-service/Dockerfile, ., b2o_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2c-service, services/b2c-service/Dockerfile, ., b2c_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2b-service, services/b2b-service/Dockerfile, ., b2b_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (public-service, services/public-service/Dockerfile, ., public_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (gateway, gateway/Dockerfile, gateway, main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Contratos y capas",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#644",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 644,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/644",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-29T07:55:07Z",
+      "updated_at": "2026-10-29T17:13:35Z",
+      "merged_at": "2026-10-29T17:13:35Z",
+      "closed_at": "2026-10-29T17:13:35Z",
+      "head_sha": "ea73af680f8b4441ca518ffd6dadafa3db6cfaff",
+      "changed_files": 21,
+      "additions": 2221,
+      "deletions": 22,
+      "external_approval": true,
+      "reviewers": ["SergiorCode"],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Suite completa",
+          "state": "FAILURE"
+        },
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "PostgreSQL real (15 + PostGIS)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (ai-service, services/ai-service/Dockerfile, ., ai_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (auth-service, services/auth-service/Dockerfile, ., auth_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2o-service, services/b2o-service/Dockerfile, ., b2o_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2c-service, services/b2c-service/Dockerfile, ., b2c_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2b-service, services/b2b-service/Dockerfile, ., b2b_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (public-service, services/public-service/Dockerfile, ., public_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (gateway, gateway/Dockerfile, gateway, main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (help-center-service, services/help-center-service/Dockerfile, ., help_center_servic...",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Contratos y capas",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#643",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 643,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/643",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-29T07:55:05Z",
+      "updated_at": "2026-10-29T17:13:30Z",
+      "merged_at": "2026-10-29T17:13:30Z",
+      "closed_at": "2026-10-29T17:13:30Z",
+      "head_sha": "af3fc88fc91986118391ebadc90a1d87affdccdd",
+      "changed_files": 15,
+      "additions": 3927,
+      "deletions": 56,
+      "external_approval": true,
+      "reviewers": ["SergiorCode"],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Suite completa",
+          "state": "FAILURE"
+        },
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "PostgreSQL real (15 + PostGIS)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (ai-service, services/ai-service/Dockerfile, ., ai_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (auth-service, services/auth-service/Dockerfile, ., auth_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2o-service, services/b2o-service/Dockerfile, ., b2o_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2c-service, services/b2c-service/Dockerfile, ., b2c_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2b-service, services/b2b-service/Dockerfile, ., b2b_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (public-service, services/public-service/Dockerfile, ., public_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (gateway, gateway/Dockerfile, gateway, main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Contratos y capas",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#642",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 642,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/642",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-29T07:55:03Z",
+      "updated_at": "2026-10-29T17:13:26Z",
+      "merged_at": "2026-10-29T17:13:26Z",
+      "closed_at": "2026-10-29T17:13:26Z",
+      "head_sha": "656ecca5786bba248e962a39ace38a083f5c5164",
+      "changed_files": 17,
+      "additions": 1271,
+      "deletions": 180,
+      "external_approval": true,
+      "reviewers": ["SergiorCode"],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Suite completa",
+          "state": "FAILURE"
+        },
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "PostgreSQL real (15 + PostGIS)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (ai-service, services/ai-service/Dockerfile, ., ai_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (auth-service, services/auth-service/Dockerfile, ., auth_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2o-service, services/b2o-service/Dockerfile, ., b2o_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2c-service, services/b2c-service/Dockerfile, ., b2c_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2b-service, services/b2b-service/Dockerfile, ., b2b_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (public-service, services/public-service/Dockerfile, ., public_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (gateway, gateway/Dockerfile, gateway, main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Contratos y capas",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#641",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 641,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/641",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-29T07:55:01Z",
+      "updated_at": "2026-10-29T17:13:22Z",
+      "merged_at": "2026-10-29T17:13:22Z",
+      "closed_at": "2026-10-29T17:13:22Z",
+      "head_sha": "e16553e693c85fdfad10d9332e9c08242fd0afb6",
+      "changed_files": 69,
+      "additions": 1582,
+      "deletions": 769,
+      "external_approval": true,
+      "reviewers": ["SergiorCode"],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Suite completa",
+          "state": "FAILURE"
+        },
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build",
+          "state": "SKIPPED"
+        },
+        {
+          "name": "PostgreSQL real (15 + PostGIS)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (ai-service, services/ai-service/Dockerfile, ., ai_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (auth-service, services/auth-service/Dockerfile, ., auth_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2o-service, services/b2o-service/Dockerfile, ., b2o_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2c-service, services/b2c-service/Dockerfile, ., b2c_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2b-service, services/b2b-service/Dockerfile, ., b2b_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (public-service, services/public-service/Dockerfile, ., public_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (gateway, gateway/Dockerfile, gateway, main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Contratos y capas",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#640",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 640,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/640",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-29T07:55:00Z",
+      "updated_at": "2026-10-29T17:13:17Z",
+      "merged_at": "2026-10-29T17:13:17Z",
+      "closed_at": "2026-10-29T17:13:17Z",
+      "head_sha": "62fbf8a08f84c62a0f4c7d827748d6302939692a",
+      "changed_files": 49,
+      "additions": 1434,
+      "deletions": 887,
+      "external_approval": true,
+      "reviewers": ["SergiorCode"],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Suite completa",
+          "state": "FAILURE"
+        },
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build",
+          "state": "SKIPPED"
+        },
+        {
+          "name": "PostgreSQL real (15 + PostGIS)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (ai-service, services/ai-service/Dockerfile, ., ai_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (auth-service, services/auth-service/Dockerfile, ., auth_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2o-service, services/b2o-service/Dockerfile, ., b2o_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2c-service, services/b2c-service/Dockerfile, ., b2c_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2b-service, services/b2b-service/Dockerfile, ., b2b_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (public-service, services/public-service/Dockerfile, ., public_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (gateway, gateway/Dockerfile, gateway, main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Contratos y capas",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#639",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 639,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/639",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-29T07:54:58Z",
+      "updated_at": "2026-10-29T17:13:12Z",
+      "merged_at": "2026-10-29T17:13:12Z",
+      "closed_at": "2026-10-29T17:13:12Z",
+      "head_sha": "e510f3c149aa30d3f0bba932a2a34e1371ee1803",
+      "changed_files": 24,
+      "additions": 541,
+      "deletions": 267,
+      "external_approval": true,
+      "reviewers": ["SergiorCode"],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Suite completa",
+          "state": "FAILURE"
+        },
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "PostgreSQL real (15 + PostGIS)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (ai-service, services/ai-service/Dockerfile, ., ai_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (auth-service, services/auth-service/Dockerfile, ., auth_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2o-service, services/b2o-service/Dockerfile, ., b2o_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2c-service, services/b2c-service/Dockerfile, ., b2c_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2b-service, services/b2b-service/Dockerfile, ., b2b_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (public-service, services/public-service/Dockerfile, ., public_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (gateway, gateway/Dockerfile, gateway, main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Contratos y capas",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#638",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 638,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/638",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-29T07:54:56Z",
+      "updated_at": "2026-10-29T17:13:08Z",
+      "merged_at": "2026-10-29T17:13:07Z",
+      "closed_at": "2026-10-29T17:13:07Z",
+      "head_sha": "ca66436b50e95de252d9bbb1ab298bcb58e796ea",
+      "changed_files": 37,
+      "additions": 5124,
+      "deletions": 241,
+      "external_approval": true,
+      "reviewers": ["SergiorCode"],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Suite completa",
+          "state": "FAILURE"
+        },
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "PostgreSQL real (15 + PostGIS)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (ai-service, services/ai-service/Dockerfile, ., ai_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (auth-service, services/auth-service/Dockerfile, ., auth_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2o-service, services/b2o-service/Dockerfile, ., b2o_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2c-service, services/b2c-service/Dockerfile, ., b2c_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2b-service, services/b2b-service/Dockerfile, ., b2b_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (public-service, services/public-service/Dockerfile, ., public_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (notifications-service, services/notifications-service/Dockerfile, ., notifications_...",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (gateway, gateway/Dockerfile, gateway, main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Contratos y capas",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#637",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 637,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/637",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-29T07:54:53Z",
+      "updated_at": "2026-10-29T17:13:02Z",
+      "merged_at": "2026-10-29T17:13:02Z",
+      "closed_at": "2026-10-29T17:13:02Z",
+      "head_sha": "f0b6e6bbead656af08fd9e51788c2ffb47963d08",
+      "changed_files": 17,
+      "additions": 2320,
+      "deletions": 29,
+      "external_approval": true,
+      "reviewers": ["SergiorCode"],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Suite completa",
+          "state": "FAILURE"
+        },
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "PostgreSQL real (15 + PostGIS)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (ai-service, services/ai-service/Dockerfile, ., ai_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (auth-service, services/auth-service/Dockerfile, ., auth_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2o-service, services/b2o-service/Dockerfile, ., b2o_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2c-service, services/b2c-service/Dockerfile, ., b2c_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2b-service, services/b2b-service/Dockerfile, ., b2b_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (public-service, services/public-service/Dockerfile, ., public_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (gateway, gateway/Dockerfile, gateway, main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Contratos y capas",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#636",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 636,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/636",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-29T06:49:47Z",
+      "updated_at": "2026-10-29T17:12:58Z",
+      "merged_at": "2026-10-29T17:12:58Z",
+      "closed_at": "2026-10-29T17:12:58Z",
+      "head_sha": "6e20b12666fb1bda828a8f245afaebfce02caa48",
+      "changed_files": 16,
+      "additions": 15041,
+      "deletions": 26,
+      "external_approval": true,
+      "reviewers": ["SergiorCode"],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Suite completa",
+          "state": "FAILURE"
+        },
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "PostgreSQL real (15 + PostGIS)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (ai-service, services/ai-service/Dockerfile, ., ai_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (auth-service, services/auth-service/Dockerfile, ., auth_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2o-service, services/b2o-service/Dockerfile, ., b2o_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2c-service, services/b2c-service/Dockerfile, ., b2c_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2b-service, services/b2b-service/Dockerfile, ., b2b_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (public-service, services/public-service/Dockerfile, ., public_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (gateway, gateway/Dockerfile, gateway, main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Contratos y capas",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#635",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 635,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/635",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-29T06:49:46Z",
+      "updated_at": "2026-10-29T17:12:53Z",
+      "merged_at": "2026-10-29T17:12:53Z",
+      "closed_at": "2026-10-29T17:12:53Z",
+      "head_sha": "a7c7b48124215036c9c893fd354fa8be847f431e",
+      "changed_files": 9,
+      "additions": 712,
+      "deletions": 20,
+      "external_approval": true,
+      "reviewers": ["SergiorCode"],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Suite completa",
+          "state": "FAILURE"
+        },
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "PostgreSQL real (15 + PostGIS)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (ai-service, services/ai-service/Dockerfile, ., ai_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (auth-service, services/auth-service/Dockerfile, ., auth_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2o-service, services/b2o-service/Dockerfile, ., b2o_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2c-service, services/b2c-service/Dockerfile, ., b2c_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2b-service, services/b2b-service/Dockerfile, ., b2b_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (public-service, services/public-service/Dockerfile, ., public_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (gateway, gateway/Dockerfile, gateway, main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Contratos y capas",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/pigui-conect#52",
+      "repo": "Pigui-AI/pigui-conect",
+      "number": 52,
+      "url": "https://github.com/Pigui-AI/pigui-conect/pull/52",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-29T16:53:41Z",
+      "updated_at": "2026-10-29T17:11:29Z",
+      "merged_at": "2026-10-29T17:11:29Z",
+      "closed_at": "2026-10-29T17:11:29Z",
+      "head_sha": "62d68f19c8c7bc1708b19d89ebee73bc01837289",
+      "changed_files": 3,
+      "additions": 32,
+      "deletions": 16,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "MISSING",
+      "technical_checks": [],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/pigui-rewardstore#6",
+      "repo": "Pigui-AI/pigui-rewardstore",
+      "number": 6,
+      "url": "https://github.com/Pigui-AI/pigui-rewardstore/pull/6",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-29T16:53:19Z",
+      "updated_at": "2026-10-29T17:11:17Z",
+      "merged_at": "2026-10-29T17:11:16Z",
+      "closed_at": "2026-10-29T17:11:17Z",
+      "head_sha": "72628cdfe412115c2513346010a542dd772bbca7",
+      "changed_files": 10,
+      "additions": 143,
+      "deletions": 358,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "MISSING",
+      "technical_checks": [],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#634",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 634,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/634",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-29T06:49:44Z",
+      "updated_at": "2026-10-29T17:05:34Z",
+      "merged_at": "2026-10-29T17:05:34Z",
+      "closed_at": "2026-10-29T17:05:34Z",
+      "head_sha": "aae71876d35b70cdac5958c647426c7c7996dcab",
+      "changed_files": 1,
+      "additions": 75,
+      "deletions": 3,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Suite completa",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "PostgreSQL real (15 + PostGIS)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (ai-service, services/ai-service/Dockerfile, ., ai_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (auth-service, services/auth-service/Dockerfile, ., auth_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2o-service, services/b2o-service/Dockerfile, ., b2o_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2c-service, services/b2c-service/Dockerfile, ., b2c_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2b-service, services/b2b-service/Dockerfile, ., b2b_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (public-service, services/public-service/Dockerfile, ., public_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (gateway, gateway/Dockerfile, gateway, main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Contratos y capas",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#632",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 632,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/632",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-29T01:19:23Z",
+      "updated_at": "2026-10-29T05:36:26Z",
+      "merged_at": "2026-10-29T05:36:26Z",
+      "closed_at": "2026-10-29T05:36:26Z",
+      "head_sha": "8814e584a4aef6430734737d7174ec80cae7395e",
+      "changed_files": 9,
+      "additions": 6177,
+      "deletions": 853,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Suite completa",
+          "state": "FAILURE"
+        },
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "PostgreSQL real (15 + PostGIS)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Contratos y capas",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#631",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 631,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/631",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-29T01:19:17Z",
+      "updated_at": "2026-10-29T05:36:07Z",
+      "merged_at": "2026-10-29T05:36:07Z",
+      "closed_at": "2026-10-29T05:36:07Z",
+      "head_sha": "950ce8a4da120e3e575b7902bbbe84b0fd02fba9",
+      "changed_files": 6,
+      "additions": 856,
+      "deletions": 61,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#630",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 630,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/630",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-29T01:19:08Z",
+      "updated_at": "2026-10-29T05:35:43Z",
+      "merged_at": "2026-10-29T05:35:43Z",
+      "closed_at": "2026-10-29T05:35:43Z",
+      "head_sha": "4d5c0887ace4003e18b10daaf036c2321969ca6f",
+      "changed_files": 530,
+      "additions": 980,
+      "deletions": 83149,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (ai-service, services/ai-service/Dockerfile, ., ai_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (auth-service, services/auth-service/Dockerfile, ., auth_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2o-service, services/b2o-service/Dockerfile, ., b2o_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2c-service, services/b2c-service/Dockerfile, ., b2c_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2b-service, services/b2b-service/Dockerfile, ., b2b_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (public-service, services/public-service/Dockerfile, ., public_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (gateway, gateway/Dockerfile, gateway, main)",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#629",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 629,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/629",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-29T01:19:03Z",
+      "updated_at": "2026-10-29T05:35:27Z",
+      "merged_at": "2026-10-29T05:35:27Z",
+      "closed_at": "2026-10-29T05:35:27Z",
+      "head_sha": "4d0f37be226ced3489a5490190e5eb48c563b680",
+      "changed_files": 4,
+      "additions": 381,
+      "deletions": 9,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/pigui-network-map#5",
+      "repo": "Pigui-AI/pigui-network-map",
+      "number": 5,
+      "url": "https://github.com/Pigui-AI/pigui-network-map/pull/5",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-29T00:43:40Z",
+      "updated_at": "2026-10-29T00:47:16Z",
+      "merged_at": "2026-10-29T00:47:15Z",
+      "closed_at": "2026-10-29T00:47:16Z",
+      "head_sha": "af1666f481f828f09c68b6a4e02dbba987416a7d",
+      "changed_files": 6,
+      "additions": 47,
+      "deletions": 28,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "MISSING",
+      "technical_checks": [],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#628",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 628,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/628",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-29T00:28:36Z",
+      "updated_at": "2026-10-29T00:30:00Z",
+      "merged_at": "2026-10-29T00:29:59Z",
+      "closed_at": "2026-10-29T00:29:59Z",
+      "head_sha": "cb531e726a5c9447ade0eee9bb69c5d90f67ae84",
+      "changed_files": 2,
+      "additions": 39,
+      "deletions": 2,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/app-pigui-scanapp#291",
+      "repo": "Pigui-AI/app-pigui-scanapp",
+      "number": 291,
+      "url": "https://github.com/Pigui-AI/app-pigui-scanapp/pull/291",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-28T17:16:42Z",
+      "updated_at": "2026-10-28T17:18:31Z",
+      "merged_at": "2026-10-28T17:18:31Z",
+      "closed_at": "2026-10-28T17:18:31Z",
+      "head_sha": "97c5d4c855bf4d12e582a763c112a92aa8b6f831",
+      "changed_files": 10,
+      "additions": 149,
+      "deletions": 31,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Analyze and test",
+          "state": "FAILURE"
+        },
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "qa-ui",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Autoria de los commits",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#627",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 627,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/627",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-28T17:16:41Z",
+      "updated_at": "2026-10-28T17:18:14Z",
+      "merged_at": "2026-10-28T17:18:14Z",
+      "closed_at": "2026-10-28T17:18:14Z",
+      "head_sha": "760b948ee36d1a8d19f06d99f434a968f95f7fb7",
+      "changed_files": 5,
+      "additions": 173,
+      "deletions": 4,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/front-b2b#742",
+      "repo": "Pigui-AI/front-b2b",
+      "number": 742,
+      "url": "https://github.com/Pigui-AI/front-b2b/pull/742",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-28T15:30:47Z",
+      "updated_at": "2026-10-28T15:31:32Z",
+      "merged_at": "2026-10-28T15:31:32Z",
+      "closed_at": "2026-10-28T15:31:32Z",
+      "head_sha": "fad48d18e51844821a8f35a5f5cccfa27f3c0db0",
+      "changed_files": 37,
+      "additions": 7479,
+      "deletions": 5729,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Analyze (javascript-typescript)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "qa-ui-flow-suite",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Semgrep Scan",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "ui-e2e-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/front-b2b#740",
+      "repo": "Pigui-AI/front-b2b",
+      "number": 740,
+      "url": "https://github.com/Pigui-AI/front-b2b/pull/740",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-28T01:55:51Z",
+      "updated_at": "2026-10-28T01:58:16Z",
+      "merged_at": "2026-10-28T01:58:15Z",
+      "closed_at": "2026-10-28T01:58:15Z",
+      "head_sha": "d8024e5deb5e76d45dbafb3ef1c0f8bef6f6abc1",
+      "changed_files": 3,
+      "additions": 458,
+      "deletions": 122,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Analyze (javascript-typescript)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "qa-ui-flow-suite",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Semgrep Scan",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "ui-e2e-tests",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/front-b2b#739",
+      "repo": "Pigui-AI/front-b2b",
+      "number": 739,
+      "url": "https://github.com/Pigui-AI/front-b2b/pull/739",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-28T01:28:02Z",
+      "updated_at": "2026-10-28T01:28:57Z",
+      "merged_at": "2026-10-28T01:28:57Z",
+      "closed_at": "2026-10-28T01:28:57Z",
+      "head_sha": "f495d874aa4cf7008935ead57476050e8e416c3c",
+      "changed_files": 18,
+      "additions": 995,
+      "deletions": 372,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Analyze (javascript-typescript)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "qa-ui-flow-suite",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Semgrep Scan",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "ui-e2e-tests",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/front-b2b#738",
+      "repo": "Pigui-AI/front-b2b",
+      "number": 738,
+      "url": "https://github.com/Pigui-AI/front-b2b/pull/738",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-27T22:50:44Z",
+      "updated_at": "2026-10-27T22:56:25Z",
+      "merged_at": "2026-10-27T22:56:25Z",
+      "closed_at": "2026-10-27T22:56:25Z",
+      "head_sha": "1f7cc059be055ec1a1df2be3973e39d2c6e3974e",
+      "changed_files": 4,
+      "additions": 232,
+      "deletions": 0,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Analyze (javascript-typescript)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "qa-ui-flow-suite",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Semgrep Scan",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "ui-e2e-tests",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/front-b2b#737",
+      "repo": "Pigui-AI/front-b2b",
+      "number": 737,
+      "url": "https://github.com/Pigui-AI/front-b2b/pull/737",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-27T22:49:11Z",
+      "updated_at": "2026-10-27T22:50:26Z",
+      "merged_at": "2026-10-27T22:50:26Z",
+      "closed_at": "2026-10-27T22:50:26Z",
+      "head_sha": "fe612570f4d56000d9619530dcab3cd7bd42eb16",
+      "changed_files": 3,
+      "additions": 1178,
+      "deletions": 1746,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Analyze (javascript-typescript)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "qa-ui-flow-suite",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Semgrep Scan",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "ui-e2e-tests",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/front-b2b#736",
+      "repo": "Pigui-AI/front-b2b",
+      "number": 736,
+      "url": "https://github.com/Pigui-AI/front-b2b/pull/736",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-27T21:21:19Z",
+      "updated_at": "2026-10-27T21:24:21Z",
+      "merged_at": "2026-10-27T21:24:21Z",
+      "closed_at": "2026-10-27T21:24:21Z",
+      "head_sha": "f22dcfde646247214ddab3faf3668aed5ad4a28f",
+      "changed_files": 22,
+      "additions": 7514,
+      "deletions": 52,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Analyze (javascript-typescript)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "qa-ui-flow-suite",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Semgrep Scan",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "ui-e2e-tests",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#626",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 626,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/626",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-27T21:19:37Z",
+      "updated_at": "2026-10-27T21:24:12Z",
+      "merged_at": "2026-10-27T21:24:12Z",
+      "closed_at": "2026-10-27T21:24:12Z",
+      "head_sha": "d54f52acd309deff165bd8020758782715ad46e3",
+      "changed_files": 8,
+      "additions": 1435,
+      "deletions": 0,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/front-b2b#731",
+      "repo": "Pigui-AI/front-b2b",
+      "number": 731,
+      "url": "https://github.com/Pigui-AI/front-b2b/pull/731",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-27T17:13:13Z",
+      "updated_at": "2026-10-27T17:47:03Z",
+      "merged_at": "2026-10-27T17:47:03Z",
+      "closed_at": "2026-10-27T17:47:03Z",
+      "head_sha": "f698ebbc7e4c4043418d89ccb41b5437f7fb37b4",
+      "changed_files": 14,
+      "additions": 3651,
+      "deletions": 46,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Analyze (javascript-typescript)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "qa-ui-flow-suite",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Semgrep Scan",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "ui-e2e-tests",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#624",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 624,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/624",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-27T17:44:42Z",
+      "updated_at": "2026-10-27T17:46:47Z",
+      "merged_at": "2026-10-27T17:46:46Z",
+      "closed_at": "2026-10-27T17:46:46Z",
+      "head_sha": "59dfda41816160c097db9d38b5e7335a0cdb69c5",
+      "changed_files": 7,
+      "additions": 1499,
+      "deletions": 132,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/front-b2b#729",
+      "repo": "Pigui-AI/front-b2b",
+      "number": 729,
+      "url": "https://github.com/Pigui-AI/front-b2b/pull/729",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-27T06:04:48Z",
+      "updated_at": "2026-10-27T16:29:57Z",
+      "merged_at": "2026-10-27T16:29:57Z",
+      "closed_at": "2026-10-27T16:29:57Z",
+      "head_sha": "795d2cae07f09cef62251044656ae9954212bdd9",
+      "changed_files": 29,
+      "additions": 2743,
+      "deletions": 1374,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Analyze (javascript-typescript)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "qa-ui-flow-suite",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Semgrep Scan",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "ui-e2e-tests",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/front-b2b#728",
+      "repo": "Pigui-AI/front-b2b",
+      "number": 728,
+      "url": "https://github.com/Pigui-AI/front-b2b/pull/728",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-27T00:23:11Z",
+      "updated_at": "2026-10-27T00:24:12Z",
+      "merged_at": "2026-10-27T00:24:11Z",
+      "closed_at": "2026-10-27T00:24:11Z",
+      "head_sha": "e16e8a789675fce5c6c718f6718c00feff62a9f1",
+      "changed_files": 11,
+      "additions": 1365,
+      "deletions": 951,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "MISSING",
+      "technical_checks": [],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/front-b2b#727",
+      "repo": "Pigui-AI/front-b2b",
+      "number": 727,
+      "url": "https://github.com/Pigui-AI/front-b2b/pull/727",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-26T20:31:58Z",
+      "updated_at": "2026-10-27T00:23:29Z",
+      "merged_at": "2026-10-26T20:32:56Z",
+      "closed_at": "2026-10-26T20:32:56Z",
+      "head_sha": "ab0e1fe9215a142694935e566ad86101479d9222",
+      "changed_files": 20,
+      "additions": 2388,
+      "deletions": 105,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "MISSING",
+      "technical_checks": [],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#623",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 623,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/623",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-26T21:08:05Z",
+      "updated_at": "2026-10-27T00:12:44Z",
+      "merged_at": "2026-10-26T21:09:19Z",
+      "closed_at": "2026-10-26T21:09:19Z",
+      "head_sha": "a996f178b733bd32b71c5cf1d43c0c364f473eb5",
+      "changed_files": 95,
+      "additions": 5833,
+      "deletions": 2,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "MISSING",
+      "technical_checks": [],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#622",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 622,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/622",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-26T19:21:32Z",
+      "updated_at": "2026-10-26T19:22:48Z",
+      "merged_at": "2026-10-26T19:22:48Z",
+      "closed_at": "2026-10-26T19:22:48Z",
+      "head_sha": "70793a5dc5c5dff0e2ff2afeb0c5ccdcdc8fa219",
+      "changed_files": 10,
+      "additions": 245,
+      "deletions": 24,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "MISSING",
+      "technical_checks": [],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#621",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 621,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/621",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-26T18:55:02Z",
+      "updated_at": "2026-10-26T19:12:07Z",
+      "merged_at": "2026-10-26T19:12:07Z",
+      "closed_at": "2026-10-26T19:12:07Z",
+      "head_sha": "e4bfed1f723a87541761f6d992f13e1285054166",
+      "changed_files": 6,
+      "additions": 573,
+      "deletions": 0,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "MISSING",
+      "technical_checks": [],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/app-pigui-scanapp#289",
+      "repo": "Pigui-AI/app-pigui-scanapp",
+      "number": 289,
+      "url": "https://github.com/Pigui-AI/app-pigui-scanapp/pull/289",
+      "author": "americabalderas-del",
+      "state": "MERGED",
+      "created_at": "2026-10-26T18:55:22Z",
+      "updated_at": "2026-10-26T19:11:26Z",
+      "merged_at": "2026-10-26T19:11:26Z",
+      "closed_at": "2026-10-26T19:11:26Z",
+      "head_sha": "a69937c9cbc271b5a0c3f7bab8a67c09ddee2a02",
+      "changed_files": 7,
+      "additions": 288,
+      "deletions": 26,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "MISSING",
+      "technical_checks": [],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/front-b2b#746",
+      "repo": "Pigui-AI/front-b2b",
+      "number": 746,
+      "url": "https://github.com/Pigui-AI/front-b2b/pull/746",
+      "author": "ricardogallardo-pigui",
+      "state": "MERGED",
+      "created_at": "2026-10-29T14:08:18Z",
+      "updated_at": "2026-10-29T15:00:40Z",
+      "merged_at": "2026-10-29T15:00:39Z",
+      "closed_at": "2026-10-29T15:00:39Z",
+      "head_sha": "d7cb3026759b927005891b22bccf6fcf499ad191",
+      "changed_files": 3,
+      "additions": 39,
+      "deletions": 17,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Analyze (javascript-typescript)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "qa-ui-flow-suite",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Semgrep Scan",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "ui-e2e-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/front-b2b#745",
+      "repo": "Pigui-AI/front-b2b",
+      "number": 745,
+      "url": "https://github.com/Pigui-AI/front-b2b/pull/745",
+      "author": "ricardogallardo-pigui",
+      "state": "MERGED",
+      "created_at": "2026-10-29T12:59:19Z",
+      "updated_at": "2026-10-29T13:14:09Z",
+      "merged_at": "2026-10-29T13:14:09Z",
+      "closed_at": "2026-10-29T13:14:09Z",
+      "head_sha": "7eac62357ac301e7f83960c09c02ac7a6c998178",
+      "changed_files": 6,
+      "additions": 125,
+      "deletions": 7,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Analyze (javascript-typescript)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "qa-ui-flow-suite",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Semgrep Scan",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "ui-e2e-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/front-b2b#744",
+      "repo": "Pigui-AI/front-b2b",
+      "number": 744,
+      "url": "https://github.com/Pigui-AI/front-b2b/pull/744",
+      "author": "ricardogallardo-pigui",
+      "state": "MERGED",
+      "created_at": "2026-10-29T05:47:12Z",
+      "updated_at": "2026-10-29T05:52:17Z",
+      "merged_at": "2026-10-29T05:52:17Z",
+      "closed_at": "2026-10-29T05:52:17Z",
+      "head_sha": "fecf484e714f3f1f4228330e6019a308a39b8381",
+      "changed_files": 3,
+      "additions": 23,
+      "deletions": 6,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Analyze (javascript-typescript)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Semgrep Scan",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#611",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 611,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/611",
+      "author": "ricardogallardo-pigui",
+      "state": "CLOSED",
+      "created_at": "2026-10-23T01:19:45Z",
+      "updated_at": "2026-10-29T05:38:19Z",
+      "merged_at": null,
+      "closed_at": "2026-10-29T05:38:19Z",
+      "head_sha": "73cdb3ec4886272e98ac63b194fe267d621eae1e",
+      "changed_files": 14,
+      "additions": 1001,
+      "deletions": 41,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": true
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#619",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 619,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/619",
+      "author": "ricardogallardo-pigui",
+      "state": "MERGED",
+      "created_at": "2026-10-24T00:44:54Z",
+      "updated_at": "2026-10-29T05:35:14Z",
+      "merged_at": "2026-10-29T05:35:14Z",
+      "closed_at": "2026-10-29T05:35:14Z",
+      "head_sha": "1003b1f10ad28a8a81c2579569b5bb7d9e23a32d",
+      "changed_files": 2,
+      "additions": 17,
+      "deletions": 3,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#633",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 633,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/633",
+      "author": "ricardogallardo-pigui",
+      "state": "MERGED",
+      "created_at": "2026-10-29T04:09:48Z",
+      "updated_at": "2026-10-29T05:18:31Z",
+      "merged_at": "2026-10-29T05:18:29Z",
+      "closed_at": "2026-10-29T05:18:30Z",
+      "head_sha": "9c6890432048bd8be589d99f62b4e9d525191d41",
+      "changed_files": 55,
+      "additions": 3183,
+      "deletions": 36,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/front-b2b#743",
+      "repo": "Pigui-AI/front-b2b",
+      "number": 743,
+      "url": "https://github.com/Pigui-AI/front-b2b/pull/743",
+      "author": "ricardogallardo-pigui",
+      "state": "MERGED",
+      "created_at": "2026-10-29T04:09:45Z",
+      "updated_at": "2026-10-29T05:18:05Z",
+      "merged_at": "2026-10-29T05:18:05Z",
+      "closed_at": "2026-10-29T05:18:05Z",
+      "head_sha": "36e1e52fc07dc358d8bcfb334dc6ca619d57fc02",
+      "changed_files": 45,
+      "additions": 7990,
+      "deletions": 116,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Analyze (javascript-typescript)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "qa-ui-flow-suite",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Semgrep Scan",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "ui-e2e-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/Motor-chats#64",
+      "repo": "Pigui-AI/Motor-chats",
+      "number": 64,
+      "url": "https://github.com/Pigui-AI/Motor-chats/pull/64",
+      "author": "ricardogallardo-pigui",
+      "state": "MERGED",
+      "created_at": "2026-10-29T04:09:40Z",
+      "updated_at": "2026-10-29T05:17:55Z",
+      "merged_at": "2026-10-29T05:17:53Z",
+      "closed_at": "2026-10-29T05:17:53Z",
+      "head_sha": "ea0f26086004f750aed891d8ff806d6176e9fc4c",
+      "changed_files": 145,
+      "additions": 75357,
+      "deletions": 288,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "MISSING",
+      "technical_checks": [],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/front-b2b#732",
+      "repo": "Pigui-AI/front-b2b",
+      "number": 732,
+      "url": "https://github.com/Pigui-AI/front-b2b/pull/732",
+      "author": "ricardogallardo-pigui",
+      "state": "MERGED",
+      "created_at": "2026-10-27T17:47:56Z",
+      "updated_at": "2026-10-27T20:38:16Z",
+      "merged_at": "2026-10-27T20:38:15Z",
+      "closed_at": "2026-10-27T20:38:15Z",
+      "head_sha": "239fef6e69b84394662b60dfac6b8698b2cf270b",
+      "changed_files": 47,
+      "additions": 6495,
+      "deletions": 120,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Analyze (javascript-typescript)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "qa-ui-flow-suite",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Semgrep Scan",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "ui-e2e-tests",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/Motor-chats#62",
+      "repo": "Pigui-AI/Motor-chats",
+      "number": 62,
+      "url": "https://github.com/Pigui-AI/Motor-chats/pull/62",
+      "author": "ricardogallardo-pigui",
+      "state": "MERGED",
+      "created_at": "2026-10-27T17:47:48Z",
+      "updated_at": "2026-10-27T20:33:57Z",
+      "merged_at": "2026-10-27T20:33:57Z",
+      "closed_at": "2026-10-27T20:33:57Z",
+      "head_sha": "4006cc068a15c89cff95e40c3a8f01d5212af52e",
+      "changed_files": 637,
+      "additions": 1456071,
+      "deletions": 582,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "MISSING",
+      "technical_checks": [],
+      "excluded": false
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#625",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 625,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/625",
+      "author": "ricardogallardo-pigui",
+      "state": "MERGED",
+      "created_at": "2026-10-27T17:47:53Z",
+      "updated_at": "2026-10-27T20:32:01Z",
+      "merged_at": "2026-10-27T20:32:01Z",
+      "closed_at": "2026-10-27T20:32:01Z",
+      "head_sha": "3a3dcbf72b27d32827717e9e9c8661f52a6604f7",
+      "changed_files": 107,
+      "additions": 12025,
+      "deletions": 205,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false
+    }
+  ]
+}

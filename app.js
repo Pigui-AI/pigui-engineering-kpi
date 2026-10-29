@@ -204,12 +204,21 @@ function route() {
     if (a.dataset.route === view) a.setAttribute("aria-current", "page");
     else a.removeAttribute("aria-current");
   });
-  document.querySelector("#main").innerHTML = {
-    overview,
-    team: teamView,
-    evidence: evidenceView,
-    criteria: criteriaView,
-  }[view]();
+  document.querySelector("#main").innerHTML = (
+    state.audit
+      ? {
+          overview: auditedOverview,
+          team: auditedTeamView,
+          evidence: auditedEvidenceView,
+          criteria: auditedCriteria,
+        }
+      : {
+          overview,
+          team: teamView,
+          evidence: evidenceView,
+          criteria: criteriaView,
+        }
+  )[view]();
   document.title = `${{ overview: "Resumen", team: "Equipo", evidence: "Evidencias", criteria: "Criterios" }[view]} · Pigui`;
 }
 function openReport(member = "") {
@@ -225,6 +234,15 @@ function openReport(member = "") {
   document.querySelector("#report-dialog").showModal();
 }
 function updateReportHint() {
+  const person = state.data.team.find(
+    (m) =>
+      m.name === document.querySelector("#report-form").elements.member.value,
+  );
+  if (person?.shared_evidence_group) {
+    document.querySelector("#report-hint").textContent =
+      "América / Ever: la evidencia se comparte entre ambas cuentas autorizadas y cada PR cuenta una sola vez para el grupo.";
+    return;
+  }
   const qa =
     document.querySelector("#report-form").elements.member.value ===
     "Yestzanetli";
@@ -233,6 +251,7 @@ function updateReportHint() {
     : "Publica desde tu cuenta de GitHub. Debe coincidir con la cuenta del PR y estar vinculada a tu nombre.";
 }
 function openMember(index) {
+  if (state.audit) return openAuditedMember(index);
   const m = state.data.team[index];
   if (!m) return;
   const el = document.querySelector("#member-dialog");
@@ -241,24 +260,26 @@ function openMember(index) {
 }
 function exportCsv() {
   if (!state.data) return;
-  const rows = [
-    [
-      "Integrante",
-      "Rol",
-      "GitHub",
-      "Avance validado (%)",
-      "PR validados",
-      "Pendientes",
-    ],
-    ...state.data.team.map((m) => [
-      m.name,
-      m.role,
-      m.login || "QA comodín",
-      clamp(m.verified_progress),
-      count(m.verified_prs),
-      count(m.open_reports),
-    ]),
-  ];
+  const rows = state.audit
+    ? auditCsvRows()
+    : [
+        [
+          "Integrante",
+          "Rol",
+          "GitHub",
+          "Avance validado (%)",
+          "PR validados",
+          "Pendientes",
+        ],
+        ...state.data.team.map((m) => [
+          m.name,
+          m.role,
+          m.login || "QA comodín",
+          clamp(m.verified_progress),
+          count(m.verified_prs),
+          count(m.open_reports),
+        ]),
+      ];
   const csv =
     "\ufeff" +
     rows
@@ -410,12 +431,16 @@ document.querySelector("#save-draft").addEventListener("click", () => {
 document.querySelector("#report-form").addEventListener("submit", (e) => {
   e.preventDefault();
   const d = Object.fromEntries(new FormData(e.currentTarget));
+  const match = d.pr.match(
+    /^https:\/\/github\.com\/([^/]+\/[^/]+)\/pull\/\d+\/?$/,
+  );
   if (
-    !/^https:\/\/github\.com\/Pigui-AI\/api-pigui-backend\/pull\/\d+\/?$/.test(
-      d.pr,
-    )
+    !match ||
+    !(
+      state.data.source_repositories || [state.data.source_repository]
+    ).includes(match[1])
   ) {
-    toast("Usa un PR de Pigui-AI/api-pigui-backend");
+    toast("Usa un PR de uno de los repositorios autorizados del equipo");
     e.currentTarget.elements.pr.focus();
     return;
   }
@@ -468,14 +493,21 @@ fetch("data/team.json", { cache: "no-store" })
     if (!r.ok) throw Error("Datos no disponibles");
     return r.json();
   })
-  .then((data) => {
+  .then(async (data) => {
     if (!Array.isArray(data.team) || !data.team.length)
       throw Error("Equipo no disponible");
     state.data = data;
+    if (data.audit_file) {
+      const response = await fetch(data.audit_file, { cache: "no-store" });
+      if (!response.ok) throw Error("Corte de evidencia no disponible");
+      state.audit = await response.json();
+    }
     document.querySelector("#report-form").elements.member.innerHTML = data.team
       .map((m) => `<option>${esc(m.name)}</option>`)
       .join("");
-    document.querySelector("#source-state").textContent = "Resumen disponible";
+    document.querySelector("#source-state").textContent = state.audit
+      ? "Corte: 29 oct · 12:36 CDMX"
+      : "Resumen disponible";
     route();
   })
   .catch(() => {

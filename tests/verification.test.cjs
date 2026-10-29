@@ -26,6 +26,33 @@ test("developers cannot claim another identity or PR", () => {
     validateIdentity(person, "marcopigui", "marcopigui", [], "evidence"),
   );
 });
+test("shared identity accepts only the two explicitly configured accounts", () => {
+  const person = {
+    login: "everbecerra0",
+    shared_accounts: ["americabalderas-del", "everbecerra0"],
+  };
+  assert.doesNotThrow(() =>
+    validateIdentity(
+      person,
+      "everbecerra0",
+      "americabalderas-del",
+      [],
+      "evidence",
+    ),
+  );
+  assert.throws(() =>
+    validateIdentity(
+      person,
+      "marcopigui",
+      "americabalderas-del",
+      [],
+      "evidence",
+    ),
+  );
+  assert.throws(() =>
+    validateIdentity(person, "everbecerra0", "marcopigui", [], "evidence"),
+  );
+});
 test("QA delegation permits a different PR author but rejects bots, strangers and missing evidence", () => {
   const qa = { reporting_mode: "qa-delegated" },
     delegates = ["SergiorCode"];
@@ -48,6 +75,7 @@ function fixture({
   accepted = [],
   counted = [],
   review = "APPROVED",
+  reviewCommit = "head-sha",
   actor = "SergiorCode",
 } = {}) {
   const writes = [],
@@ -66,6 +94,7 @@ function fixture({
     ],
   };
   return {
+    dashboard,
     writes,
     errors,
     args: {
@@ -101,11 +130,18 @@ function fixture({
         ok: true,
         json: async () =>
           url.includes("reviews")
-            ? [{ user: { login: "reviewer" }, state: review }]
+            ? [
+                {
+                  user: { login: "reviewer" },
+                  state: review,
+                  commit_id: reviewCommit,
+                },
+              ]
             : {
                 merged_at: "date",
                 changed_files: 3,
                 user: { login: "everbecerra0" },
+                head: { sha: "head-sha" },
               },
       }),
     },
@@ -134,4 +170,19 @@ test("unapproved QA evidence never writes dashboard metrics", async () => {
   await run(f.args);
   assert.equal(f.writes.length, 0);
   assert.match(f.errors[0], /aprobación externa/);
+});
+test("approval on an older commit never validates the current PR", async () => {
+  const f=fixture({reviewCommit:'old-sha'});await run(f.args);
+  assert.equal(f.writes.length,0);assert.match(f.errors[0],/aprobación externa/);
+});
+test("shared report updates both people but rejects a PR already counted by either", async () => {
+  const f=fixture({actor:'everbecerra0'});
+  f.dashboard.team=['Ever','América'].map(name=>({name,login:name==='Ever'?'everbecerra0':'americabalderas-del',shared_evidence_group:'america-ever',shared_accounts:['americabalderas-del','everbecerra0'],counted_prs:['Pigui-AI/api-pigui-backend#634'],verified_prs:1}));
+  f.args.context.payload.issue.body=reportBody('Ever');
+  await run(f.args);assert.deepEqual(f.errors,[]);
+  assert.equal(f.writes[0].team[0].verified_prs,2);assert.equal(f.writes[0].team[1].verified_prs,2);
+  const duplicate=fixture({actor:'everbecerra0'});
+  duplicate.dashboard.team=f.writes[0].team;
+  duplicate.args.context.payload.issue.body=reportBody('Ever');
+  await run(duplicate.args);assert.equal(duplicate.writes.length,0);assert.match(duplicate.errors[0],/ya fue contabilizado/);
 });

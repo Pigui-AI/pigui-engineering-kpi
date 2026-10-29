@@ -22,6 +22,12 @@ function validateIdentity(person, actor, author, delegates, summary) {
       throw Error(
         "QA debe incluir casos de prueba y resultados (mínimo 30 caracteres).",
       );
+  } else if (person.shared_accounts?.length) {
+    const accounts = person.shared_accounts.map((a) => a.toLowerCase());
+    if (!accounts.includes(login) || !accounts.includes(author.toLowerCase()))
+      throw Error(
+        "El reporte y el PR deben pertenecer a las cuentas del grupo compartido autorizado.",
+      );
   } else {
     if (!person.login || person.login === "por-asignar")
       throw Error("La cuenta del integrante aún no está vinculada.");
@@ -59,7 +65,7 @@ async function run({ github, context, core, fetch: request = global.fetch }) {
     const match = report.pr?.match(
       /^https:\/\/github\.com\/([^/]+)\/([^/]+)\/pull\/(\d+)\/?$/,
     );
-    if (!match || `${match[1]}/${match[2]}` !== process.env.SOURCE_REPOSITORY)
+    if (!match)
       throw Error("El PR debe pertenecer al repositorio de código autorizado.");
     const file = await github.rest.repos.getContent({
       ...repo,
@@ -69,6 +75,12 @@ async function run({ github, context, core, fetch: request = global.fetch }) {
     const dashboard = JSON.parse(
       Buffer.from(file.data.content, "base64").toString("utf8"),
     );
+    if (
+      !(
+        dashboard.source_repositories || [process.env.SOURCE_REPOSITORY]
+      ).includes(`${match[1]}/${match[2]}`)
+    )
+      throw Error("El PR debe pertenecer al repositorio de código autorizado.");
     const person = dashboard.team.find((p) => p.name === report.member);
     if (!person) throw Error("Integrante no reconocido.");
     // An accepted report is immutable in the metrics; editing it never adds another delivery.
@@ -114,23 +126,42 @@ async function run({ github, context, core, fetch: request = global.fetch }) {
         if (
           ["APPROVED", "CHANGES_REQUESTED", "DISMISSED"].includes(review.state)
         )
-          approvals.set(review.user.login.toLowerCase(), review.state);
+          approvals.set(review.user.login.toLowerCase(), {
+            state: review.state,
+            commit: review.commit_id,
+          });
       if (reviews.length < 100) break;
     }
     if (
       ![...approvals].some(
-        ([login, status]) =>
-          login !== pr.user.login.toLowerCase() && status === "APPROVED",
+        ([login, review]) =>
+          login !== pr.user.login.toLowerCase() &&
+          review.state === "APPROVED" &&
+          review.commit === pr.head.sha,
       )
     )
       throw Error("Falta la aprobación externa del PR.");
     // A PR counts once per person; QA and the developer can provide different evidence for the same PR.
     const key = `${match[1]}/${match[2]}#${match[3]}`;
-    if ((person.counted_prs || []).includes(key))
+    const peers = person.shared_evidence_group
+      ? dashboard.team.filter(
+          (m) => m.shared_evidence_group === person.shared_evidence_group,
+        )
+      : [person];
+    if (peers.some((m) => (m.counted_prs || []).includes(key)))
       throw Error("Ese PR ya fue contabilizado para este integrante.");
-    person.counted_prs = [...(person.counted_prs || []), key];
-    person.verified_progress = report.progress;
-    person.verified_prs = (person.verified_prs || 0) + 1;
+    const keys = [
+      ...new Set([...peers.flatMap((m) => m.counted_prs || []), key]),
+    ];
+    const verifiedCount = Math.max(
+      Math.max(...peers.map((m) => m.verified_prs || 0)) + 1,
+      keys.length,
+    );
+    for (const peer of peers) {
+      peer.counted_prs = keys;
+      peer.verified_progress = report.progress;
+      peer.verified_prs = verifiedCount;
+    }
     person.open_reports = Math.max(0, (person.open_reports || 0) - 1);
     dashboard.accepted_reports = [
       ...(dashboard.accepted_reports || []),
