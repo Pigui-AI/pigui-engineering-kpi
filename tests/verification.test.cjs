@@ -172,17 +172,30 @@ test("unapproved QA evidence never writes dashboard metrics", async () => {
   assert.match(f.errors[0], /aprobación externa/);
 });
 test("approval on an older commit never validates the current PR", async () => {
-  const f=fixture({reviewCommit:'old-sha'});await run(f.args);
-  assert.equal(f.writes.length,0);assert.match(f.errors[0],/aprobación externa/);
+  const f = fixture({ reviewCommit: "old-sha" });
+  await run(f.args);
+  assert.equal(f.writes.length, 0);
+  assert.match(f.errors[0], /aprobación externa/);
 });
 test("shared report updates both people but rejects a PR already counted by either", async () => {
-  const f=fixture({actor:'everbecerra0'});
-  f.dashboard.team=['Ever','América'].map(name=>({name,login:name==='Ever'?'everbecerra0':'americabalderas-del',shared_evidence_group:'america-ever',shared_accounts:['americabalderas-del','everbecerra0'],counted_prs:['Pigui-AI/api-pigui-backend#634'],verified_prs:1}));
-  f.args.context.payload.issue.body=reportBody('Ever');
-  await run(f.args);assert.deepEqual(f.errors,[]);
-  assert.equal(f.writes[0].team[0].verified_prs,2);assert.equal(f.writes[0].team[1].verified_prs,2);
-  const duplicate=fixture({actor:'everbecerra0'});
-  duplicate.dashboard.team=f.writes[0].team;
-  duplicate.args.context.payload.issue.body=reportBody('Ever');
-  await run(duplicate.args);assert.equal(duplicate.writes.length,0);assert.match(duplicate.errors[0],/ya fue contabilizado/);
+  const f = fixture({ actor: "everbecerra0" });
+  f.dashboard.team = ["Ever", "América"].map((name) => ({
+    name,
+    login: name === "Ever" ? "everbecerra0" : "americabalderas-del",
+    shared_evidence_group: "america-ever",
+    shared_accounts: ["americabalderas-del", "everbecerra0"],
+    counted_prs: ["Pigui-AI/api-pigui-backend#634"],
+    verified_prs: 1,
+  }));
+  f.args.context.payload.issue.body = reportBody("Ever");
+  await run(f.args);
+  assert.deepEqual(f.errors, []);
+  assert.equal(f.writes[0].team[0].verified_prs, 2);
+  assert.equal(f.writes[0].team[1].verified_prs, 2);
+  const duplicate = fixture({ actor: "everbecerra0" });
+  duplicate.dashboard.team = f.writes[0].team;
+  duplicate.args.context.payload.issue.body = reportBody("Ever");
+  await run(duplicate.args);
+  assert.equal(duplicate.writes.length, 0);
+  assert.match(duplicate.errors[0], /ya fue contabilizado/);
 });

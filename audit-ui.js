@@ -1,3 +1,24 @@
+function executiveBrief(m, detail = false) {
+  const summary = `<div class="executive-work"><span>En qué trabajó</span><p>${esc(m.executive_summary || "Sin resumen atribuible en este corte.")}</p></div>`;
+  if (!detail || !m.workstreams?.length) return summary;
+  return (
+    summary +
+    `<ul class="executive-results">${m.workstreams
+      .slice(0, 3)
+      .map(
+        (w) =>
+          `<li>${esc(w.text)}<small>${w.prs
+            .map((key) => {
+              const r = state.audit.records.find((r) => r.key === key);
+              return r
+                ? `<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.repo.split("/")[1])} #${r.number} ↗</a>`
+                : "";
+            })
+            .join(" · ")}</small></li>`,
+      )
+      .join("")}</ul>`
+  );
+}
 function auditMetrics(m) {
   return KPIAudit.summarize(KPIAudit.memberRecords(m, state.audit));
 }
@@ -94,7 +115,7 @@ function auditedOverview() {
     .map((m, i) => {
       const s = auditMetrics(m),
         qa = m.reporting_mode === "qa-delegated";
-      return `<article class="mini-person" style="--avatar:${colors[i]}"><div class="mini-top">${avatar(m, i)}<button class="icon-button" data-member="${i}" aria-label="Ver a ${esc(m.name)}">${icon("arrow")}</button></div><span class="member-name">${esc(m.name)}</span><span class="member-role">${esc(m.role)}</span><div class="mini-score">${qa ? "Sin reporte" : s.merged + " PR"}</div><div class="mini-meta">${qa ? "Evidencia aún no atribuible" : s.approved + " con aprobación · " + auditNumber(s.coverage)}</div><span class="progress"><i style="width:${s.coverage || 0}%"></i></span><small class="evidence-date">${m.shared_evidence_group ? "Grupo compartido América / Ever" : qa ? "No es una calificación de desempeño" : "Cobertura de aprobación"}</small></article>`;
+      return `<article class="mini-person" style="--avatar:${colors[i]}"><div class="mini-top">${avatar(m, i)}<button class="icon-button" data-member="${i}" aria-label="Ver a ${esc(m.name)}">${icon("arrow")}</button></div><span class="member-name">${esc(m.name)}</span><span class="member-role">${esc(m.role)}</span>${executiveBrief(m)}<div class="mini-score">${qa ? "Sin reporte" : s.merged + " PR"}</div><div class="mini-meta">${qa ? "Evidencia aún no atribuible" : s.approved + " con aprobación · " + auditNumber(s.coverage)}</div><span class="progress"><i style="width:${s.coverage || 0}%"></i></span><small class="evidence-date">${m.shared_evidence_group ? "Grupo compartido América / Ever" : qa ? "No es una calificación de desempeño" : "Cobertura de aprobación"}</small></article>`;
     })
     .join("")}</div></section>
 <aside class="setup-banner glass"><span>${icon("info")}</span><p><strong>Entrega no equivale a calidad aprobada.</strong> Los 11 PR con aprobación tienen alertas de CI. Los 42 checks de revisión automática en rojo y los fallos técnicos son señales distintas. No se ejecutaron nuevamente las suites.</p><a class="text-link" href="#/evidence">Ver evidencia ${icon("arrow")}</a></aside>`;
@@ -104,7 +125,7 @@ function auditedTeamView() {
     .map((m, i) => {
       const s = auditMetrics(m),
         qa = m.reporting_mode === "qa-delegated";
-      return `<article class="person-card glass"><div class="person-top">${avatar(m, i)}</div><h2>${esc(m.name)}</h2><p>${esc(m.role)}</p>${auditShare(m)}<div class="person-score audit-score">${qa ? "Sin reporte" : s.merged + " PR"}</div><p>${qa ? "Pendiente de evidencia QA atribuible." : `${s.approved} con aprobación externa · ${s.missing_approval} sin aprobación`}</p><div class="person-meta"><span>Cobertura de aprobación</span><strong>${auditNumber(s.coverage)}</strong></div><span class="progress"><i style="width:${s.coverage || 0}%"></i></span><div class="person-meta"><span>${s.open} abiertos · ${s.discarded} descartados</span><span>${s.technical_failures} alertas técnicas</span></div><button class="button secondary" data-member="${i}">Ver evidencia ${icon("arrow")}</button></article>`;
+      return `<article class="person-card glass"><div class="person-top">${avatar(m, i)}</div><h2>${esc(m.name)}</h2><p>${esc(m.role)}</p>${auditShare(m)}${executiveBrief(m)}<div class="person-score audit-score">${qa ? "Sin reporte" : s.merged + " PR"}</div><p>${qa ? "Pendiente de evidencia QA atribuible." : `${s.approved} con aprobación externa · ${s.missing_approval} sin aprobación`}</p><div class="person-meta"><span>Cobertura de aprobación</span><strong>${auditNumber(s.coverage)}</strong></div><span class="progress"><i style="width:${s.coverage || 0}%"></i></span><div class="person-meta"><span>${s.open} abiertos · ${s.discarded} descartados</span><span>${s.technical_failures} alertas técnicas</span></div><button class="button secondary" data-member="${i}">Ver evidencia ${icon("arrow")}</button></article>`;
     })
     .join(
       "",
@@ -163,7 +184,7 @@ function openAuditedMember(index) {
     s = KPIAudit.summarize(rows),
     qa = m.reporting_mode === "qa-delegated";
   const el = document.querySelector("#member-dialog");
-  el.innerHTML = `<div class="dialog-head"><h2>${esc(m.name)} · evidencia</h2><button class="icon-button" data-action="close" aria-label="Cerrar">${icon("x")}</button></div><div class="member-detail">${avatar(m, index)}<p class="subtitle">${esc(m.role)} · @${esc(m.login || "QA delegado")}</p>${auditShare(m)}<strong class="stat-number">${qa ? "N/D" : s.merged + " PR"}</strong><p class="subtitle">Entregas fusionadas del corte${m.shared_evidence_group ? " · grupo América / Ever" : ""}</p><div class="detail-line"><span>Con aprobación externa</span><strong>${s.approved}</strong></div><div class="detail-line"><span>Cobertura de revisión</span><strong>${auditNumber(s.coverage)}</strong></div><div class="detail-line"><span>Checks técnicos con fallos</span><strong>${s.technical_failures}</strong></div>${
+  el.innerHTML = `<div class="dialog-head"><h2>${esc(m.name)} · evidencia</h2><button class="icon-button" data-action="close" aria-label="Cerrar">${icon("x")}</button></div><div class="member-detail">${avatar(m, index)}<p class="subtitle">${esc(m.role)} · @${esc(m.login || "QA delegado")}</p>${auditShare(m)}${executiveBrief(m, true)}<strong class="stat-number">${qa ? "N/D" : s.merged + " PR"}</strong><p class="subtitle">Entregas fusionadas del corte${m.shared_evidence_group ? " · grupo América / Ever" : ""}</p><div class="detail-line"><span>Con aprobación externa</span><strong>${s.approved}</strong></div><div class="detail-line"><span>Cobertura de revisión</span><strong>${auditNumber(s.coverage)}</strong></div><div class="detail-line"><span>Checks técnicos con fallos</span><strong>${s.technical_failures}</strong></div>${
     qa
       ? '<p class="form-hint">No se encontró evidencia QA atribuible. Esto no equivale a 0% de trabajo.</p>'
       : `<p class="form-hint">${m.shared_evidence_group ? "Evidencia compartida: se contabiliza una sola vez en el equipo." : "Los merges sin revisión externa permanecen identificados como pendientes de validación."}</p><div class="member-evidence-links">${rows

@@ -10,7 +10,22 @@
       "verified_progress": null,
       "verified_prs": 0,
       "open_reports": 0,
-      "counted_prs": []
+      "counted_prs": [],
+      "executive_summary": "Mejoró tiendas, actualización de ciudades y audio de llamadas en Android.",
+      "workstreams": [
+        {
+          "text": "Tiendas: eliminó opciones repetidas en el listado.",
+          "prs": ["Pigui-AI/app-pigui-b2c#389"]
+        },
+        {
+          "text": "Ciudades: actualiza el selector sin reiniciar la app.",
+          "prs": ["Pigui-AI/app-pigui-b2c#389"]
+        },
+        {
+          "text": "Android: ajustó la salida de audio durante las llamadas.",
+          "prs": ["Pigui-AI/app-pigui-b2c#389"]
+        }
+      ]
     },
     {
       "name": "América",
@@ -33,6 +48,29 @@
         "Pigui-AI/api-pigui-backend#637",
         "Pigui-AI/api-pigui-backend#636",
         "Pigui-AI/api-pigui-backend#635"
+      ],
+      "executive_summary": "Preparó el backend modular y las migraciones de datos; migró B2B a Flutter.",
+      "workstreams": [
+        {
+          "text": "Backend: servicios, datos y notificaciones preparados para activación.",
+          "prs": [
+            "Pigui-AI/api-pigui-backend#643",
+            "Pigui-AI/api-pigui-backend#636",
+            "Pigui-AI/api-pigui-backend#638"
+          ]
+        },
+        {
+          "text": "Voz: reforzó el acceso por sucursal y la lista de agentes permitidos.",
+          "prs": ["Pigui-AI/api-pigui-backend#635"]
+        },
+        {
+          "text": "Producto: migración B2B a Flutter y mejoras de tienda, chat y Scan.",
+          "prs": [
+            "Pigui-AI/front-b2b#694",
+            "Pigui-AI/pigui-rewardstore#7",
+            "Pigui-AI/app-pigui-scanapp#291"
+          ]
+        }
       ]
     },
     {
@@ -42,7 +80,26 @@
       "verified_progress": null,
       "verified_prs": 0,
       "open_reports": 0,
-      "counted_prs": []
+      "counted_prs": [],
+      "executive_summary": "Estabilizó el chat e integró la asesoría comercial de sucursales.",
+      "workstreams": [
+        {
+          "text": "Chat: evitó reinicios de conversación y mejoró el menú de temas.",
+          "prs": ["Pigui-AI/front-b2b#745", "Pigui-AI/front-b2b#746"]
+        },
+        {
+          "text": "Branch: integró asesoría comercial entre panel, Brain y API.",
+          "prs": [
+            "Pigui-AI/front-b2b#743",
+            "Pigui-AI/Motor-chats#64",
+            "Pigui-AI/api-pigui-backend#633"
+          ]
+        },
+        {
+          "text": "Calidad: corrigió pruebas de venta y lint del prototipo 3D.",
+          "prs": ["Pigui-AI/api-pigui-backend#619", "Pigui-AI/front-b2b#744"]
+        }
+      ]
     },
     {
       "name": "Yestzanetli",
@@ -52,7 +109,9 @@
       "verified_progress": null,
       "verified_prs": 0,
       "open_reports": 0,
-      "counted_prs": []
+      "counted_prs": [],
+      "executive_summary": "Pendiente de documentar pruebas ejecutadas y sus resultados.",
+      "workstreams": []
     },
     {
       "name": "Ever",
@@ -75,6 +134,29 @@
         "Pigui-AI/api-pigui-backend#637",
         "Pigui-AI/api-pigui-backend#636",
         "Pigui-AI/api-pigui-backend#635"
+      ],
+      "executive_summary": "Preparó el backend modular y las migraciones de datos; migró B2B a Flutter.",
+      "workstreams": [
+        {
+          "text": "Backend: servicios, datos y notificaciones preparados para activación.",
+          "prs": [
+            "Pigui-AI/api-pigui-backend#643",
+            "Pigui-AI/api-pigui-backend#636",
+            "Pigui-AI/api-pigui-backend#638"
+          ]
+        },
+        {
+          "text": "Voz: reforzó el acceso por sucursal y la lista de agentes permitidos.",
+          "prs": ["Pigui-AI/api-pigui-backend#635"]
+        },
+        {
+          "text": "Producto: migración B2B a Flutter y mejoras de tienda, chat y Scan.",
+          "prs": [
+            "Pigui-AI/front-b2b#694",
+            "Pigui-AI/pigui-rewardstore#7",
+            "Pigui-AI/app-pigui-scanapp#291"
+          ]
+        }
       ]
     }
   ],

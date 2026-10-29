@@ -79,3 +79,47 @@
 .chart-bars {
   inset: 0 5px 24px 35px;
 }
+.executive-work {
+  margin: 16px 0;
+}
+.executive-work > span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 5px;
+}
+.executive-work > p {
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0;
+  color: var(--text);
+}
+.mini-person .executive-work {
+  min-height: 94px;
+}
+.mini-person .executive-work > p {
+  color: #f3f5fa;
+}
+.person-card .executive-work {
+  min-height: 90px;
+}
+.executive-results {
+  padding-left: 18px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.executive-results li {
+  margin-bottom: 12px;
+}
+.executive-results small {
+  display: block;
+  color: var(--accent);
+  font-size: 10px;
+}
+@media (max-width: 450px) {
+  .mini-person .executive-work {
+    min-height: 120px;
+  }
+}
