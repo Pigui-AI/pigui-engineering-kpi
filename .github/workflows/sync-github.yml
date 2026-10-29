@@ -37,5 +37,8 @@ jobs:
             echo 'No dataset changes'
           else
             git commit -m 'chore(kpi): synchronize GitHub evidence'
+            # Preserve source changes pushed while this job was collecting evidence.
+            git pull --rebase origin main
+            node --test tests/*.test.cjs
             git push origin HEAD:main
           fi
