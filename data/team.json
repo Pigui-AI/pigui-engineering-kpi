@@ -1,11 +1,48 @@
 {
   "period": "Semana actual",
   "source_repository": "Pigui-AI/api-pigui-backend",
+  "qa_delegates": ["SergiorCode", "americabalderas-del"],
   "team": [
-    {"name":"Marco","role":"Desarrollador móvil","login":"por-asignar","verified_progress":0,"verified_prs":0,"open_reports":0},
-    {"name":"América","role":"Desarrollador fullstack móvil","login":"americabalderas-del","verified_progress":0,"verified_prs":0,"open_reports":0},
-    {"name":"Ricardo","role":"Fullstack Sr.","login":"por-asignar","verified_progress":0,"verified_prs":0,"open_reports":0},
-    {"name":"Yestzanetli","role":"QA","login":"por-asignar","verified_progress":0,"verified_prs":0,"open_reports":0},
-    {"name":"Ever","role":"Backend","login":"por-asignar","verified_progress":0,"verified_prs":0,"open_reports":0}
+    {
+      "name": "Marco",
+      "role": "Desarrollador móvil",
+      "login": "marcopigui",
+      "verified_progress": 0,
+      "verified_prs": 0,
+      "open_reports": 0
+    },
+    {
+      "name": "América",
+      "role": "Desarrollador fullstack móvil",
+      "login": "americabalderas-del",
+      "verified_progress": 0,
+      "verified_prs": 0,
+      "open_reports": 0
+    },
+    {
+      "name": "Ricardo",
+      "role": "Fullstack Sr.",
+      "login": "ricardogallardo-pigui",
+      "verified_progress": 0,
+      "verified_prs": 0,
+      "open_reports": 0
+    },
+    {
+      "name": "Yestzanetli",
+      "role": "QA",
+      "login": null,
+      "reporting_mode": "qa-delegated",
+      "verified_progress": 0,
+      "verified_prs": 0,
+      "open_reports": 0
+    },
+    {
+      "name": "Ever",
+      "role": "Backend",
+      "login": "everbecerra0",
+      "verified_progress": 0,
+      "verified_prs": 0,
+      "open_reports": 0
+    }
   ]
 }

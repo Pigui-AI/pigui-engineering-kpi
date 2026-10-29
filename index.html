@@ -1,22 +1,199 @@
 <!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pigui · Engineering KPI</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <main>
-    <header class="hero">
-      <div><p class="eyebrow">PIGUI AI · DELIVERY HEALTH</p><h1>KPIs de ingeniería,<br><span>con evidencia de código.</span></h1><p class="lede">Sólo cuentan avances ligados a un PR, validados por GitHub Actions y aprobados en revisión.</p></div>
-      <div class="hero-stat"><span>Regla activa</span><strong>PR + código + validación</strong><small>Sin evidencia, el avance no entra al promedio.</small></div>
-    </header>
-    <section class="toolbar"><div><p class="eyebrow">PERIODO ACTUAL</p><h2 id="period">Semana en curso</h2></div><a class="button" id="report-link" href="https://github.com/Pigui-AI/pigui-engineering-kpi/issues/new/choose">+ Reportar avance</a></section>
-    <section class="notice"><span>◆</span><div><strong>Candado de calidad activado</strong><p>Un reporte se publica como KPI sólo si el PR relacionado tiene cambios, está fusionado y pasa el verificador automático. La validación de revisión se configura como protección de rama.</p></div></section>
-    <section><div class="section-head"><div><p class="eyebrow">EQUIPO</p><h2>Avance verificable por persona</h2></div><p class="muted" id="data-source">Cargando métricas…</p></div><div class="team-grid" id="team"></div></section>
-    <section class="scoreboard"><div class="section-head"><div><p class="eyebrow">SALUD DEL EQUIPO</p><h2>Promedios de la semana</h2></div></div><div class="metrics" id="metrics"></div></section>
-    <section class="flow"><p class="eyebrow">CÓMO FUNCIONA</p><h2>Un flujo que evita reportes de papel.</h2><div class="flow-grid"><article><b>01</b><h3>Entrega</h3><p>La persona abre y fusiona su PR de trabajo.</p></article><article><b>02</b><h3>Evidencia</h3><p>Reporta el avance desde GitHub e incluye la URL del PR.</p></article><article><b>03</b><h3>Verificación</h3><p>La Action revisa autor, estado, cambios y etiqueta el reporte.</p></article><article><b>04</b><h3>Métrica</h3><p>El dashboard cuenta sólo reportes con <code>kpi-verified</code>.</p></article></div></section>
-    <footer>Configuración requerida: asignar los usuarios de GitHub en <code>data/team.json</code> y añadir <code>PIGUI_READ_TOKEN</code> si el repositorio de código es privado.</footer>
-  </main><script src="app.js"></script>
-</body></html>
+<html lang="es" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#18181b" />
+    <meta
+      name="description"
+      content="El espacio de entrega del equipo Pigui: personas, avances y evidencia verificable en GitHub."
+    />
+    <title>Pigui · Engineering desk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("pigui:theme") || "dark";
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Ir al contenido</a>
+    <div class="wall" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="app">
+      <header class="topbar">
+        <a class="brand glass" href="#/overview" aria-label="Pigui, resumen"
+          ><span class="brand-mark">p↗</span><span>pigui</span></a
+        >
+        <nav class="tabs glass" aria-label="Navegación principal">
+          <a href="#/overview" data-route="overview">Resumen</a
+          ><a href="#/team" data-route="team">Equipo</a
+          ><a href="#/evidence" data-route="evidence">Evidencias</a
+          ><a href="#/criteria" data-route="criteria">Criterios</a>
+        </nav>
+        <div class="top-actions glass">
+          <button
+            class="icon-button"
+            data-action="search"
+            aria-label="Buscar personas y páginas"
+            data-icon="search"
+          ></button
+          ><button
+            class="icon-button"
+            data-action="report"
+            aria-label="Nuevo reporte"
+            data-icon="plus"
+          ></button
+          ><a
+            class="profile"
+            href="https://github.com/Pigui-AI/pigui-engineering-kpi"
+            target="_blank"
+            rel="noopener"
+            aria-label="Repositorio en GitHub"
+            >PG</a
+          >
+        </div>
+      </header>
+      <main id="main" tabindex="-1">
+        <div class="loading glass">Cargando tu espacio de ingeniería…</div>
+      </main>
+      <footer class="site-footer">
+        <span
+          ><i class="status-dot"></i> GitHub ·
+          <span id="source-state">Conectando</span></span
+        ><span>Pigui / Engineering desk</span>
+      </footer>
+    </div>
+    <nav class="dock glass" aria-label="Acciones rápidas">
+      <button
+        data-action="search"
+        aria-label="Buscar"
+        title="Buscar · ⌘ K"
+        data-icon="search"
+      ></button
+      ><button
+        data-action="report"
+        aria-label="Reportar avance"
+        title="Reportar avance"
+        data-icon="plus"
+      ></button
+      ><a
+        href="#/overview"
+        aria-label="Resumen"
+        title="Resumen"
+        data-icon="grid"
+      ></a
+      ><a href="#/team" aria-label="Equipo" title="Equipo" data-icon="users"></a
+      ><button
+        data-action="export"
+        aria-label="Exportar KPIs a CSV"
+        title="Exportar CSV"
+        data-icon="download"
+      ></button
+      ><span class="dock-divider"></span
+      ><a
+        href="#/criteria"
+        aria-label="Criterios de validación"
+        title="Criterios"
+        data-icon="shield"
+      ></a
+      ><button
+        data-action="theme"
+        aria-label="Cambiar tema"
+        title="Tema claro / oscuro"
+        data-icon="sun"
+      ></button>
+    </nav>
+    <dialog id="search-dialog" class="modal glass">
+      <div class="dialog-head">
+        <h2>Buscar en tu espacio</h2>
+        <button
+          data-action="close"
+          aria-label="Cerrar"
+          class="icon-button"
+          data-icon="x"
+        ></button>
+      </div>
+      <label class="search-field"
+        ><span data-icon="search"></span
+        ><input
+          id="search-input"
+          type="search"
+          placeholder="Nombre, rol o sección…"
+          autocomplete="off"
+          aria-label="Buscar"
+      /></label>
+      <div id="search-results"></div>
+    </dialog>
+    <dialog id="member-dialog" class="modal glass"></dialog>
+    <dialog id="report-dialog" class="modal glass">
+      <div class="dialog-head">
+        <div>
+          <p class="eyebrow">DEL TRABAJO A LA EVIDENCIA</p>
+          <h2>Reportar avance</h2>
+        </div>
+        <button
+          data-action="close"
+          class="icon-button"
+          aria-label="Cerrar"
+          data-icon="x"
+        ></button>
+      </div>
+      <form id="report-form">
+        <label>Integrante<select name="member" required></select></label>
+        <div class="form-row">
+          <label
+            >Métrica<select name="metric">
+              <option>Avance comprometido</option>
+              <option>Calidad</option>
+              <option>QA</option>
+              <option>Entrega a producción</option>
+            </select></label
+          ><label
+            >Avance (%)<input
+              type="number"
+              name="progress"
+              min="0"
+              max="100"
+              required
+              placeholder="0–100"
+          /></label>
+        </div>
+        <label
+          >PR de evidencia<input
+            name="pr"
+            type="url"
+            required
+            placeholder="https://github.com/Pigui-AI/api-pigui-backend/pull/123" /></label
+        ><label
+          >Resultado o pruebas realizadas<textarea
+            name="summary"
+            rows="3"
+            required
+            placeholder="¿Qué entregaste o qué verificaste? Incluye casos de prueba y resultados."
+          ></textarea>
+        </label>
+        <p class="form-hint" id="report-hint"></p>
+        <div class="dialog-actions">
+          <button type="button" class="button secondary" id="save-draft">
+            Guardar borrador</button
+          ><button type="submit" class="button primary">
+            Enviar a GitHub <span data-icon="arrow"></span>
+          </button>
+        </div>
+        <p class="fine">
+          Los borradores se guardan sólo en este navegador y no cuentan como
+          avance. GitHub requiere una cuenta para publicar un reporte.
+        </p>
+      </form>
+    </dialog>
+    <div id="toast" class="toast glass" role="status" aria-live="polite"></div>
+    <script src="app.js" defer></script>
+  </body>
+</html>

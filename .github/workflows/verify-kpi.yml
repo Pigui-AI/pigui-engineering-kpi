@@ -5,58 +5,25 @@ on:
 permissions:
   issues: write
   contents: write
+concurrency:
+  group: kpi-verification
+  cancel-in-progress: false
 jobs:
   verify:
     if: contains(github.event.issue.labels.*.name, 'kpi-report')
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
       - uses: actions/github-script@v7
         env:
           SOURCE_REPOSITORY: Pigui-AI/api-pigui-backend
-          # For a private source repository, add PIGUI_READ_TOKEN as an Actions secret.
           PIGUI_READ_TOKEN: ${{ secrets.PIGUI_READ_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const body = context.payload.issue.body || '';
-            const field = (name) => (body.match(new RegExp('### ' + name + '\\s*\\n\\s*([^\\n]+)', 'i')) || [])[1]?.trim();
-            const member = field('Integrante');
-            const progress = Number(field('Avance verificable \\(0-100\\)'));
-            const prUrl = field('URL del PR de código');
-            const actor = context.payload.issue.user.login;
-            const fail = async (message) => {
-              await github.rest.issues.setLabels({owner:context.repo.owner,repo:context.repo.repo,issue_number:context.issue.number,labels:['kpi-report','kpi-rejected']});
-              await github.rest.issues.createComment({owner:context.repo.owner,repo:context.repo.repo,issue_number:context.issue.number,body:`❌ **KPI no validado:** ${message}`});
-              core.setFailed(message);
-            };
-            if (!Number.isFinite(progress) || progress < 0 || progress > 100) return fail('El avance debe ser un número entre 0 y 100.');
-            const match = prUrl?.match(/^https:\/\/github\.com\/([^/]+)\/([^/]+)\/pull\/(\d+)\/?$/);
-            if (!match) return fail('La evidencia debe ser una URL válida de Pull Request de GitHub.');
-            const [, owner, repo, number] = match;
-            if (`${owner}/${repo}` !== process.env.SOURCE_REPOSITORY) return fail(`El PR debe pertenecer a ${process.env.SOURCE_REPOSITORY}.`);
-            const { getOctokit } = require('@actions/github');
-            const client = process.env.PIGUI_READ_TOKEN ? getOctokit(process.env.PIGUI_READ_TOKEN) : github;
-            let pr;
-            try { pr = (await client.rest.pulls.get({owner,repo,pull_number:Number(number)})).data; } catch { return fail('No se pudo leer el PR. Configura PIGUI_READ_TOKEN si el repo fuente es privado.'); }
-            if (!pr.merged_at) return fail('El PR aún no está fusionado.');
-            if (!pr.changed_files || pr.changed_files < 1) return fail('El PR no tiene cambios de código verificables.');
-            if (pr.user.login.toLowerCase() !== actor.toLowerCase()) return fail(`El PR pertenece a @${pr.user.login}; el reporte debe abrirlo la misma persona.`);
-            const reviews = (await client.rest.pulls.listReviews({owner,repo,pull_number:Number(number)})).data;
-            const approvals = new Map();
-            for (const review of reviews) approvals.set(review.user.login, review.state);
-            const hasExternalApproval = [...approvals.entries()].some(([login,state]) => login.toLowerCase() !== pr.user.login.toLowerCase() && state === 'APPROVED');
-            if (!hasExternalApproval) return fail('El PR necesita la aprobación vigente de otra persona antes de contar como KPI.');
-            const previouslyVerified = context.payload.issue.labels.some(label => label.name === 'kpi-verified');
-            if (previouslyVerified) return;
-            const file = await github.rest.repos.getContent({owner:context.repo.owner,repo:context.repo.repo,path:'data/team.json',ref:'main'});
-            const dashboard = JSON.parse(Buffer.from(file.data.content, 'base64').toString('utf8'));
-            const person = dashboard.team.find(p => p.name.toLowerCase() === member.toLowerCase());
-            if (!person) return fail(`No encontré a ${member} en data/team.json.`);
-            if (!person.login || person.login === 'por-asignar') return fail(`Aún no se ha configurado el usuario de GitHub para ${person.name}.`);
-            if (person.login.toLowerCase() !== actor.toLowerCase()) return fail(`Este reporte es de ${person.name}, pero fue abierto por @${actor}.`);
-            person.verified_progress = progress;
-            person.verified_prs = (person.verified_prs || 0) + 1;
-            person.open_reports = Math.max(0, (person.open_reports || 0) - 1);
-            await github.rest.repos.createOrUpdateFileContents({owner:context.repo.owner,repo:context.repo.repo,path:'data/team.json',sha:file.data.sha,message:`chore(kpi): registra avance validado de ${person.name}`,content:Buffer.from(JSON.stringify(dashboard,null,2)+'\\n').toString('base64'),branch:'main'});
-            await github.rest.issues.setLabels({owner:context.repo.owner,repo:context.repo.repo,issue_number:context.issue.number,labels:['kpi-report','kpi-verified']});
-            await github.rest.issues.createComment({owner:context.repo.owner,repo:context.repo.repo,issue_number:context.issue.number,body:`✅ **KPI validado.** PR #${number} está fusionado, tiene cambios, aprobación externa y corresponde a @${actor}.`});
+            const { run } = require('./.github/scripts/verify-kpi.cjs');
+            await run({ github, context, core });
