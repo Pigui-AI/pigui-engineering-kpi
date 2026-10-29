@@ -1,0 +1,28 @@
+name: Reportar avance KPI
+description: Registra avance únicamente con evidencia en un PR de código.
+title: "KPI: "
+labels: ["kpi-report", "kpi-pending"]
+body:
+  - type: markdown
+    attributes:
+      value: "Este reporte no contará hasta que el verificador encuentre un PR fusionado, con cambios y de tu autoría."
+  - type: dropdown
+    id: member
+    attributes: { label: Integrante, options: [Marco, América, Ricardo, Yestzanetli, Ever] }
+    validations: { required: true }
+  - type: dropdown
+    id: metric
+    attributes: { label: Métrica, options: [Avance comprometido, Calidad, QA, Entrega a producción] }
+    validations: { required: true }
+  - type: input
+    id: progress
+    attributes: { label: Avance verificable (0-100), placeholder: "Ejemplo: 25" }
+    validations: { required: true }
+  - type: input
+    id: pr_url
+    attributes: { label: URL del PR de código, placeholder: "https://github.com/Pigui-AI/api-pigui-backend/pull/123" }
+    validations: { required: true }
+  - type: textarea
+    id: summary
+    attributes: { label: Qué cambió, description: "Resume el resultado de código que entrega el PR." }
+    validations: { required: true }

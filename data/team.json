@@ -1,0 +1,11 @@
+{
+  "period": "Semana actual",
+  "source_repository": "Pigui-AI/api-pigui-backend",
+  "team": [
+    {"name":"Marco","role":"Desarrollador móvil","login":"por-asignar","verified_progress":0,"verified_prs":0,"open_reports":0},
+    {"name":"América","role":"Desarrollador fullstack móvil","login":"americabalderas-del","verified_progress":0,"verified_prs":0,"open_reports":0},
+    {"name":"Ricardo","role":"Fullstack Sr.","login":"por-asignar","verified_progress":0,"verified_prs":0,"open_reports":0},
+    {"name":"Yestzanetli","role":"QA","login":"por-asignar","verified_progress":0,"verified_prs":0,"open_reports":0},
+    {"name":"Ever","role":"Backend","login":"por-asignar","verified_progress":0,"verified_prs":0,"open_reports":0}
+  ]
+}

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pigui · Engineering KPI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <header class="hero">
+      <div><p class="eyebrow">PIGUI AI · DELIVERY HEALTH</p><h1>KPIs de ingeniería,<br><span>con evidencia de código.</span></h1><p class="lede">Sólo cuentan avances ligados a un PR, validados por GitHub Actions y aprobados en revisión.</p></div>
+      <div class="hero-stat"><span>Regla activa</span><strong>PR + código + validación</strong><small>Sin evidencia, el avance no entra al promedio.</small></div>
+    </header>
+    <section class="toolbar"><div><p class="eyebrow">PERIODO ACTUAL</p><h2 id="period">Semana en curso</h2></div><a class="button" id="report-link" href="issues/new/choose">+ Reportar avance</a></section>
+    <section class="notice"><span>◆</span><div><strong>Candado de calidad activado</strong><p>Un reporte se publica como KPI sólo si el PR relacionado tiene cambios, está fusionado y pasa el verificador automático. La validación de revisión se configura como protección de rama.</p></div></section>
+    <section><div class="section-head"><div><p class="eyebrow">EQUIPO</p><h2>Avance verificable por persona</h2></div><p class="muted" id="data-source">Cargando métricas…</p></div><div class="team-grid" id="team"></div></section>
+    <section class="scoreboard"><div class="section-head"><div><p class="eyebrow">SALUD DEL EQUIPO</p><h2>Promedios de la semana</h2></div></div><div class="metrics" id="metrics"></div></section>
+    <section class="flow"><p class="eyebrow">CÓMO FUNCIONA</p><h2>Un flujo que evita reportes de papel.</h2><div class="flow-grid"><article><b>01</b><h3>Entrega</h3><p>La persona abre y fusiona su PR de trabajo.</p></article><article><b>02</b><h3>Evidencia</h3><p>Reporta el avance desde GitHub e incluye la URL del PR.</p></article><article><b>03</b><h3>Verificación</h3><p>La Action revisa autor, estado, cambios y etiqueta el reporte.</p></article><article><b>04</b><h3>Métrica</h3><p>El dashboard cuenta sólo reportes con <code>kpi-verified</code>.</p></article></div></section>
+    <footer>Configuración requerida: asignar los usuarios de GitHub en <code>data/team.json</code> y añadir <code>PIGUI_READ_TOKEN</code> si el repositorio de código es privado.</footer>
+  </main><script src="app.js"></script>
+</body></html>
