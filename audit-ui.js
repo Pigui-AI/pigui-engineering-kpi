@@ -125,8 +125,10 @@ function auditTable(records) {
 }
 function auditedOverview() {
   const t = KPIAudit.summarize(state.audit.records),
-    groups = KPIAudit.groups(state.data.team, state.audit);
-  const max = Math.max(1, ...groups.map((g) => g.merged));
+    groups = KPIAudit.groups(state.data.team, state.audit).sort((a,b)=>b.lines_added-a.lines_added);
+  const rawMax = Math.max(1, ...groups.map((g) => g.lines_added));
+  const scale = 10 ** Math.max(0,Math.floor(Math.log10(rawMax))-1);
+  const max = Math.ceil(rawMax/(scale*4))*(scale*4);
   return `${heading("Avances respaldados en GitHub.", `Quincena ${state.data.period} · evidencia recopilada del 26 al 29 de octubre.`)}
 <section class="stats" aria-label="Indicadores auditados">${[
     {
@@ -161,7 +163,7 @@ function auditedOverview() {
     )
     .join("")}</section>
 ${codeStats(t)}
-<div class="overview-grid"><section class="panel glass"><div class="panel-head"><div><h2>Entregas por integrante</h2><p>PR fusionados por responsable</p></div><span class="badge neutral">Corte verificado</span></div><div class="chart"><div class="chart-grid">${[max, Math.round(max * 0.75), Math.round(max * 0.5), Math.round(max * 0.25), 0].map((n) => `<div class="chart-line"><span>${n}</span></div>`).join("")}</div><div class="chart-bars">${groups.map((g) => `<div class="chart-bar" style="height:${(g.merged / max) * 100}%"><span>${g.merged} PR</span></div>`).join("")}</div><div class="chart-x">${groups.map((g) => `<span>${esc(g.name)}</span>`).join("")}</div></div><div class="chart-foot"><span>QA: sin reporte atribuible, no equivale a 0% de trabajo</span><a href="#/criteria" class="text-link">Ver metodología ${icon("arrow")}</a></div></section>
+<div class="overview-grid"><section class="panel glass"><div class="panel-head"><div><h2>Líneas de código añadidas</h2><p>Por integrante · código y pruebas en PR fusionados</p></div><span class="badge neutral">Corte verificado</span></div><div class="chart code-chart"><div class="chart-grid">${[max, Math.round(max * 0.75), Math.round(max * 0.5), Math.round(max * 0.25), 0].map((n) => `<div class="chart-line"><span>${lineCount(n)}</span></div>`).join("")}</div><div class="chart-bars">${groups.map((g) => `<div class="chart-bar" style="height:${(g.lines_added / max) * 100}%"><span>${lineCount(g.lines_added)}</span></div>`).join("")}</div><div class="chart-x">${groups.map((g) => `<span>${esc(g.name)}</span>`).join("")}</div></div><div class="chart-foot"><span>QA: sin reporte atribuible, no equivale a 0% de trabajo</span><a href="#/criteria" class="text-link">Ver metodología ${icon("arrow")}</a></div></section>
 <section class="panel glass"><div class="panel-head"><div><h2>Lo que falta validar</h2><p>Los bloqueos conservan su motivo.</p></div></div><div class="rule-list">${[
     {
       title: `${t.missing_approval} entregas sin aprobación`,

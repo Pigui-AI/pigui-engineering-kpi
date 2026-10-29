@@ -501,7 +501,7 @@ window.addEventListener("hashchange", () => {
 document
   .querySelectorAll("[data-icon]")
   .forEach((el) => (el.innerHTML = icon(el.dataset.icon)));
-fetch("data/team.json?v=20261029-lines-r1", { cache: "no-store" })
+fetch("data/team.json?v=20261029-code-chart-r1", { cache: "no-store" })
   .then((r) => {
     if (!r.ok) throw Error("Datos no disponibles");
     return r.json();
@@ -511,7 +511,7 @@ fetch("data/team.json?v=20261029-lines-r1", { cache: "no-store" })
       throw Error("Equipo no disponible");
     state.data = data;
     if (data.audit_file) {
-      const response = await fetch(`${data.audit_file}?v=20261029-lines-r1`, {
+      const response = await fetch(`${data.audit_file}?v=20261029-code-chart-r1`, {
         cache: "no-store",
       });
       if (!response.ok) throw Error("Corte de evidencia no disponible");
