@@ -1,4 +1,10 @@
 (function (root) {
+  const dateFormatter = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/Mexico_City",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
   function approved(r) {
     return !!r.merged_at && r.changed_files > 0 && r.external_approval === true;
   }
@@ -91,12 +97,7 @@
   function localDate(timestamp) {
     if (!timestamp || !Number.isFinite(new Date(timestamp).getTime()))
       return null;
-    const parts = new Intl.DateTimeFormat("en-US", {
-      timeZone: "America/Mexico_City",
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-    }).formatToParts(new Date(timestamp));
+    const parts = dateFormatter.formatToParts(new Date(timestamp));
     const get = (type) => parts.find((p) => p.type === type).value;
     return `${get("year")}-${get("month")}-${get("day")}`;
   }
@@ -122,6 +123,7 @@
     defaultQuincena,
     filterQuincena,
     lineStats,
+    localDate,
   };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.KPIAudit = api;

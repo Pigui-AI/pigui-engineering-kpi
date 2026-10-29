@@ -1,80 +1,45 @@
-.pane-widget {
-  position: relative;
-  isolation: isolate;
+.title-word {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+.title-character {
+  display: inline-block;
+}
+.button,
+.card-arrow,
+.toolbar-tools .icon-button {
   transition:
-    box-shadow 0.3s,
-    border-color 0.3s,
-    translate 0.3s;
+    translate 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    background-color 0.2s,
+    box-shadow 0.2s;
 }
-.pane-widget::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: radial-gradient(
-    350px circle at var(--glow-x, 50%) var(--glow-y, 50%),
-    #99bfff1f,
-    transparent 65%
-  );
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s;
-  z-index: -1;
+.chart-column,
+.activity-track {
+  transition: background-color 0.2s;
 }
-.pane-widget:hover::after {
-  opacity: 1;
+.chart-column:hover,
+.chart-column:focus,
+.activity-column:hover .activity-track,
+.activity-column:focus .activity-track {
+  background: color-mix(in srgb, var(--text) 11%, transparent);
 }
-.pane-widget:hover {
-  translate: 0 -3px;
-  box-shadow: 0 16px 40px #0002;
-}
-.pane-person {
+.code-chips button,
+.source-legend button,
+.pane-person,
+.performance-row {
   transition:
-    background 0.25s,
-    box-shadow 0.25s;
+    background-color 0.2s,
+    opacity 0.2s;
 }
-.pane-person:hover {
-  background: #9ebdff08;
-  box-shadow: inset 3px 0 #9ebdff;
+.pane-person:hover,
+.performance-row:not(.performance-head):hover {
+  background: var(--well);
 }
 .progress i {
   transform-origin: left;
-}
-.button,
-.icon-button,
-.sidebar-nav a {
-  position: relative;
-  overflow: hidden;
-}
-.tap-wave {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: #bcd4ff50;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  animation: tap-wave 0.65s ease-out forwards;
-}
-@keyframes tap-wave {
-  to {
-    transform: translate(-50%, -50%) scale(22);
-    opacity: 0;
-  }
-}
-.live-arrival .stat,
-.live-arrival .pane-widget {
-  animation: live-arrival 1.8s ease-out;
-}
-@keyframes live-arrival {
-  0%,
-  100% {
-    outline-color: transparent;
-  }
-  20% {
-    outline: 1px solid #8abaff80;
-    outline-offset: 2px;
-  }
 }
 .is-syncing [data-action="refresh"] svg {
   animation: sync-spin 1s linear infinite;
@@ -85,22 +50,47 @@
   }
 }
 .sync-stale {
-  color: #efb98d;
+  color: var(--tomato);
 }
 dialog[open] {
-  animation: dialog-enter 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: rapport-modal 0.38s cubic-bezier(0.34, 1.4, 0.64, 1);
 }
-@keyframes dialog-enter {
+@keyframes rapport-modal {
   from {
     opacity: 0;
-    transform: translateY(16px) scale(0.97);
+    transform: translateY(-14px) scale(0.97);
   }
   to {
     opacity: 1;
-    transform: none;
+    transform: translateY(0) scale(1);
+  }
+}
+.search-result {
+  animation: search-result 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+.search-result:nth-child(2) {
+  animation-delay: 25ms;
+}
+.search-result:nth-child(3) {
+  animation-delay: 50ms;
+}
+.search-result:nth-child(4) {
+  animation-delay: 75ms;
+}
+@keyframes search-result {
+  from {
+    opacity: 0;
+    translate: 0 8px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   *,
   *::before,
   *::after {
@@ -108,7 +98,9 @@ dialog[open] {
     transition: none !important;
     scroll-behavior: auto !important;
   }
-  .pane-widget:hover {
-    translate: none;
+  .button,
+  .card-arrow,
+  .toolbar-tools .icon-button {
+    translate: none !important;
   }
 }

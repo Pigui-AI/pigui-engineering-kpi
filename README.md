@@ -1,6 +1,6 @@
 # Pigui Engineering KPI
 
-Dashboard de entregas y líneas de código, publicado en GitHub Pages. Interfaz inspirada en Pane con tema claro/oscuro, filtro quincenal, evidencias, resumen por integrante, CSV y reportes QA delegados.
+Dashboard de entregas y líneas de código, publicado en GitHub Pages. Interfaz basada en la composición de Rapport Growth: fondo cálido animado, tarjetas translúcidas, navegación superior y dock flotante. Incluye tema claro/oscuro, filtro quincenal, evidencias, resumen por integrante, CSV y reportes QA delegados. La curva de revisión y las barras por fecha se calculan con los PR de la quincena, agrupados cada tres días; las fechas sin entregas no generan porcentajes de aprobación.
 
 ## Sincronización automática
 

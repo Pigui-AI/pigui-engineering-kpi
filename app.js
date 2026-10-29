@@ -21,6 +21,7 @@ const icons = {
   chart: '<path d="M4 4v16h17M8 16l4-6 4 3 5-8"/>',
   code: '<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/>',
   x: '<path d="m6 6 12 12M6 18 18 6"/>',
+  moon: '<path d="M20 15.4A8.5 8.5 0 0 1 8.6 4a8.5 8.5 0 1 0 11.4 11.4Z"/>',
   file: '<path d="M14 3H6v18h12V7zM14 3v5h4M9 12h6m-6 4h6"/>',
   info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v1"/>',
 };
@@ -231,7 +232,7 @@ function route(reason = "navigation") {
   document.querySelector("#main").innerHTML = (
     state.audit
       ? {
-          overview: auditedOverview,
+          overview: rapportOverview,
           team: auditedTeamView,
           evidence: auditedEvidenceView,
           criteria: auditedCriteria,
