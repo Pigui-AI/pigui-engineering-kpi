@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   verify:
-    if: contains(github.event.issue.labels.*.name, 'kpi-report')
+    if: contains(github.event.issue.labels.*.name, 'kpi-report') || startsWith(github.event.issue.title, 'KPI:')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
