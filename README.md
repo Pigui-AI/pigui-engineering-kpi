@@ -14,7 +14,7 @@ Los resultados se presentan por responsable operativo: Marco 1 merge, América 1
 
 La cobertura de aprobación es 11 / 53 = 20.8%, no un porcentaje de cumplimiento de metas. Los porcentajes de avance de objetivos se dejan sin dato hasta tener metas acordadas. El snapshot guarda sólo enlaces y metadata de PR/checks, sin código, cuerpos de comentarios ni credenciales. Los repositorios privados siguen requiriendo sus permisos al abrir los enlaces.
 
-Interfaz inspirada visualmente en Vitrea, implementada con HTML/CSS/JS propios, sin copiar sus recursos ni su plantilla comercial. Vistas: Resumen, Equipo, Evidencias y Criterios. Incluye tema claro/oscuro, búsqueda (⌘/Ctrl K), detalle de integrante, exportación CSV y formulario de reportes.
+Interfaz inspirada visualmente en Pane, implementada con HTML/CSS/JS propios. Incluye barra lateral en escritorio, navegación flotante en móvil, widgets de actividad de código y resumen ejecutivo por integrante. Vistas: Inicio, Equipo, Evidencias y Criterios. Conserva tema claro/oscuro, búsqueda (⌘/Ctrl K), detalle de integrante, exportación CSV, formulario de reportes y filtro quincenal.
 
 ## Equipo y QA
 

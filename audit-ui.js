@@ -10,35 +10,14 @@ function codeMini(s) {
   return `<div class="loc-mini" aria-label="Líneas de código"><div><span>Añadidas</span><strong class="loc-added">${s.lines_measured_prs ? "+" + lineValue(s, "lines_added") : "N/D"}</strong></div><div><span>Eliminadas</span><strong class="loc-deleted">${s.lines_measured_prs ? "−" + lineValue(s, "lines_deleted") : "N/D"}</strong></div><div class="loc-net"><span>Cambio neto</span><strong>${lineValue(s, "lines_net", true)}</strong></div></div>`;
 }
 function codeStats(s) {
-  return `<section class="loc-section"><div class="loc-heading"><h2>Actividad de código</h2><p>Sólo PR fusionados · ${s.lines_measured_prs} de ${s.merged} con medición por archivo</p></div><div class="stats loc-stats">${[
-    {
-      label: "Líneas añadidas",
-      key: "lines_added",
-      note: "Código y pruebas",
-      sign: true,
-    },
-    {
-      label: "Líneas eliminadas",
-      key: "lines_deleted",
-      note: "Incluye limpieza y refactors",
-    },
-    {
-      label: "Cambio neto",
-      key: "lines_net",
-      note: "Añadidas menos eliminadas",
-      sign: true,
-    },
-    {
-      label: "Promedio de cambios / PR",
-      key: "average_lines_changed",
-      note: "Añadidas + eliminadas por PR",
-    },
-  ]
-    .map(
-      (x) =>
-        `<article class="stat glass"><div class="stat-label">${x.label}${icon("code")}</div><strong class="stat-number">${lineValue(s, x.key, x.sign)}</strong><span class="stat-note">${x.note}</span></article>`,
-    )
-    .join("")}</div></section>`;
+  const total = s.lines_changed,
+    addedShare = total ? Math.round((s.lines_added / total) * 100) : 0,
+    deletedShare = total ? Math.round((s.lines_deleted / total) * 100) : 0;
+  return `<section class="loc-section pane-widgets" aria-label="Actividad de código">
+ <article class="pane-widget glass"><div class="widget-head"><h2>Distribución del cambio</h2><span class="badge neutral">Código</span></div><p class="widget-kicker">Añadidas y eliminadas en la quincena</p><div class="ring-layout"><div class="code-ring"><svg viewBox="0 0 150 150" role="img" aria-label="${addedShare}% de las líneas cambiadas fueron añadidas"><title>Distribución de líneas añadidas y eliminadas</title><circle class="ring-track" cx="75" cy="75" r="58" pathLength="100"/><circle class="ring-added" cx="75" cy="75" r="58" pathLength="100" stroke-dasharray="${addedShare} 100"/><circle class="ring-track" cx="75" cy="75" r="42" pathLength="100"/><circle class="ring-deleted" cx="75" cy="75" r="42" pathLength="100" stroke-dasharray="${deletedShare} 100"/></svg><div class="code-ring-label"><b>${s.lines_measured_prs ? addedShare + "%" : "N/D"}</b><small>añadidas</small></div></div><div class="ring-legend"><div><span>Añadidas</span><strong>${lineValue(s, "lines_added")}</strong></div><div><span>Eliminadas</span><strong>${lineValue(s, "lines_deleted")}</strong></div></div></div></article>
+ <article class="pane-widget glass widget-blue"><div class="widget-head"><h2>Código incorporado</h2><span class="badge neutral">Quincena</span></div><p class="widget-kicker">Líneas añadidas en PR fusionados</p><strong class="widget-big positive">${lineValue(s, "lines_added", true)}</strong><p class="widget-caption">Código y pruebas · sin dependencias ni generados</p><div class="widget-foot widget-footline"><span>Promedio de cambios / PR</span><strong>${lineValue(s, "average_lines_changed")}</strong></div></article>
+ <article class="pane-widget glass widget-pink"><div class="widget-head"><h2>Depuración y balance</h2></div><p class="widget-kicker">La limpieza también cuenta</p><strong class="widget-big">${lineValue(s, "lines_deleted")}</strong><p class="widget-caption">Líneas eliminadas, incluidos refactors</p><div class="widget-net"><span>Cambio neto</span><strong>${lineValue(s, "lines_net", true)}</strong></div><p class="widget-caption" style="margin-top:10px">${s.lines_measured_prs} de ${s.merged} entregas con medición completa</p></article>
+ </section>`;
 }
 function quincenaOptions() {
   const base = state.auditSource.as_of.slice(0, 7);
@@ -125,11 +104,13 @@ function auditTable(records) {
 }
 function auditedOverview() {
   const t = KPIAudit.summarize(state.audit.records),
-    groups = KPIAudit.groups(state.data.team, state.audit).sort((a,b)=>b.lines_added-a.lines_added);
+    groups = KPIAudit.groups(state.data.team, state.audit).sort(
+      (a, b) => b.lines_added - a.lines_added,
+    );
   const rawMax = Math.max(1, ...groups.map((g) => g.lines_added));
-  const scale = 10 ** Math.max(0,Math.floor(Math.log10(rawMax))-1);
-  const max = Math.ceil(rawMax/(scale*4))*(scale*4);
-  return `${heading("Avances respaldados en GitHub.", `Quincena ${state.data.period} · evidencia recopilada del 26 al 29 de octubre.`)}
+  const scale = 10 ** Math.max(0, Math.floor(Math.log10(rawMax)) - 1);
+  const max = Math.ceil(rawMax / (scale * 4)) * (scale * 4);
+  return `${heading("Así avanza tu equipo.", `Quincena ${state.data.period} · evidencia recopilada del 26 al 29 de octubre.`)}
 <section class="stats" aria-label="Indicadores auditados">${[
     {
       label: "Entregas fusionadas",
@@ -163,7 +144,7 @@ function auditedOverview() {
     )
     .join("")}</section>
 ${codeStats(t)}
-<div class="overview-grid"><section class="panel glass"><div class="panel-head"><div><h2>Líneas de código añadidas</h2><p>Por integrante · código y pruebas en PR fusionados</p></div><span class="badge neutral">Corte verificado</span></div><div class="chart code-chart"><div class="chart-grid">${[max, Math.round(max * 0.75), Math.round(max * 0.5), Math.round(max * 0.25), 0].map((n) => `<div class="chart-line"><span>${lineCount(n)}</span></div>`).join("")}</div><div class="chart-bars">${groups.map((g) => `<div class="chart-bar" style="height:${(g.lines_added / max) * 100}%"><span>${lineCount(g.lines_added)}</span></div>`).join("")}</div><div class="chart-x">${groups.map((g) => `<span>${esc(g.name)}</span>`).join("")}</div></div><div class="chart-foot"><span>QA: sin reporte atribuible, no equivale a 0% de trabajo</span><a href="#/criteria" class="text-link">Ver metodología ${icon("arrow")}</a></div></section>
+<div class="overview-grid"><section class="panel glass"><div class="panel-head"><div><h2>Líneas de código añadidas</h2><p>Por integrante · código y pruebas en PR fusionados</p></div><span class="badge neutral">Corte verificado</span></div><div class="chart code-chart"><div class="chart-grid">${[max, Math.round(max * 0.75), Math.round(max * 0.5), Math.round(max * 0.25), 0].map((n) => `<div class="chart-line"><span>${lineCount(n)}</span></div>`).join("")}</div><div class="chart-bars">${groups.map((g) => `<div class="chart-column"><div class="chart-bar" style="height:${(g.lines_added / max) * 100}%"><span>${lineCount(g.lines_added)}</span></div></div>`).join("")}</div><div class="chart-x">${groups.map((g) => `<span>${esc(g.name)}</span>`).join("")}</div></div><div class="chart-foot"><span>QA: sin reporte atribuible, no equivale a 0% de trabajo</span><a href="#/criteria" class="text-link">Ver metodología ${icon("arrow")}</a></div></section>
 <section class="panel glass"><div class="panel-head"><div><h2>Lo que falta validar</h2><p>Los bloqueos conservan su motivo.</p></div></div><div class="rule-list">${[
     {
       title: `${t.missing_approval} entregas sin aprobación`,
@@ -191,14 +172,16 @@ ${codeStats(t)}
         `<div class="rule-item"><span class="rule-icon">${icon(x.ico)}</span><div><strong>${x.title}</strong><p>${x.note}</p></div></div>`,
     )
     .join("")}</div></section></div>
-<section class="panel glass team-panel"><div class="panel-head"><div><h2>Avances de todos</h2><p>Trabajo y resultados de cada integrante.</p></div><a class="text-link" href="#/team">Ver detalle ${icon("arrow")}</a></div><div class="mini-team">${state.data.team
+${panePeople()}\n<aside class="setup-banner glass"><span>${icon("info")}</span><p><strong>Entrega no equivale a calidad aprobada.</strong> Los 11 PR con aprobación tienen alertas de CI. Los checks de revisión automática en rojo y los fallos técnicos son señales distintas. No se ejecutaron nuevamente las suites.</p><a class="text-link" href="#/evidence">Ver evidencia ${icon("arrow")}</a></aside>`;
+}
+function panePeople() {
+  return `<section class="panel glass team-panel"><div class="panel-head"><div><h2>En qué está tu equipo</h2><p>Resultados ejecutivos y evidencia por integrante</p></div><a class="text-link" href="#/team">Ver equipo ${icon("arrow")}</a></div><div class="pane-people-list">${state.data.team
     .map((m, i) => {
       const s = auditMetrics(m),
         qa = m.reporting_mode === "qa-delegated";
-      return `<article class="mini-person" style="--avatar:${colors[i]}"><div class="mini-top">${avatar(m, i)}<button class="icon-button" data-member="${i}" aria-label="Ver a ${esc(m.name)}">${icon("arrow")}</button></div><span class="member-name">${esc(m.name)}</span><span class="member-role">${esc(m.role)}</span>${executiveBrief(m)}<div class="mini-score">${qa ? "Sin reporte" : s.merged + " PR"}</div><div class="mini-meta">${qa ? "Evidencia aún no atribuible" : s.approved + " con aprobación · " + auditNumber(s.coverage)}</div><span class="progress"><i style="width:${s.coverage || 0}%"></i></span><small class="evidence-date">${qa ? "No es una calificación de desempeño" : "Cobertura de aprobación"}</small>${codeMini(s)}</article>`;
+      return `<article class="mini-person pane-person ${qa ? "is-qa" : ""}" style="--avatar:${colors[i]}"><div class="pane-person-identity">${avatar(m, i)}<div><span class="member-name">${esc(m.name)}</span><span class="member-role">${esc(m.role)}</span></div></div>${executiveBrief(m)}<div class="pane-person-metrics"><div class="mini-score">${qa ? "Sin reporte" : s.merged + " PR"}</div><div class="mini-meta">${qa ? "Evidencia pendiente" : s.approved + " con aprobación"}</div><span class="progress"><i style="width:${s.coverage || 0}%"></i></span></div>${codeMini(s)}<button class="icon-button" data-member="${i}" aria-label="Ver a ${esc(m.name)}">${icon("arrow")}</button></article>`;
     })
-    .join("")}</div></section>
-<aside class="setup-banner glass"><span>${icon("info")}</span><p><strong>Entrega no equivale a calidad aprobada.</strong> Los 11 PR con aprobación tienen alertas de CI. Los checks de revisión automática en rojo y los fallos técnicos son señales distintas. No se ejecutaron nuevamente las suites.</p><a class="text-link" href="#/evidence">Ver evidencia ${icon("arrow")}</a></aside>`;
+    .join("")}</div></section>`;
 }
 function auditedTeamView() {
   return `${heading("El avance, con contexto.", "Resultados individuales, con enlaces a los PR de respaldo.")}<section class="team-grid">${state.data.team

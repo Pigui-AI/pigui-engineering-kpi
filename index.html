@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#18181b" />
+    <meta name="theme-color" content="#202126" />
     <meta
       name="description"
       content="El espacio de entrega del equipo Pigui: personas, avances y evidencia verificable en GitHub."
@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <script>
@@ -21,37 +21,97 @@
           localStorage.getItem("pigui:theme") || "dark";
       } catch {}
     </script>
-    <link rel="stylesheet" href="styles.css?v=20261029-code-chart-r1" />
-    <link rel="stylesheet" href="audit.css?v=20261029-code-chart-r1" />
+    <link rel="stylesheet" href="styles.css?v=20261029-pane-r1" />
+    <link rel="stylesheet" href="audit.css?v=20261029-pane-r1" />
+    <link rel="stylesheet" href="pane.css?v=20261029-pane-r1" />
   </head>
   <body>
     <a class="skip" href="#main">Ir al contenido</a>
     <div class="wall" aria-hidden="true"><i></i><i></i><i></i></div>
-    <div class="app">
-      <header class="topbar">
-        <a class="brand glass" href="#/overview" aria-label="Pigui, resumen"
-          ><span class="brand-mark">p↗</span><span>pigui</span></a
+    <aside class="workspace-sidebar glass" aria-label="Espacio de ingeniería">
+      <a class="brand" href="#/overview" aria-label="Pigui, inicio"
+        ><span class="brand-mark">p↗</span
+        ><span>pigui<small>Engineering workspace</small></span></a
+      >
+      <nav class="sidebar-nav" aria-label="Navegación principal">
+        <a href="#/overview" data-route="overview"
+          ><span data-icon="grid"></span><span>Inicio</span></a
         >
-        <nav class="tabs glass" aria-label="Navegación principal">
-          <a href="#/overview" data-route="overview">Resumen</a
-          ><a href="#/team" data-route="team">Equipo</a
-          ><a href="#/evidence" data-route="evidence">Evidencias</a
-          ><a href="#/criteria" data-route="criteria">Criterios</a>
-        </nav>
-        <div class="top-actions glass">
+        <a href="#/team" data-route="team"
+          ><span data-icon="users"></span><span>Equipo</span><b>5</b></a
+        >
+        <a href="#/evidence" data-route="evidence"
+          ><span data-icon="branch"></span><span>Evidencias</span></a
+        >
+        <a href="#/criteria" data-route="criteria"
+          ><span data-icon="shield"></span><span>Criterios</span></a
+        >
+      </nav>
+      <div class="sidebar-group">
+        <p>ACCESOS RÁPIDOS</p>
+        <button data-action="code-section">
+          <i class="nav-dot blue"></i>Actividad de código</button
+        ><button data-action="people-section">
+          <i class="nav-dot purple"></i>Avance del equipo
+        </button>
+      </div>
+      <div class="sidebar-group sidebar-actions">
+        <p>HERRAMIENTAS</p>
+        <button data-action="report">
+          <span data-icon="plus"></span>Reportar avance</button
+        ><button data-action="export">
+          <span data-icon="download"></span>Exportar resultados
+        </button>
+      </div>
+      <div class="sidebar-context">
+        <span class="status-dot"></span
+        ><span>Evidencia de GitHub<small>Periodos quincenales</small></span>
+      </div>
+      <a
+        class="side-account"
+        href="https://github.com/Pigui-AI/pigui-engineering-kpi"
+        target="_blank"
+        rel="noopener"
+        ><span class="profile">PG</span
+        ><span
+          ><strong>Pigui AI</strong><small>Equipo de desarrollo</small></span
+        ><span data-icon="arrow"></span
+      ></a>
+    </aside>
+    <div class="app">
+      <header class="topbar" aria-label="Herramientas del espacio">
+        <span class="workspace-current glass" id="compact-title">Inicio</span>
+        <div class="toolbar-tools glass">
           <button
-            class="icon-button"
+            class="search-pill"
             data-action="search"
             aria-label="Buscar personas y páginas"
-            data-icon="search"
-          ></button
-          ><button
+          >
+            <span data-icon="search"></span><span>Buscar en el equipo</span
+            ><kbd>⌘ K</kbd>
+          </button>
+          <button
             class="icon-button"
             data-action="report"
             aria-label="Nuevo reporte"
+            title="Nuevo reporte"
             data-icon="plus"
-          ></button
-          ><a
+          ></button>
+          <button
+            class="icon-button"
+            data-action="theme"
+            aria-label="Cambiar tema"
+            title="Cambiar tema"
+            data-icon="sun"
+          ></button>
+          <button
+            class="icon-button"
+            data-action="export"
+            aria-label="Exportar KPIs a CSV"
+            title="Exportar CSV"
+            data-icon="download"
+          ></button>
+          <a
             class="profile"
             href="https://github.com/Pigui-AI/pigui-engineering-kpi"
             target="_blank"
@@ -71,45 +131,22 @@
         ><span>Pigui / Engineering desk</span>
       </footer>
     </div>
-    <nav class="dock glass" aria-label="Acciones rápidas">
-      <button
-        data-action="search"
-        aria-label="Buscar"
-        title="Buscar · ⌘ K"
-        data-icon="search"
-      ></button
-      ><button
-        data-action="report"
-        aria-label="Reportar avance"
-        title="Reportar avance"
-        data-icon="plus"
-      ></button
-      ><a
-        href="#/overview"
-        aria-label="Resumen"
-        title="Resumen"
-        data-icon="grid"
-      ></a
-      ><a href="#/team" aria-label="Equipo" title="Equipo" data-icon="users"></a
-      ><button
-        data-action="export"
-        aria-label="Exportar KPIs a CSV"
-        title="Exportar CSV"
-        data-icon="download"
-      ></button
-      ><span class="dock-divider"></span
-      ><a
-        href="#/criteria"
-        aria-label="Criterios de validación"
-        title="Criterios"
-        data-icon="shield"
-      ></a
-      ><button
-        data-action="theme"
-        aria-label="Cambiar tema"
-        title="Tema claro / oscuro"
-        data-icon="sun"
-      ></button>
+    <nav class="mobile-nav glass" aria-label="Navegación móvil">
+      <a href="#/overview" data-route="overview"
+        ><span data-icon="grid"></span><span>Inicio</span></a
+      >
+      <a href="#/team" data-route="team"
+        ><span data-icon="users"></span><span>Equipo</span></a
+      >
+      <a href="#/evidence" data-route="evidence"
+        ><span data-icon="branch"></span><span>Evidencias</span></a
+      >
+      <a href="#/criteria" data-route="criteria"
+        ><span data-icon="shield"></span><span>Criterios</span></a
+      >
+      <button data-action="search" aria-label="Buscar">
+        <span data-icon="search"></span>
+      </button>
     </nav>
     <dialog id="search-dialog" class="modal glass">
       <div class="dialog-head">
@@ -195,8 +232,8 @@
       </form>
     </dialog>
     <div id="toast" class="toast glass" role="status" aria-live="polite"></div>
-    <script src="audit-model.js?v=20261029-code-chart-r1" defer></script>
-    <script src="audit-ui.js?v=20261029-code-chart-r1" defer></script>
-    <script src="app.js?v=20261029-code-chart-r1" defer></script>
+    <script src="audit-model.js?v=20261029-pane-r1" defer></script>
+    <script src="audit-ui.js?v=20261029-pane-r1" defer></script>
+    <script src="app.js?v=20261029-pane-r1" defer></script>
   </body>
 </html>

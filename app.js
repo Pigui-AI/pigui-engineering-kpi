@@ -204,6 +204,14 @@ function route() {
     if (a.dataset.route === view) a.setAttribute("aria-current", "page");
     else a.removeAttribute("aria-current");
   });
+  const compactTitle = document.querySelector("#compact-title");
+  if (compactTitle)
+    compactTitle.textContent = {
+      overview: "Inicio",
+      team: "Equipo",
+      evidence: "Evidencias",
+      criteria: "Criterios",
+    }[view];
   if (state.auditSource && !state.audit.records.length) {
     document.querySelector("#main").innerHTML =
       heading(
@@ -228,7 +236,7 @@ function route() {
           criteria: criteriaView,
         }
   )[view]();
-  document.title = `${{ overview: "Resumen", team: "Equipo", evidence: "Evidencias", criteria: "Criterios" }[view]} · Pigui`;
+  document.title = `${{ overview: "Inicio", team: "Equipo", evidence: "Evidencias", criteria: "Criterios" }[view]} · Pigui`;
 }
 function openReport(member = "") {
   if (!state.data) {
@@ -316,7 +324,7 @@ function search() {
     .querySelector("#search-input")
     .value.toLocaleLowerCase("es");
   const pages = [
-    ["overview", "Resumen"],
+    ["overview", "Inicio"],
     ["team", "Equipo"],
     ["evidence", "Evidencias"],
     ["criteria", "Criterios"],
@@ -389,6 +397,26 @@ document.addEventListener("click", (e) => {
     }
   }
   switch (btn.dataset.action) {
+    case "code-section":
+    case "people-section": {
+      const selector =
+        btn.dataset.action === "code-section" ? ".loc-section" : ".team-panel";
+      location.hash = "#/overview";
+      route();
+      setTimeout(
+        () =>
+          document
+            .querySelector(selector)
+            ?.scrollIntoView({
+              behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+                ? "instant"
+                : "smooth",
+              block: "start",
+            }),
+        0,
+      );
+      break;
+    }
     case "report":
       openReport();
       break;
@@ -501,7 +529,7 @@ window.addEventListener("hashchange", () => {
 document
   .querySelectorAll("[data-icon]")
   .forEach((el) => (el.innerHTML = icon(el.dataset.icon)));
-fetch("data/team.json?v=20261029-code-chart-r1", { cache: "no-store" })
+fetch("data/team.json?v=20261029-pane-r1", { cache: "no-store" })
   .then((r) => {
     if (!r.ok) throw Error("Datos no disponibles");
     return r.json();
@@ -511,7 +539,7 @@ fetch("data/team.json?v=20261029-code-chart-r1", { cache: "no-store" })
       throw Error("Equipo no disponible");
     state.data = data;
     if (data.audit_file) {
-      const response = await fetch(`${data.audit_file}?v=20261029-code-chart-r1`, {
+      const response = await fetch(`${data.audit_file}?v=20261029-pane-r1`, {
         cache: "no-store",
       });
       if (!response.ok) throw Error("Corte de evidencia no disponible");
