@@ -22,11 +22,17 @@ function codeStats(s) {
 function quincenaOptions() {
   const base = state.auditSource.as_of.slice(0, 7);
   const [y, m] = base.split("-").map(Number);
-  return [0, 1, 2].flatMap((offset) => {
+  const options = [0, 1, 2].flatMap((offset) => {
     const date = new Date(Date.UTC(y, m - 1 - offset, 1));
     const prefix = `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, "0")}`;
     return [`${prefix}-2`, `${prefix}-1`];
   });
+  if (
+    /^\d{4}-(0[1-9]|1[0-2])-[12]$/.test(state.quincena || "") &&
+    !options.includes(state.quincena)
+  )
+    options.push(state.quincena);
+  return options;
 }
 function quincenaControl() {
   return `<label class="period period-filter">${icon("calendar")}<select id="quincena-filter" aria-label="Filtrar por quincena">${quincenaOptions()
@@ -37,7 +43,7 @@ function quincenaControl() {
     .join("")}</select></label>`;
 }
 function selectQuincena(id) {
-  if (!quincenaOptions().includes(id))
+  if (!/^\d{4}-(0[1-9]|1[0-2])-[12]$/.test(id || ""))
     id = KPIAudit.defaultQuincena(state.auditSource.as_of);
   state.quincena = id;
   state.data.period = KPIAudit.quincenaRange(id).label;
@@ -48,24 +54,28 @@ function selectQuincena(id) {
   state.data.team = KPIAudit.rankMembers(state.data.team, state.audit);
 }
 function executiveBrief(m, detail = false) {
-  const summary = `<div class="executive-work"><span>En qué trabajó</span><p>${esc(m.executive_summary || "Sin resumen atribuible en este corte.")}</p></div>`;
-  if (!detail || !m.workstreams?.length) return summary;
+  const recent = KPIAudit.memberRecords(m, state.audit)
+    .filter((r) => r.merged_at && r.title)
+    .sort((a, b) => b.merged_at.localeCompare(a.merged_at))
+    .slice(0, detail ? 3 : 2);
+  const concise = (title) =>
+    title
+      .replace(
+        /^(feat|fix|refactor|chore|test|docs|perf|build|ci)(\([^)]*\))?!?:\s*/i,
+        "",
+      )
+      .slice(0, 140);
+  const text = recent.length
+    ? recent.map((r) => concise(r.title)).join(" · ")
+    : m.reporting_mode === "qa-delegated"
+      ? m.executive_summary
+      : "Sin entregas fusionadas en esta quincena.";
+  const summary = `<div class="executive-work"><span>En qué trabajó · últimas entregas</span><p>${esc(text)}</p></div>`;
   return (
     summary +
-    `<ul class="executive-results">${m.workstreams
-      .slice(0, 3)
-      .map(
-        (w) =>
-          `<li>${esc(w.text)}<small>${w.prs
-            .map((key) => {
-              const r = state.audit.records.find((r) => r.key === key);
-              return r
-                ? `<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.repo.split("/")[1])} #${r.number} ↗</a>`
-                : "";
-            })
-            .join(" · ")}</small></li>`,
-      )
-      .join("")}</ul>`
+    (detail && recent.length
+      ? `<ul class="executive-results">${recent.map((r) => `<li>${esc(concise(r.title))}<small><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.repo.split("/")[1])} #${r.number} ↗</a></small></li>`).join("")}</ul>`
+      : "")
   );
 }
 function auditMetrics(m) {
@@ -110,7 +120,7 @@ function auditedOverview() {
   const rawMax = Math.max(1, ...groups.map((g) => g.lines_added));
   const scale = 10 ** Math.max(0, Math.floor(Math.log10(rawMax)) - 1);
   const max = Math.ceil(rawMax / (scale * 4)) * (scale * 4);
-  return `${heading("Así avanza tu equipo.", `Quincena ${state.data.period} · evidencia recopilada del 26 al 29 de octubre.`)}
+  return `${heading("Así avanza tu equipo.", `Quincena ${state.data.period} · evidencia de GitHub actualizada automáticamente.`)}
 <section class="stats" aria-label="Indicadores auditados">${[
     {
       label: "Entregas fusionadas",
@@ -172,7 +182,7 @@ ${codeStats(t)}
         `<div class="rule-item"><span class="rule-icon">${icon(x.ico)}</span><div><strong>${x.title}</strong><p>${x.note}</p></div></div>`,
     )
     .join("")}</div></section></div>
-${panePeople()}\n<aside class="setup-banner glass"><span>${icon("info")}</span><p><strong>Entrega no equivale a calidad aprobada.</strong> Los 11 PR con aprobación tienen alertas de CI. Los checks de revisión automática en rojo y los fallos técnicos son señales distintas. No se ejecutaron nuevamente las suites.</p><a class="text-link" href="#/evidence">Ver evidencia ${icon("arrow")}</a></aside>`;
+${panePeople()}\n<aside class="setup-banner glass"><span>${icon("info")}</span><p><strong>Entrega no equivale a calidad aprobada.</strong> Las aprobaciones y los fallos técnicos se validan por separado. Los datos se consultan cada 15 minutos y el navegador busca nuevos cortes cada minuto. No se ejecutan nuevamente las suites.</p><a class="text-link" href="#/evidence">Ver evidencia ${icon("arrow")}</a></aside>`;
 }
 function panePeople() {
   return `<section class="panel glass team-panel"><div class="panel-head"><div><h2>En qué está tu equipo</h2><p>Resultados ejecutivos y evidencia por integrante</p></div><a class="text-link" href="#/team">Ver equipo ${icon("arrow")}</a></div><div class="pane-people-list">${state.data.team
@@ -213,7 +223,7 @@ function auditedEvidenceView() {
             ? r.state === "OPEN"
             : true,
   );
-  return `${heading("Cada cifra tiene un PR.", "Corte de GitHub del 29 de octubre. Los enlaces respetan los permisos del repositorio.")}<section class="panel glass"><div class="panel-head"><div><h2>Evidencias verificadas</h2><p>${rows.length} PR en esta vista · ${state.audit.records.length} únicos en el corte</p></div><a class="text-link" href="data/github-audit.json" target="_blank" rel="noopener">Ver datos ↗</a></div><div class="audit-filters"><label>Integrante<select id="audit-person"><option value="all">Todos · sin duplicados</option>${state.data.team.map((m) => `<option value="${esc(m.name)}" ${person === m.name ? "selected" : ""}>${esc(m.name)}</option>`).join("")}</select></label><label>Condición<select id="audit-status">${[
+  return `${heading("Cada cifra tiene un PR.", "Evidencia sincronizada de GitHub. Los enlaces respetan los permisos del repositorio.")}<section class="panel glass"><div class="panel-head"><div><h2>Evidencias verificadas</h2><p>${rows.length} PR en esta vista · ${state.audit.records.length} únicos en el corte</p></div><a class="text-link" href="data/github-audit.json" target="_blank" rel="noopener">Ver datos ↗</a></div><div class="audit-filters"><label>Integrante<select id="audit-person"><option value="all">Todos · sin duplicados</option>${state.data.team.map((m) => `<option value="${esc(m.name)}" ${person === m.name ? "selected" : ""}>${esc(m.name)}</option>`).join("")}</select></label><label>Condición<select id="audit-status">${[
     ["all", "Todos los estados"],
     ["approved", "Fusionados con aprobación"],
     ["unapproved", "Fusionados sin aprobación"],

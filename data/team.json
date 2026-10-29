@@ -142,11 +142,35 @@
         "source_rules": [
           {
             "repository": "Pigui-AI/api-pigui-backend",
-            "authors": ["americabalderas-del", "everbecerra0"]
+            "authors": ["americabalderas-del", "everbecerra0", "SergiorCode"]
           },
           {
             "repository": "Pigui-AI/front-b2b",
-            "authors": ["SergiorCode"]
+            "authors": ["SergiorCode", "everbecerra0"]
+          },
+          {
+            "repository": "Pigui-AI/app-pigui-b2c",
+            "authors": ["SergiorCode", "everbecerra0"]
+          },
+          {
+            "repository": "Pigui-AI/pigui-rewardstore",
+            "authors": ["SergiorCode", "everbecerra0"]
+          },
+          {
+            "repository": "Pigui-AI/pigui-conect",
+            "authors": ["SergiorCode", "everbecerra0"]
+          },
+          {
+            "repository": "Pigui-AI/pigui-network-map",
+            "authors": ["SergiorCode", "everbecerra0"]
+          },
+          {
+            "repository": "Pigui-AI/app-pigui-scanapp",
+            "authors": ["SergiorCode", "everbecerra0"]
+          },
+          {
+            "repository": "Pigui-AI/Motor-chats",
+            "authors": ["SergiorCode", "everbecerra0"]
           }
         ],
         "reporters": ["americabalderas-del", "everbecerra0", "SergiorCode"]

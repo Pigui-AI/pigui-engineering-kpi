@@ -1,41 +1,38 @@
 # Pigui Engineering KPI
 
-El dashboard también mide líneas añadidas, eliminadas, cambio neto y promedio de cambios por PR fusionado, con el filtro quincenal. Las cifras proceden de `PullRequest.files` en GitHub, paginadas, contrastadas con el SHA y los totales del PR. La clasificación de `code-lines.js` incluye código y pruebas y excluye dependencias, generados, artefactos, documentación y datos/configuración. El neto puede ser negativo por limpieza de código; no representa calidad ni el tamaño actual del repositorio.
+Dashboard de entregas y líneas de código, publicado en GitHub Pages. Interfaz inspirada en Pane con tema claro/oscuro, filtro quincenal, evidencias, resumen por integrante, CSV y reportes QA delegados.
 
-`node scripts/collect-code-lines.cjs` consulta las cifras por archivo y devuelve las mediciones JSON sin modificar archivos ni publicar cambios. El corte contiene medición completa de los 53 PR fusionados; estos campos no se capturan manualmente en el formulario.
+## Sincronización automática
 
-El filtro de periodo es quincenal: días 1–15 y 16–fin de mes, con fechas de Ciudad de México. Los PR fusionados se asignan por fecha de merge; los cerrados sin merge por fecha de cierre, y los abiertos por fecha de creación. La selección se conserva en el navegador y se aplica a todas las vistas. El corte actual sólo contiene evidencia recopilada del 26 al 29 de octubre; las quincenas sin datos muestran ausencia de evidencia, no una evaluación de cero.
+`Sync GitHub evidence` consulta los ocho repositorios de `data/team.json` cada 15 minutos (minutos 7, 22, 37 y 52). GitHub puede retrasar ejecuciones programadas. También admite ejecución manual y `repository_dispatch` de tipo `kpi-pr-merged`. El receptor está preparado; no se han instalado emisores en los repositorios de negocio. La configuración activa es la consulta periódica.
 
-## Corte validado del 29 de octubre, 12:36 CDMX
+El workflow necesita el secreto `PIGUI_READ_TOKEN`, con lectura de los repositorios conectados. Sólo la Action usa este secreto; nunca se entrega al navegador. El `GITHUB_TOKEN` del workflow sólo escribe el snapshot en este repositorio. Una ejecución exitosa dispara `Deploy GitHub Pages` mediante `workflow_run`, incluso cuando el commit del bot no dispara eventos `push`.
 
-La vista principal carga `data/github-audit.json`: 57 PR revisados en 8 repositorios, 53 fusionados, 11 fusionados con cambios y aprobación externa sobre el head, 13 con fallos técnicos y 12 sin señal de CI. Se muestran las alertas, no se convierten en una aprobación de calidad. Es un corte puntual, no una sincronización automática ni una auditoría completa del código.
+El navegador comprueba nuevos datos publicados cada minuto, al volver a la pestaña y con el botón Actualizar. Conserva la quincena, los filtros y el desplazamiento. Si hay un formulario o detalle abierto, espera a que se cierre para aplicar el nuevo corte. Un error conserva los últimos datos válidos y muestra su antigüedad real.
 
-Los resultados se presentan por responsable operativo: Marco 1 merge, América 17, Ricardo 10 y Ever 25. Cada PR se cuenta una vez. Las fichas muestran el trabajo; la cuenta autora original permanece en GitHub. QA sigue sin reporte atribuible.
+El primer corte automático descubre actividad desde el 1 de octubre de 2026. Los siguientes descubren PR actualizados desde el último corte menos un día y revisan además los abiertos y los de la quincena actual. Se conserva el historial previo. No se inventan metas ni porcentajes de avance a partir del volumen de código.
 
-La cobertura de aprobación es 11 / 53 = 20.8%, no un porcentaje de cumplimiento de metas. Los porcentajes de avance de objetivos se dejan sin dato hasta tener metas acordadas. El snapshot guarda sólo enlaces y metadata de PR/checks, sin código, cuerpos de comentarios ni credenciales. Los repositorios privados siguen requiriendo sus permisos al abrir los enlaces.
+## Atribución y validación
 
-Interfaz inspirada visualmente en Pane, implementada con HTML/CSS/JS propios. Incluye barra lateral en escritorio, navegación flotante en móvil, widgets de actividad de código y resumen ejecutivo por integrante. Vistas: Inicio, Equipo, Evidencias y Criterios. Conserva tema claro/oscuro, búsqueda (⌘/Ctrl K), detalle de integrante, exportación CSV, formulario de reportes y filtro quincenal.
+La cuenta `SergiorCode`, sin distinguir mayúsculas, se asigna siempre a Ever en todos los repositorios conectados. Esta regla se aplica antes de las excepciones por repositorio. La actividad de `everbecerra0` también corresponde a Ever. El backend de `americabalderas-del` se mantiene asignado a Ever según la instrucción del responsable. América conserva su actividad en los otros repositorios. Marco y Ricardo usan sus cuentas configuradas. Cada PR tiene un responsable y cuenta una sola vez; la autoría original permanece en los datos de auditoría y GitHub.
 
-## Equipo y QA
+Los metadatos se obtienen de GitHub, no de cifras declaradas en un formulario. Se comprueban SHA, fecha de merge, cantidad de archivos, revisiones externas sobre el head y checks. Una aprobación no oculta un CI fallido. Una respuesta incompleta, pérdida de acceso o inconsistencia entre archivos y totales impide publicar un corte parcial.
 
-Marco: `marcopigui`; América: `americabalderas-del`; Ricardo: `ricardogallardo-pigui`; Ever: `everbecerra0`. Yestzanetli participa como QA comodín sin cuenta. `piguiai` es un bot, no un integrante.
+Las líneas añadidas y eliminadas se consultan por archivo, con paginación completa y reconciliación contra los totales del PR. Sólo cuentan código y pruebas de PR fusionados; se excluyen dependencias, generados, compilados, documentación y datos/configuración. Los valores se reutilizan sólo si coinciden SHA, archivos medidos y versión del método. El cambio neto puede ser negativo. Las líneas miden volumen de cambios, no calidad ni el tamaño actual del repositorio.
 
-QA puede guardar borradores en el navegador. Para compartir y contabilizar un reporte se publica un Issue desde una cuenta de `qa_delegates` en `data/team.json`: inicialmente SergiorCode y América. QA puede verificar PR ajenos, pero debe incluir pruebas y resultados (mínimo 30 caracteres); se siguen exigiendo merge y aprobación externa. Los borradores locales no se sincronizan entre dispositivos.
+## Periodos y reportes
 
-Los PR cuentan una sola vez por persona. El porcentaje individual es el último declarado y validado; no es una estimación automática del código. El sitio no genera tendencias ni periodos semanales automáticos. La vista Criterios documenta estas limitaciones.
+Quincenas: 1–15 y 16–último día del mes, zona America/Mexico_City. Un PR fusionado se asigna por fecha de merge; uno cerrado por fecha de cierre; uno abierto por fecha de creación. El filtro se aplica a gráficas, equipo, evidencias y CSV.
 
-Pruebas: `node --test tests/verification.test.cjs`. El despliegue de Pages se dispara tanto con push como cuando termina exitosamente el verificador de KPIs.
+Yestzanetli participa como QA sin cuenta de GitHub. Puede guardar borradores locales y publicar reportes mediante los delegados de `data/team.json`. El verificador exige pruebas descritas, merge, cambios y revisión externa sobre el head; rechaza identidades no autorizadas y reutilización del mismo PR. `piguiai` es un bot. La ausencia de reporte no se interpreta como desempeño cero.
 
-Dashboard estático publicado en GitHub Pages. Los reportes de avance se reciben con un Issue Form y sólo son válidos cuando `.github/workflows/verify-kpi.yml` los etiqueta como `kpi-verified`.
+## Comprobación y operación
 
-## Candados
+```sh
+node --test tests/*.test.cjs
+# Validar un corte sin publicar (token del login local, sin imprimirlo):
+node scripts/sync-github.cjs --local-auth --output /tmp/pigui-sync-preview.json
+gh workflow run sync-github.yml --repo Pigui-AI/pigui-engineering-kpi
+```
 
-1. La evidencia debe enlazar a un PR de `Pigui-AI/api-pigui-backend`.
-2. El PR debe estar fusionado y tener al menos un archivo modificado.
-3. El autor del Issue y del PR deben coincidir con la cuenta configurada, excepto QA delegado.
-4. Para repositorios privados, configurar el secreto `PIGUI_READ_TOKEN` con permiso de lectura sobre el repo de código.
-5. El verificador comprueba aprobación externa. La protección del repositorio de código debe configurarse allí; este workflow de Issues no es un check de PR.
-
-## Inicialización
-
-Las cuatro cuentas de desarrollo están vinculadas en `data/team.json`. Los delegados de QA se administran en `qa_delegates`. GitHub Pages se despliega automáticamente por la Action incluida.
+Configuración de fuentes y atribución: `data/sync-config.json` y `data/team.json`. Datos publicados: `data/github-audit.json`. El snapshot sólo incluye metadatos de PR, títulos, enlaces y checks; nunca código fuente ni credenciales. Las animaciones respetan la preferencia de movimiento reducido.

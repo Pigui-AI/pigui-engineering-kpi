@@ -21,9 +21,10 @@
           localStorage.getItem("pigui:theme") || "dark";
       } catch {}
     </script>
-    <link rel="stylesheet" href="styles.css?v=20261029-pane-r1" />
-    <link rel="stylesheet" href="audit.css?v=20261029-pane-r1" />
-    <link rel="stylesheet" href="pane.css?v=20261029-pane-r1" />
+    <link rel="stylesheet" href="styles.css?v=20261029-live-r1" />
+    <link rel="stylesheet" href="audit.css?v=20261029-live-r1" />
+    <link rel="stylesheet" href="pane.css?v=20261029-live-r1" />
+    <link rel="stylesheet" href="motion.css?v=20261029-live-r1" />
   </head>
   <body>
     <a class="skip" href="#main">Ir al contenido</a>
@@ -65,7 +66,7 @@
       </div>
       <div class="sidebar-context">
         <span class="status-dot"></span
-        ><span>Evidencia de GitHub<small>Periodos quincenales</small></span>
+        ><span>Evidencia de GitHub<small>Automático · cada 15 min</small></span>
       </div>
       <a
         class="side-account"
@@ -82,6 +83,13 @@
       <header class="topbar" aria-label="Herramientas del espacio">
         <span class="workspace-current glass" id="compact-title">Inicio</span>
         <div class="toolbar-tools glass">
+          <button
+            class="icon-button"
+            data-action="refresh"
+            aria-label="Actualizar cifras"
+            title="Actualizar cifras"
+            data-icon="refresh"
+          ></button>
           <button
             class="search-pill"
             data-action="search"
@@ -232,8 +240,10 @@
       </form>
     </dialog>
     <div id="toast" class="toast glass" role="status" aria-live="polite"></div>
-    <script src="audit-model.js?v=20261029-pane-r1" defer></script>
-    <script src="audit-ui.js?v=20261029-pane-r1" defer></script>
-    <script src="app.js?v=20261029-pane-r1" defer></script>
+    <script src="audit-model.js?v=20261029-live-r1" defer></script>
+    <script src="audit-ui.js?v=20261029-live-r1" defer></script>
+    <script src="live-dashboard.js?v=20261029-live-r1" defer></script>
+    <script src="motion.js?v=20261029-live-r1" defer></script>
+    <script src="app.js?v=20261029-live-r1" defer></script>
   </body>
 </html>

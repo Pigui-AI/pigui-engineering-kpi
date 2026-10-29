@@ -1,6 +1,8 @@
 "use strict";
 const REPO = "https://github.com/Pigui-AI/pigui-engineering-kpi";
 const icons = {
+  refresh:
+    '<path d="M20 7v5h-5M4 17v-5h5"/><path d="M6 7a7 7 0 0 1 12-1l2 3M4 15l2 3a7 7 0 0 0 12-1"/>',
   search: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/>',
   grid: '<rect x="4" y="4" width="6" height="6" rx="2"/><rect x="14" y="4" width="6" height="6" rx="2"/><rect x="4" y="14" width="6" height="6" rx="2"/><rect x="14" y="14" width="6" height="6" rx="2"/>',
   users:
@@ -194,7 +196,7 @@ function criteriaView() {
       "",
     )}<article class="info-card glass wide"><h2>Cómo leer tus KPIs</h2><p>El avance individual es el porcentaje del último reporte aceptado por el verificador. El avance del equipo es la media de esos porcentajes. Los PR validados corresponden al contador del resumen. El porcentaje lo declara el integrante: enlazar un PR acredita evidencia, pero no demuestra por sí solo el porcentaje declarado.</p><div class="formula">Avance del equipo = suma de avances individuales ÷ 5 integrantes</div><p>La vista muestra el periodo definido en la configuración. Actualmente no existe reinicio semanal automático, histórico de tendencias ni ponderación por complejidad. Usa estos indicadores para conversar sobre entregas, junto con contexto y revisión humana.</p></article><article class="info-card glass wide"><h2>Yestzanetli · QA comodín</h2><p>QA no necesita una cuenta vinculada para preparar y guardar sus pruebas en este sitio. Los borradores permanecen en el navegador. Para compartirlos, una cuenta autorizada envía el reporte a GitHub; el verificador exige un PR fusionado con aprobación externa y evidencia escrita de las pruebas. El bot <code>piguiai</code> no está asignado a ninguna persona.</p></article></div>`;
 }
-function route() {
+function route(reason = "navigation") {
   if (!state.data) return;
   let view = location.hash.replace("#/", "") || "overview";
   if (!["overview", "team", "evidence", "criteria"].includes(view))
@@ -218,7 +220,12 @@ function route() {
         "Avances por quincena.",
         "Selecciona una quincena para consultar sus evidencias.",
       ) +
-      '<section class="panel glass empty-state"><h2>Sin evidencia recopilada para esta quincena</h2><p>El corte disponible contiene actividad recopilada del 26 al 29 de octubre. La ausencia de datos históricos no significa que el equipo no haya trabajado.</p></section>';
+      '<section class="panel glass empty-state"><h2>Sin evidencia recopilada para esta quincena</h2><p>La sincronización cubre los repositorios conectados desde octubre de 2026. La ausencia de datos no significa que el equipo no haya trabajado.</p></section>';
+    window.dispatchEvent(
+      new CustomEvent("pigui:render", {
+        detail: { reason, context: state.quincena + ":" + view },
+      }),
+    );
     return;
   }
   document.querySelector("#main").innerHTML = (
@@ -237,6 +244,11 @@ function route() {
         }
   )[view]();
   document.title = `${{ overview: "Inicio", team: "Equipo", evidence: "Evidencias", criteria: "Criterios" }[view]} · Pigui`;
+  window.dispatchEvent(
+    new CustomEvent("pigui:render", {
+      detail: { reason, context: state.quincena + ":" + view },
+    }),
+  );
 }
 function openReport(member = "") {
   if (!state.data) {
@@ -405,18 +417,19 @@ document.addEventListener("click", (e) => {
       route();
       setTimeout(
         () =>
-          document
-            .querySelector(selector)
-            ?.scrollIntoView({
-              behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
-                ? "instant"
-                : "smooth",
-              block: "start",
-            }),
+          document.querySelector(selector)?.scrollIntoView({
+            behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+              ? "instant"
+              : "smooth",
+            block: "start",
+          }),
         0,
       );
       break;
     }
+    case "refresh":
+      refreshDashboard({ force: true });
+      break;
     case "report":
       openReport();
       break;
@@ -529,38 +542,4 @@ window.addEventListener("hashchange", () => {
 document
   .querySelectorAll("[data-icon]")
   .forEach((el) => (el.innerHTML = icon(el.dataset.icon)));
-fetch("data/team.json?v=20261029-pane-r1", { cache: "no-store" })
-  .then((r) => {
-    if (!r.ok) throw Error("Datos no disponibles");
-    return r.json();
-  })
-  .then(async (data) => {
-    if (!Array.isArray(data.team) || !data.team.length)
-      throw Error("Equipo no disponible");
-    state.data = data;
-    if (data.audit_file) {
-      const response = await fetch(`${data.audit_file}?v=20261029-pane-r1`, {
-        cache: "no-store",
-      });
-      if (!response.ok) throw Error("Corte de evidencia no disponible");
-      state.audit = await response.json();
-      state.auditSource = state.audit;
-      let selected = KPIAudit.defaultQuincena(state.auditSource.as_of);
-      try {
-        selected = localStorage.getItem("pigui:quincena") || selected;
-      } catch {}
-      selectQuincena(selected);
-    }
-    document.querySelector("#report-form").elements.member.innerHTML = data.team
-      .map((m) => `<option>${esc(m.name)}</option>`)
-      .join("");
-    document.querySelector("#source-state").textContent = state.audit
-      ? "Corte: 29 oct · actualizado"
-      : "Resumen disponible";
-    route();
-  })
-  .catch(() => {
-    document.querySelector("#source-state").textContent = "Sin conexión";
-    document.querySelector("#main").innerHTML =
-      '<section class="empty-state panel glass"><h1>No pudimos cargar los KPIs</h1><p>Recarga la página para volver a consultar el resumen del equipo.</p><button class="button primary" onclick="location.reload()">Reintentar</button></section>';
-  });
+startDashboardLive();

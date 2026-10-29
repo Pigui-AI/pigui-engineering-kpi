@@ -1,0 +1,114 @@
+.pane-widget {
+  position: relative;
+  isolation: isolate;
+  transition:
+    box-shadow 0.3s,
+    border-color 0.3s,
+    translate 0.3s;
+}
+.pane-widget::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    350px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+    #99bfff1f,
+    transparent 65%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: -1;
+}
+.pane-widget:hover::after {
+  opacity: 1;
+}
+.pane-widget:hover {
+  translate: 0 -3px;
+  box-shadow: 0 16px 40px #0002;
+}
+.pane-person {
+  transition:
+    background 0.25s,
+    box-shadow 0.25s;
+}
+.pane-person:hover {
+  background: #9ebdff08;
+  box-shadow: inset 3px 0 #9ebdff;
+}
+.progress i {
+  transform-origin: left;
+}
+.button,
+.icon-button,
+.sidebar-nav a {
+  position: relative;
+  overflow: hidden;
+}
+.tap-wave {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #bcd4ff50;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: tap-wave 0.65s ease-out forwards;
+}
+@keyframes tap-wave {
+  to {
+    transform: translate(-50%, -50%) scale(22);
+    opacity: 0;
+  }
+}
+.live-arrival .stat,
+.live-arrival .pane-widget {
+  animation: live-arrival 1.8s ease-out;
+}
+@keyframes live-arrival {
+  0%,
+  100% {
+    outline-color: transparent;
+  }
+  20% {
+    outline: 1px solid #8abaff80;
+    outline-offset: 2px;
+  }
+}
+.is-syncing [data-action="refresh"] svg {
+  animation: sync-spin 1s linear infinite;
+}
+@keyframes sync-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.sync-stale {
+  color: #efb98d;
+}
+dialog[open] {
+  animation: dialog-enter 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes dialog-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .pane-widget:hover {
+    translate: none;
+  }
+}

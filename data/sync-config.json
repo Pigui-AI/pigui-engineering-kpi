@@ -1,0 +1,20 @@
+{
+  "organization": "Pigui-AI",
+  "interval_minutes": 15,
+  "frontend_poll_seconds": 60,
+  "bootstrap_from": "2026-10-01T00:00:00-06:00",
+  "authors": {
+    "sergiorcode": "Ever",
+    "everbecerra0": "Ever",
+    "americabalderas-del": "América",
+    "ricardogallardo-pigui": "Ricardo",
+    "marcopigui": "Marco"
+  },
+  "repository_overrides": [
+    {
+      "author": "americabalderas-del",
+      "repository": "Pigui-AI/api-pigui-backend",
+      "responsible": "Ever"
+    }
+  ]
+}

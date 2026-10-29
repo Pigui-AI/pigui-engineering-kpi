@@ -6,7 +6,7 @@ permissions:
   issues: write
   contents: write
 concurrency:
-  group: kpi-verification
+  group: kpi-data-write
   cancel-in-progress: false
 jobs:
   verify:
