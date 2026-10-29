@@ -35,14 +35,17 @@
     return snapshot.records.filter((r) => r.responsible === member.name);
   }
   function groups(team, snapshot) {
-    return team
+    return rankMembers(team, snapshot)
       .filter((m) => m.reporting_mode !== "qa-delegated")
       .map((m) => ({
         name: m.name,
         ...summarize(memberRecords(m, snapshot)),
       }));
   }
-  const api = { approved, technicalFailure, summarize, memberRecords, groups };
+  function rankMembers(team, snapshot) {
+    return [...team].sort((a,b) => summarize(memberRecords(b,snapshot)).merged - summarize(memberRecords(a,snapshot)).merged);
+  }
+  const api = { approved, technicalFailure, summarize, memberRecords, groups, rankMembers };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.KPIAudit = api;
 })(typeof globalThis !== "undefined" ? globalThis : this);

@@ -45,6 +45,13 @@ test("QA without attributable evidence is not scored as zero", () => {
   assert.equal(t.coverage, null);
   assert.equal(qa.verified_progress, null);
 });
+test("Ever leads delivery ranking without changing the evidence or totals", () => {
+  const ordered=audit.rankMembers(team,snapshot);
+  assert.equal(ordered[0].name,'Ever');
+  assert.equal(audit.summarize(audit.memberRecords(ordered[0],snapshot)).merged,25);
+  assert.deepEqual(audit.groups(team,snapshot).map(m=>[m.name,m.merged]),[['Ever',25],['América',17],['Ricardo',10],['Marco',1]]);
+  assert.equal(audit.summarize(snapshot.records).merged,53);
+});
 test("approval evidence cannot silently turn failing CI green", () => {
   const approved = snapshot.records.filter(audit.approved);
   assert.equal(approved.length, 11);
