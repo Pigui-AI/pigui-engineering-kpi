@@ -55,7 +55,17 @@
       ],
       "excluded": false,
       "responsible": "Marco",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 124,
+        "deletions": 3,
+        "net": 121,
+        "changed": 127,
+        "source_files": 4,
+        "excluded_files": 0,
+        "measured_files": 4,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#647",
@@ -255,7 +265,17 @@
       ],
       "excluded": false,
       "responsible": "América",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 101592,
+        "deletions": 0,
+        "net": 101592,
+        "changed": 101592,
+        "source_files": 411,
+        "excluded_files": 155,
+        "measured_files": 566,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/pigui-rewardstore#7",
@@ -278,7 +298,17 @@
       "technical_checks": [],
       "excluded": false,
       "responsible": "América",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 15,
+        "deletions": 0,
+        "net": 15,
+        "changed": 15,
+        "source_files": 2,
+        "excluded_files": 0,
+        "measured_files": 2,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#645",
@@ -354,7 +384,17 @@
       ],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 2505,
+        "deletions": 34,
+        "net": 2471,
+        "changed": 2539,
+        "source_files": 22,
+        "excluded_files": 3,
+        "measured_files": 25,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#644",
@@ -434,7 +474,17 @@
       ],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 1854,
+        "deletions": 22,
+        "net": 1832,
+        "changed": 1876,
+        "source_files": 16,
+        "excluded_files": 5,
+        "measured_files": 21,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#643",
@@ -510,7 +560,17 @@
       ],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 3238,
+        "deletions": 52,
+        "net": 3186,
+        "changed": 3290,
+        "source_files": 11,
+        "excluded_files": 4,
+        "measured_files": 15,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#642",
@@ -586,7 +646,17 @@
       ],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 1097,
+        "deletions": 180,
+        "net": 917,
+        "changed": 1277,
+        "source_files": 15,
+        "excluded_files": 2,
+        "measured_files": 17,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#641",
@@ -670,7 +740,17 @@
       ],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 1577,
+        "deletions": 769,
+        "net": 808,
+        "changed": 2346,
+        "source_files": 68,
+        "excluded_files": 1,
+        "measured_files": 69,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#640",
@@ -754,7 +834,17 @@
       ],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 1434,
+        "deletions": 872,
+        "net": 562,
+        "changed": 2306,
+        "source_files": 48,
+        "excluded_files": 1,
+        "measured_files": 49,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#639",
@@ -830,7 +920,17 @@
       ],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 541,
+        "deletions": 260,
+        "net": 281,
+        "changed": 801,
+        "source_files": 23,
+        "excluded_files": 1,
+        "measured_files": 24,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#638",
@@ -910,7 +1010,17 @@
       ],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 4443,
+        "deletions": 241,
+        "net": 4202,
+        "changed": 4684,
+        "source_files": 33,
+        "excluded_files": 4,
+        "measured_files": 37,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#637",
@@ -986,7 +1096,17 @@
       ],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 2249,
+        "deletions": 28,
+        "net": 2221,
+        "changed": 2277,
+        "source_files": 14,
+        "excluded_files": 3,
+        "measured_files": 17,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#636",
@@ -1062,7 +1182,17 @@
       ],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 14246,
+        "deletions": 14,
+        "net": 14232,
+        "changed": 14260,
+        "source_files": 8,
+        "excluded_files": 8,
+        "measured_files": 16,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#635",
@@ -1138,7 +1268,17 @@
       ],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 702,
+        "deletions": 17,
+        "net": 685,
+        "changed": 719,
+        "source_files": 7,
+        "excluded_files": 2,
+        "measured_files": 9,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/pigui-conect#52",
@@ -1161,7 +1301,17 @@
       "technical_checks": [],
       "excluded": false,
       "responsible": "América",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 32,
+        "deletions": 16,
+        "net": 16,
+        "changed": 48,
+        "source_files": 3,
+        "excluded_files": 0,
+        "measured_files": 3,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/pigui-rewardstore#6",
@@ -1184,7 +1334,17 @@
       "technical_checks": [],
       "excluded": false,
       "responsible": "América",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 136,
+        "deletions": 346,
+        "net": -210,
+        "changed": 482,
+        "source_files": 8,
+        "excluded_files": 2,
+        "measured_files": 10,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#634",
@@ -1260,7 +1420,17 @@
       ],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 75,
+        "deletions": 3,
+        "net": 72,
+        "changed": 78,
+        "source_files": 1,
+        "excluded_files": 0,
+        "measured_files": 1,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#632",
@@ -1308,7 +1478,17 @@
       ],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 190,
+        "deletions": 1,
+        "net": 189,
+        "changed": 191,
+        "source_files": 4,
+        "excluded_files": 5,
+        "measured_files": 9,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#631",
@@ -1344,7 +1524,17 @@
       ],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 582,
+        "deletions": 61,
+        "net": 521,
+        "changed": 643,
+        "source_files": 5,
+        "excluded_files": 1,
+        "measured_files": 6,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#630",
@@ -1408,7 +1598,17 @@
       ],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 888,
+        "deletions": 80919,
+        "net": -80031,
+        "changed": 81807,
+        "source_files": 520,
+        "excluded_files": 10,
+        "measured_files": 530,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#629",
@@ -1444,7 +1644,17 @@
       ],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 376,
+        "deletions": 9,
+        "net": 367,
+        "changed": 385,
+        "source_files": 3,
+        "excluded_files": 1,
+        "measured_files": 4,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/pigui-network-map#5",
@@ -1467,7 +1677,17 @@
       "technical_checks": [],
       "excluded": false,
       "responsible": "América",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 32,
+        "deletions": 25,
+        "net": 7,
+        "changed": 57,
+        "source_files": 2,
+        "excluded_files": 4,
+        "measured_files": 6,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#628",
@@ -1503,7 +1723,17 @@
       ],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 39,
+        "deletions": 2,
+        "net": 37,
+        "changed": 41,
+        "source_files": 2,
+        "excluded_files": 0,
+        "measured_files": 2,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/app-pigui-scanapp#291",
@@ -1543,7 +1773,17 @@
       ],
       "excluded": false,
       "responsible": "América",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 147,
+        "deletions": 31,
+        "net": 116,
+        "changed": 178,
+        "source_files": 8,
+        "excluded_files": 2,
+        "measured_files": 10,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#627",
@@ -1579,7 +1819,17 @@
       ],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 132,
+        "deletions": 4,
+        "net": 128,
+        "changed": 136,
+        "source_files": 4,
+        "excluded_files": 1,
+        "measured_files": 5,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/front-b2b#742",
@@ -1623,7 +1873,17 @@
       ],
       "excluded": false,
       "responsible": "América",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 7479,
+        "deletions": 5729,
+        "net": 1750,
+        "changed": 13208,
+        "source_files": 36,
+        "excluded_files": 1,
+        "measured_files": 37,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/front-b2b#740",
@@ -1663,7 +1923,17 @@
       ],
       "excluded": false,
       "responsible": "América",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 458,
+        "deletions": 122,
+        "net": 336,
+        "changed": 580,
+        "source_files": 3,
+        "excluded_files": 0,
+        "measured_files": 3,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/front-b2b#739",
@@ -1703,7 +1973,17 @@
       ],
       "excluded": false,
       "responsible": "América",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 995,
+        "deletions": 372,
+        "net": 623,
+        "changed": 1367,
+        "source_files": 18,
+        "excluded_files": 0,
+        "measured_files": 18,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/front-b2b#738",
@@ -1743,7 +2023,17 @@
       ],
       "excluded": false,
       "responsible": "América",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 231,
+        "deletions": 0,
+        "net": 231,
+        "changed": 231,
+        "source_files": 3,
+        "excluded_files": 1,
+        "measured_files": 4,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/front-b2b#737",
@@ -1783,7 +2073,17 @@
       ],
       "excluded": false,
       "responsible": "América",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 1178,
+        "deletions": 1746,
+        "net": -568,
+        "changed": 2924,
+        "source_files": 3,
+        "excluded_files": 0,
+        "measured_files": 3,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/front-b2b#736",
@@ -1823,7 +2123,17 @@
       ],
       "excluded": false,
       "responsible": "América",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 7514,
+        "deletions": 52,
+        "net": 7462,
+        "changed": 7566,
+        "source_files": 22,
+        "excluded_files": 0,
+        "measured_files": 22,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#626",
@@ -1859,7 +2169,17 @@
       ],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 1343,
+        "deletions": 0,
+        "net": 1343,
+        "changed": 1343,
+        "source_files": 7,
+        "excluded_files": 1,
+        "measured_files": 8,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/front-b2b#731",
@@ -1899,7 +2219,17 @@
       ],
       "excluded": false,
       "responsible": "América",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 3622,
+        "deletions": 46,
+        "net": 3576,
+        "changed": 3668,
+        "source_files": 11,
+        "excluded_files": 3,
+        "measured_files": 14,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#624",
@@ -1935,7 +2265,17 @@
       ],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 1445,
+        "deletions": 132,
+        "net": 1313,
+        "changed": 1577,
+        "source_files": 6,
+        "excluded_files": 1,
+        "measured_files": 7,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/front-b2b#729",
@@ -1975,7 +2315,17 @@
       ],
       "excluded": false,
       "responsible": "América",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 2743,
+        "deletions": 1374,
+        "net": 1369,
+        "changed": 4117,
+        "source_files": 17,
+        "excluded_files": 12,
+        "measured_files": 29,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/front-b2b#728",
@@ -1998,7 +2348,17 @@
       "technical_checks": [],
       "excluded": false,
       "responsible": "América",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 1365,
+        "deletions": 951,
+        "net": 414,
+        "changed": 2316,
+        "source_files": 11,
+        "excluded_files": 0,
+        "measured_files": 11,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/front-b2b#727",
@@ -2021,7 +2381,17 @@
       "technical_checks": [],
       "excluded": false,
       "responsible": "América",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 2386,
+        "deletions": 105,
+        "net": 2281,
+        "changed": 2491,
+        "source_files": 19,
+        "excluded_files": 1,
+        "measured_files": 20,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#623",
@@ -2044,7 +2414,17 @@
       "technical_checks": [],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 1185,
+        "deletions": 2,
+        "net": 1183,
+        "changed": 1187,
+        "source_files": 8,
+        "excluded_files": 87,
+        "measured_files": 95,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#622",
@@ -2067,7 +2447,17 @@
       "technical_checks": [],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 234,
+        "deletions": 23,
+        "net": 211,
+        "changed": 257,
+        "source_files": 9,
+        "excluded_files": 1,
+        "measured_files": 10,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#621",
@@ -2090,7 +2480,17 @@
       "technical_checks": [],
       "excluded": false,
       "responsible": "Ever",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 485,
+        "deletions": 0,
+        "net": 485,
+        "changed": 485,
+        "source_files": 5,
+        "excluded_files": 1,
+        "measured_files": 6,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/app-pigui-scanapp#289",
@@ -2113,7 +2513,17 @@
       "technical_checks": [],
       "excluded": false,
       "responsible": "América",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 255,
+        "deletions": 26,
+        "net": 229,
+        "changed": 281,
+        "source_files": 6,
+        "excluded_files": 1,
+        "measured_files": 7,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/front-b2b#746",
@@ -2157,7 +2567,17 @@
       ],
       "excluded": false,
       "responsible": "Ricardo",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 39,
+        "deletions": 17,
+        "net": 22,
+        "changed": 56,
+        "source_files": 3,
+        "excluded_files": 0,
+        "measured_files": 3,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/front-b2b#745",
@@ -2201,7 +2621,17 @@
       ],
       "excluded": false,
       "responsible": "Ricardo",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 125,
+        "deletions": 7,
+        "net": 118,
+        "changed": 132,
+        "source_files": 6,
+        "excluded_files": 0,
+        "measured_files": 6,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/front-b2b#744",
@@ -2237,7 +2667,17 @@
       ],
       "excluded": false,
       "responsible": "Ricardo",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 23,
+        "deletions": 6,
+        "net": 17,
+        "changed": 29,
+        "source_files": 3,
+        "excluded_files": 0,
+        "measured_files": 3,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#611",
@@ -2309,7 +2749,17 @@
       ],
       "excluded": false,
       "responsible": "Ricardo",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 17,
+        "deletions": 3,
+        "net": 14,
+        "changed": 20,
+        "source_files": 2,
+        "excluded_files": 0,
+        "measured_files": 2,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#633",
@@ -2345,7 +2795,17 @@
       ],
       "excluded": false,
       "responsible": "Ricardo",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 3175,
+        "deletions": 35,
+        "net": 3140,
+        "changed": 3210,
+        "source_files": 54,
+        "excluded_files": 1,
+        "measured_files": 55,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/front-b2b#743",
@@ -2389,7 +2849,17 @@
       ],
       "excluded": false,
       "responsible": "Ricardo",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 4756,
+        "deletions": 116,
+        "net": 4640,
+        "changed": 4872,
+        "source_files": 41,
+        "excluded_files": 4,
+        "measured_files": 45,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/Motor-chats#64",
@@ -2412,7 +2882,17 @@
       "technical_checks": [],
       "excluded": false,
       "responsible": "Ricardo",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 12358,
+        "deletions": 288,
+        "net": 12070,
+        "changed": 12646,
+        "source_files": 121,
+        "excluded_files": 24,
+        "measured_files": 145,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/front-b2b#732",
@@ -2452,7 +2932,17 @@
       ],
       "excluded": false,
       "responsible": "Ricardo",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 3216,
+        "deletions": 77,
+        "net": 3139,
+        "changed": 3293,
+        "source_files": 35,
+        "excluded_files": 12,
+        "measured_files": 47,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/Motor-chats#62",
@@ -2475,7 +2965,17 @@
       "technical_checks": [],
       "excluded": false,
       "responsible": "Ricardo",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 28632,
+        "deletions": 578,
+        "net": 28054,
+        "changed": 29210,
+        "source_files": 251,
+        "excluded_files": 386,
+        "measured_files": 637,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#625",
@@ -2511,7 +3011,17 @@
       ],
       "excluded": false,
       "responsible": "Ricardo",
-      "checked_at": "2026-10-29T18:36:02Z"
+      "checked_at": "2026-10-29T18:36:02Z",
+      "code_lines": {
+        "additions": 11792,
+        "deletions": 160,
+        "net": 11632,
+        "changed": 11952,
+        "source_files": 101,
+        "excluded_files": 6,
+        "measured_files": 107,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/api-pigui-backend#522",
@@ -2575,7 +3085,17 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-10-29T18:49:48Z"
+      "checked_at": "2026-10-29T18:49:48Z",
+      "code_lines": {
+        "additions": 1959,
+        "deletions": 1757,
+        "net": 202,
+        "changed": 3716,
+        "source_files": 15,
+        "excluded_files": 33,
+        "measured_files": 48,
+        "status": "complete"
+      }
     },
     {
       "key": "Pigui-AI/front-b2b#730",
@@ -2607,11 +3127,29 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-10-29T18:49:48Z"
+      "checked_at": "2026-10-29T18:49:48Z",
+      "code_lines": {
+        "additions": 1757,
+        "deletions": 0,
+        "net": 1757,
+        "changed": 1757,
+        "source_files": 1,
+        "excluded_files": 1,
+        "measured_files": 2,
+        "status": "complete"
+      }
     }
   ],
   "assignment": {
     "method": "Asignación operativa por especialidad y evidencia indicada por la persona responsable; la autoría original se conserva en GitHub.",
     "deduplication": "Un solo responsable por PR, sin duplicados en totales."
+  },
+  "code_lines_method": {
+    "checked_at": "2026-10-29T19:26:40Z",
+    "source": "GitHub PullRequest.files additions/deletions, paginados y contrastados con head SHA y totales del PR.",
+    "scope": "Sólo PR fusionados; código y pruebas. Excluye dependencias, generados, documentación y formatos de datos/configuración. Clasificación determinista en code-lines.js.",
+    "net": "Añadidas menos eliminadas.",
+    "average": "Añadidas + eliminadas dividido por PR fusionados con medición completa.",
+    "quality": "Mide volumen de cambios, no calidad, horas ni tamaño actual del repositorio."
   }
 }

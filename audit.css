@@ -135,3 +135,80 @@
   font-size: 11px;
   cursor: pointer;
 }
+.loc-section {
+  margin: 23px 0;
+}
+.loc-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 2px 12px;
+}
+.loc-heading h2 {
+  font-size: 15px;
+}
+.loc-heading p {
+  color: var(--muted);
+  font-size: 10px;
+  margin: 0;
+}
+.loc-stats .stat {
+  min-height: 120px;
+}
+.loc-stats .stat-number {
+  font-size: clamp(23px, 2.2vw, 31px);
+}
+.loc-mini {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 8px;
+  border-top: 1px solid var(--line);
+  margin-top: 15px;
+  padding-top: 12px;
+}
+.loc-mini span {
+  display: block;
+  color: var(--muted);
+  font-size: 9px;
+}
+.mini-person .loc-mini span {
+  color: #ffffffb3;
+}
+.loc-mini strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.loc-net {
+  grid-column: 1/-1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.loc-added {
+  color: #a7d9c1;
+}
+.loc-deleted {
+  color: #f0b6ac;
+}
+[data-theme="light"] .loc-added {
+  color: #256844;
+}
+[data-theme="light"] .loc-deleted {
+  color: #a14738;
+}
+.mini-person .loc-added {
+  color: #b8efd2;
+}
+.mini-person .loc-deleted {
+  color: #ffcbc2;
+}
+@media (max-width: 760px) {
+  .loc-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}

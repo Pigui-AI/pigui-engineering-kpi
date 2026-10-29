@@ -1,5 +1,9 @@
 # Pigui Engineering KPI
 
+El dashboard también mide líneas añadidas, eliminadas, cambio neto y promedio de cambios por PR fusionado, con el filtro quincenal. Las cifras proceden de `PullRequest.files` en GitHub, paginadas, contrastadas con el SHA y los totales del PR. La clasificación de `code-lines.js` incluye código y pruebas y excluye dependencias, generados, artefactos, documentación y datos/configuración. El neto puede ser negativo por limpieza de código; no representa calidad ni el tamaño actual del repositorio.
+
+`node scripts/collect-code-lines.cjs` consulta las cifras por archivo y devuelve las mediciones JSON sin modificar archivos ni publicar cambios. El corte contiene medición completa de los 53 PR fusionados; estos campos no se capturan manualmente en el formulario.
+
 El filtro de periodo es quincenal: días 1–15 y 16–fin de mes, con fechas de Ciudad de México. Los PR fusionados se asignan por fecha de merge; los cerrados sin merge por fecha de cierre, y los abiertos por fecha de creación. La selección se conserva en el navegador y se aplica a todas las vistas. El corte actual sólo contiene evidencia recopilada del 26 al 29 de octubre; las quincenas sin datos muestran ausencia de evidencia, no una evaluación de cero.
 
 ## Corte validado del 29 de octubre, 12:36 CDMX

@@ -17,6 +17,7 @@
     const merged = records.filter((r) => r.merged_at),
       accepted = records.filter(approved);
     return {
+      ...lineStats(merged),
       inspected: records.length,
       merged: merged.length,
       approved: accepted.length,
@@ -28,6 +29,29 @@
       no_ci: records.filter((r) => r.ci === "MISSING").length,
       coverage: merged.length
         ? Math.round((accepted.length / merged.length) * 1000) / 10
+        : null,
+    };
+  }
+  function lineStats(records) {
+    const unique = [
+      ...new Map(
+        records
+          .filter((r) => r.merged_at)
+          .map((r, i) => [r.key || r.url || i, r]),
+      ).values(),
+    ];
+    const measured = unique.filter((r) => r.code_lines?.status === "complete");
+    const added = measured.reduce((n, r) => n + r.code_lines.additions, 0),
+      deleted = measured.reduce((n, r) => n + r.code_lines.deletions, 0);
+    return {
+      lines_added: added,
+      lines_deleted: deleted,
+      lines_net: added - deleted,
+      lines_changed: added + deleted,
+      lines_measured_prs: measured.length,
+      lines_missing_prs: unique.length - measured.length,
+      average_lines_changed: measured.length
+        ? Math.round((added + deleted) / measured.length)
         : null,
     };
   }
@@ -97,6 +121,7 @@
     quincenaRange,
     defaultQuincena,
     filterQuincena,
+    lineStats,
   };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.KPIAudit = api;

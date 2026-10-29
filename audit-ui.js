@@ -1,3 +1,45 @@
+function lineCount(n) {
+  return new Intl.NumberFormat("es-MX").format(n);
+}
+function lineValue(s, key, signed = false) {
+  if (!s.lines_measured_prs) return "N/D";
+  const n = s[key];
+  return (signed && n > 0 ? "+" : "") + lineCount(n);
+}
+function codeMini(s) {
+  return `<div class="loc-mini" aria-label="Líneas de código"><div><span>Añadidas</span><strong class="loc-added">${s.lines_measured_prs ? "+" + lineValue(s, "lines_added") : "N/D"}</strong></div><div><span>Eliminadas</span><strong class="loc-deleted">${s.lines_measured_prs ? "−" + lineValue(s, "lines_deleted") : "N/D"}</strong></div><div class="loc-net"><span>Cambio neto</span><strong>${lineValue(s, "lines_net", true)}</strong></div></div>`;
+}
+function codeStats(s) {
+  return `<section class="loc-section"><div class="loc-heading"><h2>Actividad de código</h2><p>Sólo PR fusionados · ${s.lines_measured_prs} de ${s.merged} con medición por archivo</p></div><div class="stats loc-stats">${[
+    {
+      label: "Líneas añadidas",
+      key: "lines_added",
+      note: "Código y pruebas",
+      sign: true,
+    },
+    {
+      label: "Líneas eliminadas",
+      key: "lines_deleted",
+      note: "Incluye limpieza y refactors",
+    },
+    {
+      label: "Cambio neto",
+      key: "lines_net",
+      note: "Añadidas menos eliminadas",
+      sign: true,
+    },
+    {
+      label: "Promedio de cambios / PR",
+      key: "average_lines_changed",
+      note: "Añadidas + eliminadas por PR",
+    },
+  ]
+    .map(
+      (x) =>
+        `<article class="stat glass"><div class="stat-label">${x.label}${icon("code")}</div><strong class="stat-number">${lineValue(s, x.key, x.sign)}</strong><span class="stat-note">${x.note}</span></article>`,
+    )
+    .join("")}</div></section>`;
+}
 function quincenaOptions() {
   const base = state.auditSource.as_of.slice(0, 7);
   const [y, m] = base.split("-").map(Number);
@@ -71,11 +113,11 @@ function auditShare(m) {
 }
 function auditTable(records) {
   return (
-    '<div class="table-wrap"><table class="data-table"><thead><tr><th>PR / evidencia</th><th>Responsable</th><th>Entrega y revisión</th><th>Cambios</th><th>Checks técnicos</th></tr></thead><tbody>' +
+    '<div class="table-wrap"><table class="data-table"><thead><tr><th>PR / evidencia</th><th>Responsable</th><th>Entrega y revisión</th><th>Archivos</th><th>Líneas +</th><th>Líneas −</th><th>Neto</th><th>Checks técnicos</th></tr></thead><tbody>' +
     records
       .map(
         (r) =>
-          `<tr><td><a class="text-link" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.repo.split("/")[1])} #${r.number} ↗</a></td><td>${esc(r.responsible)}</td><td>${auditBadge(r)}</td><td>${r.changed_files} archivos</td><td><span class="badge neutral">${KPIAudit.technicalFailure(r) ? "Con fallos" : r.technical_checks.length ? "Sin fallos reportados" : "Sin señal"}</span></td></tr>`,
+          `<tr><td><a class="text-link" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.repo.split("/")[1])} #${r.number} ↗</a></td><td>${esc(r.responsible)}</td><td>${auditBadge(r)}</td><td>${r.changed_files} archivos</td><td class="loc-added">${r.code_lines?.status === "complete" ? "+" + lineCount(r.code_lines.additions) : "N/D"}</td><td class="loc-deleted">${r.code_lines?.status === "complete" ? "−" + lineCount(r.code_lines.deletions) : "N/D"}</td><td>${r.code_lines?.status === "complete" ? lineCount(r.code_lines.net) : "N/D"}</td><td><span class="badge neutral">${KPIAudit.technicalFailure(r) ? "Con fallos" : r.technical_checks.length ? "Sin fallos reportados" : "Sin señal"}</span></td></tr>`,
       )
       .join("") +
     "</tbody></table></div>"
@@ -118,6 +160,7 @@ function auditedOverview() {
         `<article class="stat glass ${s.accent ? "accent-stat" : ""}"><div class="stat-label">${s.label}${icon(s.ico)}</div><strong class="stat-number">${s.value}</strong><span class="stat-note">${s.note}</span></article>`,
     )
     .join("")}</section>
+${codeStats(t)}
 <div class="overview-grid"><section class="panel glass"><div class="panel-head"><div><h2>Entregas por integrante</h2><p>PR fusionados por responsable</p></div><span class="badge neutral">Corte verificado</span></div><div class="chart"><div class="chart-grid">${[max, Math.round(max * 0.75), Math.round(max * 0.5), Math.round(max * 0.25), 0].map((n) => `<div class="chart-line"><span>${n}</span></div>`).join("")}</div><div class="chart-bars">${groups.map((g) => `<div class="chart-bar" style="height:${(g.merged / max) * 100}%"><span>${g.merged} PR</span></div>`).join("")}</div><div class="chart-x">${groups.map((g) => `<span>${esc(g.name)}</span>`).join("")}</div></div><div class="chart-foot"><span>QA: sin reporte atribuible, no equivale a 0% de trabajo</span><a href="#/criteria" class="text-link">Ver metodología ${icon("arrow")}</a></div></section>
 <section class="panel glass"><div class="panel-head"><div><h2>Lo que falta validar</h2><p>Los bloqueos conservan su motivo.</p></div></div><div class="rule-list">${[
     {
@@ -150,7 +193,7 @@ function auditedOverview() {
     .map((m, i) => {
       const s = auditMetrics(m),
         qa = m.reporting_mode === "qa-delegated";
-      return `<article class="mini-person" style="--avatar:${colors[i]}"><div class="mini-top">${avatar(m, i)}<button class="icon-button" data-member="${i}" aria-label="Ver a ${esc(m.name)}">${icon("arrow")}</button></div><span class="member-name">${esc(m.name)}</span><span class="member-role">${esc(m.role)}</span>${executiveBrief(m)}<div class="mini-score">${qa ? "Sin reporte" : s.merged + " PR"}</div><div class="mini-meta">${qa ? "Evidencia aún no atribuible" : s.approved + " con aprobación · " + auditNumber(s.coverage)}</div><span class="progress"><i style="width:${s.coverage || 0}%"></i></span><small class="evidence-date">${qa ? "No es una calificación de desempeño" : "Cobertura de aprobación"}</small></article>`;
+      return `<article class="mini-person" style="--avatar:${colors[i]}"><div class="mini-top">${avatar(m, i)}<button class="icon-button" data-member="${i}" aria-label="Ver a ${esc(m.name)}">${icon("arrow")}</button></div><span class="member-name">${esc(m.name)}</span><span class="member-role">${esc(m.role)}</span>${executiveBrief(m)}<div class="mini-score">${qa ? "Sin reporte" : s.merged + " PR"}</div><div class="mini-meta">${qa ? "Evidencia aún no atribuible" : s.approved + " con aprobación · " + auditNumber(s.coverage)}</div><span class="progress"><i style="width:${s.coverage || 0}%"></i></span><small class="evidence-date">${qa ? "No es una calificación de desempeño" : "Cobertura de aprobación"}</small>${codeMini(s)}</article>`;
     })
     .join("")}</div></section>
 <aside class="setup-banner glass"><span>${icon("info")}</span><p><strong>Entrega no equivale a calidad aprobada.</strong> Los 11 PR con aprobación tienen alertas de CI. Los checks de revisión automática en rojo y los fallos técnicos son señales distintas. No se ejecutaron nuevamente las suites.</p><a class="text-link" href="#/evidence">Ver evidencia ${icon("arrow")}</a></aside>`;
@@ -160,7 +203,7 @@ function auditedTeamView() {
     .map((m, i) => {
       const s = auditMetrics(m),
         qa = m.reporting_mode === "qa-delegated";
-      return `<article class="person-card glass"><div class="person-top">${avatar(m, i)}</div><h2>${esc(m.name)}</h2><p>${esc(m.role)}</p>${auditShare(m)}${executiveBrief(m)}<div class="person-score audit-score">${qa ? "Sin reporte" : s.merged + " PR"}</div><p>${qa ? "Pendiente de evidencia QA atribuible." : `${s.approved} con aprobación externa · ${s.missing_approval} sin aprobación`}</p><div class="person-meta"><span>Cobertura de aprobación</span><strong>${auditNumber(s.coverage)}</strong></div><span class="progress"><i style="width:${s.coverage || 0}%"></i></span><div class="person-meta"><span>${s.open} abiertos · ${s.discarded} descartados</span><span>${s.technical_failures} alertas técnicas</span></div><button class="button secondary" data-member="${i}">Ver evidencia ${icon("arrow")}</button></article>`;
+      return `<article class="person-card glass"><div class="person-top">${avatar(m, i)}</div><h2>${esc(m.name)}</h2><p>${esc(m.role)}</p>${auditShare(m)}${executiveBrief(m)}<div class="person-score audit-score">${qa ? "Sin reporte" : s.merged + " PR"}</div><p>${qa ? "Pendiente de evidencia QA atribuible." : `${s.approved} con aprobación externa · ${s.missing_approval} sin aprobación`}</p><div class="person-meta"><span>Cobertura de aprobación</span><strong>${auditNumber(s.coverage)}</strong></div><span class="progress"><i style="width:${s.coverage || 0}%"></i></span>${codeMini(s)}<div class="person-meta"><span>${s.open} abiertos · ${s.discarded} descartados</span><span>${s.technical_failures} alertas técnicas</span></div><button class="button secondary" data-member="${i}">Ver evidencia ${icon("arrow")}</button></article>`;
     })
     .join(
       "",
@@ -206,7 +249,7 @@ function auditedEvidenceView() {
 }
 function auditedCriteria() {
   const t = KPIAudit.summarize(state.audit.records);
-  return `${heading("Cómo se validaron los avances.", "Resultados por responsable, respaldados por PR de GitHub.")}<div class="info-grid"><article class="info-card glass"><h2>Corte de evidencia</h2><p>${t.inspected} PR observados en ocho repositorios. Se revisaron merge, cambios, aprobaciones del head y checks. No se volvieron a ejecutar las suites.</p></article><article class="info-card glass"><h2>Cobertura de aprobación</h2><div class="formula">${t.approved} con aprobación ÷ ${t.merged} fusionados = ${t.coverage}%</div><p>Es cobertura de revisión, no un porcentaje de cumplimiento de objetivos. QA sin evidencia no se incorpora como cero.</p></article><article class="info-card glass"><h2>Responsabilidad individual</h2><p>Los resultados se presentan por responsable operativo: backend en Ever y producto/móvil en América. Se incorporó a Ever la evidencia adicional indicada por la persona responsable. Cada PR tiene un único responsable; la autoría original se conserva en GitHub y no se modifica.</p></article><article class="info-card glass"><h2>Estado técnico</h2><p>${t.technical_failures} PR tienen fallos técnicos y ${t.no_ci} no tienen señal de CI. La aprobación externa no convierte en exitosos los checks fallidos.</p></article><article class="info-card glass wide"><h2>QA</h2><p>Yestzanetli conserva su formulario de pruebas. Al corte no hay evidencia atribuible en GitHub; esta ausencia no es una calificación de desempeño.</p></article></div>`;
+  return `${heading("Cómo se validaron los avances.", "Resultados por responsable, respaldados por PR de GitHub.")}<div class="info-grid"><article class="info-card glass"><h2>Corte de evidencia</h2><p>${t.inspected} PR observados en ocho repositorios. Se revisaron merge, cambios, aprobaciones del head y checks. No se volvieron a ejecutar las suites.</p></article><article class="info-card glass"><h2>Cobertura de aprobación</h2><div class="formula">${t.approved} con aprobación ÷ ${t.merged} fusionados = ${t.coverage}%</div><p>Es cobertura de revisión, no un porcentaje de cumplimiento de objetivos. QA sin evidencia no se incorpora como cero.</p></article><article class="info-card glass"><h2>Responsabilidad individual</h2><p>Los resultados se presentan por responsable operativo: backend en Ever y producto/móvil en América. Se incorporó a Ever la evidencia adicional indicada por la persona responsable. Cada PR tiene un único responsable; la autoría original se conserva en GitHub y no se modifica.</p></article><article class="info-card glass"><h2>Estado técnico</h2><p>${t.technical_failures} PR tienen fallos técnicos y ${t.no_ci} no tienen señal de CI. La aprobación externa no convierte en exitosos los checks fallidos.</p></article><article class="info-card glass wide"><h2>Cómo se cuentan las líneas</h2><p>Se suman las líneas añadidas y eliminadas de archivos de código y pruebas en PR fusionados de la quincena, según GitHub. Se excluyen dependencias, salidas de compilación, archivos generados, documentación y formatos de datos/configuración. El cambio neto es añadidas menos eliminadas; el promedio usa añadidas más eliminadas por PR medido. Los cambios sucesivos de una misma línea en PR distintos cuentan en cada entrega. Es volumen de cambio, no una calificación de calidad ni el tamaño actual del repositorio.</p></article><article class="info-card glass wide"><h2>QA</h2><p>Yestzanetli conserva su formulario de pruebas. Al corte no hay evidencia atribuible en GitHub; esta ausencia no es una calificación de desempeño.</p></article></div>`;
 }
 function openAuditedMember(index) {
   const m = state.data.team[index],
@@ -214,7 +257,7 @@ function openAuditedMember(index) {
     s = KPIAudit.summarize(rows),
     qa = m.reporting_mode === "qa-delegated";
   const el = document.querySelector("#member-dialog");
-  el.innerHTML = `<div class="dialog-head"><h2>${esc(m.name)} · evidencia</h2><button class="icon-button" data-action="close" aria-label="Cerrar">${icon("x")}</button></div><div class="member-detail">${avatar(m, index)}<p class="subtitle">${esc(m.role)}</p>${auditShare(m)}${executiveBrief(m, true)}<strong class="stat-number">${qa ? "N/D" : s.merged + " PR"}</strong><p class="subtitle">Entregas fusionadas del corte</p><div class="detail-line"><span>Con aprobación externa</span><strong>${s.approved}</strong></div><div class="detail-line"><span>Cobertura de revisión</span><strong>${auditNumber(s.coverage)}</strong></div><div class="detail-line"><span>Checks técnicos con fallos</span><strong>${s.technical_failures}</strong></div>${
+  el.innerHTML = `<div class="dialog-head"><h2>${esc(m.name)} · evidencia</h2><button class="icon-button" data-action="close" aria-label="Cerrar">${icon("x")}</button></div><div class="member-detail">${avatar(m, index)}<p class="subtitle">${esc(m.role)}</p>${auditShare(m)}${executiveBrief(m, true)}<strong class="stat-number">${qa ? "N/D" : s.merged + " PR"}</strong><p class="subtitle">Entregas fusionadas del corte</p>${codeMini(s)}<div class="detail-line"><span>Promedio de cambios por PR</span><strong>${lineValue(s, "average_lines_changed")}</strong></div><div class="detail-line"><span>Con aprobación externa</span><strong>${s.approved}</strong></div><div class="detail-line"><span>Cobertura de revisión</span><strong>${auditNumber(s.coverage)}</strong></div><div class="detail-line"><span>Checks técnicos con fallos</span><strong>${s.technical_failures}</strong></div>${
     qa
       ? '<p class="form-hint">No se encontró evidencia QA atribuible. Esto no equivale a 0% de trabajo.</p>'
       : `<p class="form-hint">Los merges sin revisión externa permanecen identificados como pendientes de validación.</p><div class="member-evidence-links">${rows
@@ -238,6 +281,11 @@ function auditCsvRows() {
       "Cobertura de revisión (%)",
       "Fallos técnicos",
       "Avance de objetivos",
+      "Líneas añadidas",
+      "Líneas eliminadas",
+      "Cambio neto",
+      "Promedio de cambios por PR",
+      "Quincena",
     ],
     ...KPIAudit.groups(state.data.team, state.audit).map((s) => {
       return [
@@ -249,6 +297,11 @@ function auditCsvRows() {
         s.coverage ?? "N/D",
         s.technical_failures,
         "No medible sin metas",
+        s.lines_measured_prs ? s.lines_added : "N/D",
+        s.lines_measured_prs ? s.lines_deleted : "N/D",
+        s.lines_measured_prs ? s.lines_net : "N/D",
+        s.average_lines_changed ?? "N/D",
+        state.data.period,
       ];
     }),
     [
@@ -260,6 +313,11 @@ function auditCsvRows() {
       "N/D",
       "N/D",
       "No medible sin metas",
+      "N/D",
+      "N/D",
+      "N/D",
+      "N/D",
+      state.data.period,
     ],
   ];
 }
