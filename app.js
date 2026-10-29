@@ -238,9 +238,9 @@ function updateReportHint() {
     (m) =>
       m.name === document.querySelector("#report-form").elements.member.value,
   );
-  if (person?.shared_evidence_group) {
+  if (person?.evidence_policy) {
     document.querySelector("#report-hint").textContent =
-      "América / Ever: la evidencia se comparte entre ambas cuentas autorizadas y cada PR cuenta una sola vez para el grupo.";
+      "Adjunta el PR y el resultado del ámbito asignado. El verificador comprobará la evidencia y el responsable.";
     return;
   }
   const qa =
@@ -506,7 +506,7 @@ fetch("data/team.json", { cache: "no-store" })
       .map((m) => `<option>${esc(m.name)}</option>`)
       .join("");
     document.querySelector("#source-state").textContent = state.audit
-      ? "Corte: 29 oct · 12:36 CDMX"
+      ? "Corte: 29 oct · actualizado"
       : "Resumen disponible";
     route();
   })

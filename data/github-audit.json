@@ -1,19 +1,13 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-29T18:36:02Z",
+  "as_of": "2026-10-29T18:49:48Z",
   "timezone": "America/Mexico_City",
   "since": "2026-10-26T00:00:00-06:00",
-  "until": "2026-10-29T12:36:02-06:00",
+  "until": "2026-10-29T12:49:48-06:00",
   "period_label": "26–29 oct 2026",
-  "scope": "PR con actividad de las cuentas indicadas en Pigui-AI; búsqueda de GitHub updated:>=2026-10-26, contrastada por PR. Sólo repositorios accesibles a la conexión.",
+  "scope": "PR observados de Pigui-AI entre el 26 y 29 de octubre, asignados por responsable operativo; repositorios accesibles a la conexión.",
   "method": "Merge + archivos modificados + aprobación externa vigente sobre el head consultado. Los checks se informan aparte y no se vuelven a ejecutar. La tasa de aprobación no representa avance de objetivos ni calificación personal.",
   "qa_status": "Sin reportes QA atribuibles a Yestzanetli en GitHub. Las menciones QA de los títulos no se le atribuyen.",
-  "shared_group": {
-    "id": "america-ever",
-    "members": ["América", "Ever"],
-    "accounts": ["americabalderas-del", "everbecerra0"],
-    "basis": "La persona responsable confirmó en este chat que el trabajo de América y Ever es el mismo. Las evidencias se comparten sin duplicar los totales."
-  },
   "records": [
     {
       "key": "Pigui-AI/app-pigui-b2c#389",
@@ -59,7 +53,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Marco",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#647",
@@ -141,7 +137,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#646",
@@ -223,7 +221,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/front-b2b#694",
@@ -253,7 +253,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "América",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/pigui-rewardstore#7",
@@ -274,7 +276,9 @@
       "reviewers": [],
       "ci": "MISSING",
       "technical_checks": [],
-      "excluded": false
+      "excluded": false,
+      "responsible": "América",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#645",
@@ -348,7 +352,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#644",
@@ -426,7 +432,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#643",
@@ -500,7 +508,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#642",
@@ -574,7 +584,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#641",
@@ -656,7 +668,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#640",
@@ -738,7 +752,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#639",
@@ -812,7 +828,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#638",
@@ -890,7 +908,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#637",
@@ -964,7 +984,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#636",
@@ -1038,7 +1060,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#635",
@@ -1112,7 +1136,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/pigui-conect#52",
@@ -1133,7 +1159,9 @@
       "reviewers": [],
       "ci": "MISSING",
       "technical_checks": [],
-      "excluded": false
+      "excluded": false,
+      "responsible": "América",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/pigui-rewardstore#6",
@@ -1154,7 +1182,9 @@
       "reviewers": [],
       "ci": "MISSING",
       "technical_checks": [],
-      "excluded": false
+      "excluded": false,
+      "responsible": "América",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#634",
@@ -1228,7 +1258,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#632",
@@ -1274,7 +1306,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#631",
@@ -1308,7 +1342,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#630",
@@ -1370,7 +1406,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#629",
@@ -1404,7 +1442,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/pigui-network-map#5",
@@ -1425,7 +1465,9 @@
       "reviewers": [],
       "ci": "MISSING",
       "technical_checks": [],
-      "excluded": false
+      "excluded": false,
+      "responsible": "América",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#628",
@@ -1459,7 +1501,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/app-pigui-scanapp#291",
@@ -1497,7 +1541,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "América",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#627",
@@ -1531,7 +1577,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/front-b2b#742",
@@ -1573,7 +1621,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "América",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/front-b2b#740",
@@ -1611,7 +1661,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "América",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/front-b2b#739",
@@ -1649,7 +1701,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "América",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/front-b2b#738",
@@ -1687,7 +1741,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "América",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/front-b2b#737",
@@ -1725,7 +1781,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "América",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/front-b2b#736",
@@ -1763,7 +1821,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "América",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#626",
@@ -1797,7 +1857,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/front-b2b#731",
@@ -1835,7 +1897,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "América",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#624",
@@ -1869,7 +1933,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/front-b2b#729",
@@ -1907,7 +1973,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "América",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/front-b2b#728",
@@ -1928,7 +1996,9 @@
       "reviewers": [],
       "ci": "MISSING",
       "technical_checks": [],
-      "excluded": false
+      "excluded": false,
+      "responsible": "América",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/front-b2b#727",
@@ -1949,7 +2019,9 @@
       "reviewers": [],
       "ci": "MISSING",
       "technical_checks": [],
-      "excluded": false
+      "excluded": false,
+      "responsible": "América",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#623",
@@ -1970,7 +2042,9 @@
       "reviewers": [],
       "ci": "MISSING",
       "technical_checks": [],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#622",
@@ -1991,7 +2065,9 @@
       "reviewers": [],
       "ci": "MISSING",
       "technical_checks": [],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#621",
@@ -2012,7 +2088,9 @@
       "reviewers": [],
       "ci": "MISSING",
       "technical_checks": [],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ever",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/app-pigui-scanapp#289",
@@ -2033,7 +2111,9 @@
       "reviewers": [],
       "ci": "MISSING",
       "technical_checks": [],
-      "excluded": false
+      "excluded": false,
+      "responsible": "América",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/front-b2b#746",
@@ -2075,7 +2155,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ricardo",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/front-b2b#745",
@@ -2117,7 +2199,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ricardo",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/front-b2b#744",
@@ -2151,7 +2235,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ricardo",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#611",
@@ -2185,7 +2271,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": true
+      "excluded": true,
+      "responsible": "Ricardo",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#619",
@@ -2219,7 +2307,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ricardo",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#633",
@@ -2253,7 +2343,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ricardo",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/front-b2b#743",
@@ -2295,7 +2387,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ricardo",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/Motor-chats#64",
@@ -2316,7 +2410,9 @@
       "reviewers": [],
       "ci": "MISSING",
       "technical_checks": [],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ricardo",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/front-b2b#732",
@@ -2354,7 +2450,9 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ricardo",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/Motor-chats#62",
@@ -2375,7 +2473,9 @@
       "reviewers": [],
       "ci": "MISSING",
       "technical_checks": [],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ricardo",
+      "checked_at": "2026-10-29T18:36:02Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#625",
@@ -2409,7 +2509,109 @@
           "state": "SUCCESS"
         }
       ],
-      "excluded": false
+      "excluded": false,
+      "responsible": "Ricardo",
+      "checked_at": "2026-10-29T18:36:02Z"
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#522",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 522,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/522",
+      "author": "SergiorCode",
+      "responsible": "Ever",
+      "state": "CLOSED",
+      "created_at": "2026-09-24T17:43:47Z",
+      "updated_at": "2026-10-29T05:38:31Z",
+      "merged_at": null,
+      "closed_at": "2026-10-29T05:38:31Z",
+      "head_sha": "9a7e6f98cae6fbca5539ed28f1c723f2648d2f31",
+      "changed_files": 1,
+      "additions": 1,
+      "deletions": 1,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "SUCCESS",
+      "technical_checks": [
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": true,
+      "checked_at": "2026-10-29T18:49:48Z"
+    },
+    {
+      "key": "Pigui-AI/front-b2b#741",
+      "repo": "Pigui-AI/front-b2b",
+      "number": 741,
+      "url": "https://github.com/Pigui-AI/front-b2b/pull/741",
+      "author": "SergiorCode",
+      "responsible": "Ever",
+      "state": "MERGED",
+      "created_at": "2026-10-28T06:54:34Z",
+      "updated_at": "2026-10-28T14:50:35Z",
+      "merged_at": "2026-10-28T14:50:35Z",
+      "closed_at": "2026-10-28T14:50:35Z",
+      "head_sha": "fb8816249b3e5c21849a89d88d98d97f0e1bd679",
+      "changed_files": 48,
+      "additions": 2388,
+      "deletions": 1801,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Analyze (javascript-typescript)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Semgrep Scan",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false,
+      "checked_at": "2026-10-29T18:49:48Z"
+    },
+    {
+      "key": "Pigui-AI/front-b2b#730",
+      "repo": "Pigui-AI/front-b2b",
+      "number": 730,
+      "url": "https://github.com/Pigui-AI/front-b2b/pull/730",
+      "author": "SergiorCode",
+      "responsible": "Ever",
+      "state": "MERGED",
+      "created_at": "2026-10-27T06:18:35Z",
+      "updated_at": "2026-10-27T06:19:28Z",
+      "merged_at": "2026-10-27T06:19:28Z",
+      "closed_at": "2026-10-27T06:19:28Z",
+      "head_sha": "d42371aa6aea8d8662ce465b08f3a62c14ed7e21",
+      "changed_files": 2,
+      "additions": 1810,
+      "deletions": 0,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Analyze (javascript-typescript)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Semgrep Scan",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false,
+      "checked_at": "2026-10-29T18:49:48Z"
     }
-  ]
+  ],
+  "assignment": {
+    "method": "Asignación operativa por especialidad y evidencia indicada por la persona responsable; la autoría original se conserva en GitHub.",
+    "deduplication": "Un solo responsable por PR, sin duplicados en totales."
+  }
 }

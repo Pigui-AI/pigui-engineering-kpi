@@ -3,7 +3,7 @@ const assert = require("node:assert/strict");
 const audit = require("../audit-model.js");
 const snapshot = require("../data/github-audit.json");
 const team = require("../data/team.json").team;
-test("snapshot totals deduplicate the shared America/Ever evidence", () => {
+test("snapshot totals assign every PR to exactly one person", () => {
   const t = audit.summarize(snapshot.records);
   assert.equal(
     snapshot.records.length,
@@ -17,7 +17,7 @@ test("snapshot totals deduplicate the shared America/Ever evidence", () => {
       coverage: t.coverage,
       technical: t.technical_failures,
     },
-    { inspected: 54, merged: 51, approved: 11, coverage: 21.6, technical: 13 },
+    { inspected: 57, merged: 53, approved: 11, coverage: 20.8, technical: 13 },
   );
   const america = audit.memberRecords(
     team.find((m) => m.name === "América"),
@@ -27,12 +27,16 @@ test("snapshot totals deduplicate the shared America/Ever evidence", () => {
     team.find((m) => m.name === "Ever"),
     snapshot,
   );
-  assert.deepEqual(america, ever);
-  assert.equal(america.length, 42);
-  assert.equal(audit.groups(team, snapshot).length, 3);
+  assert.equal(
+    america.some((a) => ever.some((e) => a.key === e.key)),
+    false,
+  );
+  assert.equal(america.length, 17);
+  assert.equal(ever.filter((r) => r.merged_at).length, 25);
+  assert.equal(audit.groups(team, snapshot).length, 4);
   assert.equal(
     audit.groups(team, snapshot).reduce((n, g) => n + g.merged, 0),
-    51,
+    53,
   );
 });
 test("QA without attributable evidence is not scored as zero", () => {

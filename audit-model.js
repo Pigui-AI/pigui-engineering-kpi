@@ -32,20 +32,13 @@
     };
   }
   function memberRecords(member, snapshot) {
-    const accounts = member.shared_accounts || [member.login];
-    return snapshot.records.filter((r) => accounts.includes(r.author));
+    return snapshot.records.filter((r) => r.responsible === member.name);
   }
   function groups(team, snapshot) {
-    const seen = new Set();
     return team
-      .filter((m) => {
-        const id = m.shared_evidence_group || m.name;
-        if (seen.has(id)) return false;
-        seen.add(id);
-        return m.reporting_mode !== "qa-delegated";
-      })
+      .filter((m) => m.reporting_mode !== "qa-delegated")
       .map((m) => ({
-        name: m.shared_evidence_group ? "América / Ever" : m.name,
+        name: m.name,
         ...summarize(memberRecords(m, snapshot)),
       }));
   }

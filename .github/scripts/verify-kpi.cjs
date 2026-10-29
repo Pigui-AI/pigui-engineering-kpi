@@ -22,11 +22,17 @@ function validateIdentity(person, actor, author, delegates, summary) {
       throw Error(
         "QA debe incluir casos de prueba y resultados (mínimo 30 caracteres).",
       );
-  } else if (person.shared_accounts?.length) {
-    const accounts = person.shared_accounts.map((a) => a.toLowerCase());
-    if (!accounts.includes(login) || !accounts.includes(author.toLowerCase()))
+  } else if (person.evidence_policy) {
+    const policy = person.evidence_policy;
+    const authors = policy.source_rules
+      .flatMap((r) => r.authors)
+      .map((a) => a.toLowerCase());
+    if (
+      !policy.reporters.map((a) => a.toLowerCase()).includes(login) ||
+      !authors.includes(author.toLowerCase())
+    )
       throw Error(
-        "El reporte y el PR deben pertenecer a las cuentas del grupo compartido autorizado.",
+        "La cuenta no está autorizada para reportar esta evidencia al responsable.",
       );
   } else {
     if (!person.login || person.login === "por-asignar")
@@ -108,6 +114,16 @@ async function run({ github, context, core, fetch: request = global.fetch }) {
       return response.json();
     };
     const pr = await api(`pulls/${match[3]}`);
+    const sourceRepo = `${match[1]}/${match[2]}`;
+    if (person.excluded_repositories?.includes(sourceRepo))
+      throw Error("Ese PR corresponde a otro responsable operativo.");
+    if (
+      person.evidence_policy &&
+      !person.evidence_policy.source_rules.some(
+        (r) => r.repository === sourceRepo && r.authors.includes(pr.user.login),
+      )
+    )
+      throw Error("La evidencia no corresponde al ámbito del responsable.");
     if (!pr.merged_at || !pr.changed_files)
       throw Error("El PR debe estar fusionado y registrar cambios.");
     validateIdentity(
@@ -143,11 +159,7 @@ async function run({ github, context, core, fetch: request = global.fetch }) {
       throw Error("Falta la aprobación externa del PR.");
     // A PR counts once per person; QA and the developer can provide different evidence for the same PR.
     const key = `${match[1]}/${match[2]}#${match[3]}`;
-    const peers = person.shared_evidence_group
-      ? dashboard.team.filter(
-          (m) => m.shared_evidence_group === person.shared_evidence_group,
-        )
-      : [person];
+    const peers = [person];
     if (peers.some((m) => (m.counted_prs || []).includes(key)))
       throw Error("Ese PR ya fue contabilizado para este integrante.");
     const keys = [
