@@ -76,7 +76,7 @@ function totals() {
   };
 }
 function heading(title, subtitle) {
-  return `<div class="page-header"><div><p class="eyebrow">PIGUI / ESPACIO DE INGENIERÍA</p><h1>${title}</h1><p class="subtitle">${subtitle}</p></div><div class="header-actions"><span class="period">${icon("calendar")}${esc(state.data.period || "Periodo actual")}</span><button class="button primary" data-action="report">${icon("plus")} Reportar avance</button></div></div>`;
+  return `<div class="page-header"><div><p class="eyebrow">PIGUI / ESPACIO DE INGENIERÍA</p><h1>${title}</h1><p class="subtitle">${subtitle}</p></div><div class="header-actions">${state.auditSource ? quincenaControl() : `<span class="period">${icon("calendar")}${esc(state.data.period || "Periodo actual")}</span>`}<button class="button primary" data-action="report">${icon("plus")} Reportar avance</button></div></div>`;
 }
 function teamTable() {
   return `<div class="table-wrap"><table class="data-table"><thead><tr><th>Integrante</th><th>Cuenta de GitHub</th><th>Avance validado</th><th>PR validados</th><th>Estado</th><th></th></tr></thead><tbody>${state.data.team.map((m, i) => `<tr><td><button class="member-button" data-member="${i}">${avatar(m, i)}<span><span class="member-name">${esc(m.name)}</span><span class="member-role">${esc(m.role)}</span></span></button></td><td>${configured(m) ? `<a class="mono" href="https://github.com/${encodeURIComponent(m.login)}" target="_blank" rel="noopener">@${esc(m.login)}</a>` : '<span class="mono">Sin cuenta · QA delegado</span>'}</td><td><span class="progress-cell"><span class="progress"><i style="width:${clamp(m.verified_progress)}%"></i></span><b>${clamp(m.verified_progress)}%</b></span></td><td>${count(m.verified_prs)}</td><td>${status(m)}</td><td><button class="icon-button" data-member="${i}" aria-label="Ver detalle de ${esc(m.name)}">${icon("arrow")}</button></td></tr>`).join("")}</tbody></table></div>`;
@@ -204,6 +204,15 @@ function route() {
     if (a.dataset.route === view) a.setAttribute("aria-current", "page");
     else a.removeAttribute("aria-current");
   });
+  if (state.auditSource && !state.audit.records.length) {
+    document.querySelector("#main").innerHTML =
+      heading(
+        "Avances por quincena.",
+        "Selecciona una quincena para consultar sus evidencias.",
+      ) +
+      '<section class="panel glass empty-state"><h2>Sin evidencia recopilada para esta quincena</h2><p>El corte disponible contiene actividad recopilada del 26 al 29 de octubre. La ausencia de datos históricos no significa que el equipo no haya trabajado.</p></section>';
+    return;
+  }
   document.querySelector("#main").innerHTML = (
     state.audit
       ? {
@@ -260,6 +269,10 @@ function openMember(index) {
 }
 function exportCsv() {
   if (!state.data) return;
+  if (state.auditSource && !state.audit.records.length) {
+    toast("No hay evidencia recopilada para esta quincena");
+    return;
+  }
   const rows = state.audit
     ? auditCsvRows()
     : [
@@ -488,7 +501,7 @@ window.addEventListener("hashchange", () => {
 document
   .querySelectorAll("[data-icon]")
   .forEach((el) => (el.innerHTML = icon(el.dataset.icon)));
-fetch("data/team.json?v=20261029-ever-r1", { cache: "no-store" })
+fetch("data/team.json?v=20261029-quincena-r1", { cache: "no-store" })
   .then((r) => {
     if (!r.ok) throw Error("Datos no disponibles");
     return r.json();
@@ -498,10 +511,18 @@ fetch("data/team.json?v=20261029-ever-r1", { cache: "no-store" })
       throw Error("Equipo no disponible");
     state.data = data;
     if (data.audit_file) {
-      const response = await fetch(`${data.audit_file}?v=20261029-ever-r1`, { cache: "no-store" });
+      const response = await fetch(
+        `${data.audit_file}?v=20261029-quincena-r1`,
+        { cache: "no-store" },
+      );
       if (!response.ok) throw Error("Corte de evidencia no disponible");
       state.audit = await response.json();
-      data.team = KPIAudit.rankMembers(data.team, state.audit);
+      state.auditSource = state.audit;
+      let selected = KPIAudit.defaultQuincena(state.auditSource.as_of);
+      try {
+        selected = localStorage.getItem("pigui:quincena") || selected;
+      } catch {}
+      selectQuincena(selected);
     }
     document.querySelector("#report-form").elements.member.innerHTML = data.team
       .map((m) => `<option>${esc(m.name)}</option>`)

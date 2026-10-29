@@ -43,9 +43,61 @@
       }));
   }
   function rankMembers(team, snapshot) {
-    return [...team].sort((a,b) => summarize(memberRecords(b,snapshot)).merged - summarize(memberRecords(a,snapshot)).merged);
+    return [...team].sort(
+      (a, b) =>
+        summarize(memberRecords(b, snapshot)).merged -
+        summarize(memberRecords(a, snapshot)).merged,
+    );
   }
-  const api = { approved, technicalFailure, summarize, memberRecords, groups, rankMembers };
+  function quincenaRange(id) {
+    const m = /^(\d{4})-(0[1-9]|1[0-2])-([12])$/.exec(id);
+    if (!m) throw Error("Quincena inválida");
+    const year = Number(m[1]),
+      month = Number(m[2]),
+      half = Number(m[3]);
+    const last = new Date(Date.UTC(year, month, 0)).getUTCDate();
+    const prefix = `${m[1]}-${m[2]}-`;
+    return {
+      id,
+      start: prefix + (half === 1 ? "01" : "16"),
+      end: prefix + String(half === 1 ? 15 : last),
+      label: `${half === 1 ? "1–15" : `16–${last}`} ${["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"][month - 1]} ${year}`,
+    };
+  }
+  function localDate(timestamp) {
+    if (!timestamp || !Number.isFinite(new Date(timestamp).getTime()))
+      return null;
+    const parts = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/Mexico_City",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).formatToParts(new Date(timestamp));
+    const get = (type) => parts.find((p) => p.type === type).value;
+    return `${get("year")}-${get("month")}-${get("day")}`;
+  }
+  function defaultQuincena(timestamp) {
+    const day = localDate(timestamp);
+    return `${day.slice(0, 7)}-${Number(day.slice(8)) <= 15 ? 1 : 2}`;
+  }
+  function filterQuincena(records, id) {
+    const period = quincenaRange(id);
+    return records.filter((r) => {
+      const day = localDate(r.merged_at || r.closed_at || r.created_at);
+      return day && day >= period.start && day <= period.end;
+    });
+  }
+  const api = {
+    approved,
+    technicalFailure,
+    summarize,
+    memberRecords,
+    groups,
+    rankMembers,
+    quincenaRange,
+    defaultQuincena,
+    filterQuincena,
+  };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.KPIAudit = api;
 })(typeof globalThis !== "undefined" ? globalThis : this);

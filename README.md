@@ -1,5 +1,7 @@
 # Pigui Engineering KPI
 
+El filtro de periodo es quincenal: días 1–15 y 16–fin de mes, con fechas de Ciudad de México. Los PR fusionados se asignan por fecha de merge; los cerrados sin merge por fecha de cierre, y los abiertos por fecha de creación. La selección se conserva en el navegador y se aplica a todas las vistas. El corte actual sólo contiene evidencia recopilada del 26 al 29 de octubre; las quincenas sin datos muestran ausencia de evidencia, no una evaluación de cero.
+
 ## Corte validado del 29 de octubre, 12:36 CDMX
 
 La vista principal carga `data/github-audit.json`: 57 PR revisados en 8 repositorios, 53 fusionados, 11 fusionados con cambios y aprobación externa sobre el head, 13 con fallos técnicos y 12 sin señal de CI. Se muestran las alertas, no se convierten en una aprobación de calidad. Es un corte puntual, no una sincronización automática ni una auditoría completa del código.

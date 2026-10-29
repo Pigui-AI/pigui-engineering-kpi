@@ -1,3 +1,31 @@
+function quincenaOptions() {
+  const base = state.auditSource.as_of.slice(0, 7);
+  const [y, m] = base.split("-").map(Number);
+  return [0, 1, 2].flatMap((offset) => {
+    const date = new Date(Date.UTC(y, m - 1 - offset, 1));
+    const prefix = `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, "0")}`;
+    return [`${prefix}-2`, `${prefix}-1`];
+  });
+}
+function quincenaControl() {
+  return `<label class="period period-filter">${icon("calendar")}<select id="quincena-filter" aria-label="Filtrar por quincena">${quincenaOptions()
+    .map(
+      (id) =>
+        `<option value="${id}" ${id === state.quincena ? "selected" : ""}>${KPIAudit.quincenaRange(id).label}</option>`,
+    )
+    .join("")}</select></label>`;
+}
+function selectQuincena(id) {
+  if (!quincenaOptions().includes(id))
+    id = KPIAudit.defaultQuincena(state.auditSource.as_of);
+  state.quincena = id;
+  state.data.period = KPIAudit.quincenaRange(id).label;
+  state.audit = {
+    ...state.auditSource,
+    records: KPIAudit.filterQuincena(state.auditSource.records, id),
+  };
+  state.data.team = KPIAudit.rankMembers(state.data.team, state.audit);
+}
 function executiveBrief(m, detail = false) {
   const summary = `<div class="executive-work"><span>En qué trabajó</span><p>${esc(m.executive_summary || "Sin resumen atribuible en este corte.")}</p></div>`;
   if (!detail || !m.workstreams?.length) return summary;
@@ -57,12 +85,12 @@ function auditedOverview() {
   const t = KPIAudit.summarize(state.audit.records),
     groups = KPIAudit.groups(state.data.team, state.audit);
   const max = Math.max(1, ...groups.map((g) => g.merged));
-  return `${heading("Avances respaldados en GitHub.", "Corte de actividad: 26–29 de octubre · resultados por integrante.")}
+  return `${heading("Avances respaldados en GitHub.", `Quincena ${state.data.period} · evidencia recopilada del 26 al 29 de octubre.`)}
 <section class="stats" aria-label="Indicadores auditados">${[
     {
       label: "Entregas fusionadas",
       value: t.merged,
-      note: `${t.inspected} PR revisados · 8 repositorios`,
+      note: `${t.inspected} PR revisados en la quincena`,
       ico: "branch",
     },
     {
@@ -236,6 +264,13 @@ function auditCsvRows() {
   ];
 }
 document.addEventListener("change", (e) => {
+  if (e.target.id === "quincena-filter") {
+    selectQuincena(e.target.value);
+    try {
+      localStorage.setItem("pigui:quincena", state.quincena);
+    } catch {}
+    route();
+  }
   if (e.target.id === "audit-person") {
     state.auditPerson = e.target.value;
     route();
