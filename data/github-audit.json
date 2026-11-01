@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "as_of": "2026-11-01T05:54:33.870Z",
+  "as_of": "2026-11-01T06:21:54.027Z",
   "timezone": "America/Mexico_City",
   "since": "2026-10-01T00:00:00-06:00",
-  "until": "2026-11-01T05:54:33.870Z",
-  "period_label": "16–31 oct 2026",
+  "until": "2026-11-01T06:21:54.027Z",
+  "period_label": "1–15 nov 2026",
   "scope": "Actividad de los repositorios conectados, con descubrimiento automático y métricas por PR.",
   "method": "Merge + archivos modificados + aprobación externa vigente sobre el head consultado. Los checks se informan aparte y no se vuelven a ejecutar. La tasa de aprobación no representa avance de objetivos ni calificación personal.",
   "qa_status": "Sin reportes QA atribuibles a Yestzanetli en GitHub. Las menciones QA de los títulos no se le atribuyen.",
@@ -52,7 +52,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T05:54:33.870Z"
+      "checked_at": "2026-11-01T06:21:54.027Z"
     },
     {
       "key": "Pigui-AI/Motor-chats#72",
@@ -76,7 +76,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T05:54:33.870Z"
+      "checked_at": "2026-11-01T06:21:54.027Z"
     },
     {
       "key": "Pigui-AI/Motor-chats#71",
@@ -100,7 +100,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T05:54:33.870Z",
+      "checked_at": "2026-11-01T06:21:54.027Z",
       "code_lines": {
         "additions": 5466,
         "deletions": 54,
@@ -156,7 +156,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T05:54:33.870Z",
+      "checked_at": "2026-11-01T06:21:54.027Z",
       "code_lines": {
         "additions": 566,
         "deletions": 310,
@@ -6666,7 +6666,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T05:54:33.870Z"
+      "checked_at": "2026-11-01T06:21:54.027Z"
     },
     {
       "key": "Pigui-AI/app-pigui-scanapp#287",
@@ -7301,7 +7301,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T05:54:33.870Z"
+      "checked_at": "2026-11-01T06:21:54.027Z"
     },
     {
       "key": "Pigui-AI/app-pigui-scanapp#281",
@@ -7847,7 +7847,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T05:54:33.870Z"
+      "checked_at": "2026-11-01T06:21:54.027Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#607",
@@ -9954,7 +9954,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T05:54:33.870Z"
+      "checked_at": "2026-11-01T06:21:54.027Z"
     },
     {
       "key": "Pigui-AI/front-b2b#706",
@@ -15939,7 +15939,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T05:54:33.870Z"
+      "checked_at": "2026-11-01T06:21:54.027Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#544",
@@ -16099,7 +16099,7 @@
     "deduplication": "Un solo responsable por PR, sin duplicados en totales."
   },
   "code_lines_method": {
-    "checked_at": "2026-11-01T05:54:33.870Z",
+    "checked_at": "2026-11-01T06:21:54.027Z",
     "source": "GitHub file metadata; cached only when the PR head and file count match.",
     "scope": "Sólo PR fusionados; código y pruebas. Excluye dependencias, generados, documentación y formatos de datos/configuración. Clasificación determinista en code-lines.js.",
     "net": "Añadidas menos eliminadas.",
@@ -16110,10 +16110,10 @@
     "mode": "github-actions",
     "interval_minutes": 15,
     "frontend_poll_seconds": 60,
-    "last_success_at": "2026-11-01T05:54:33.870Z",
+    "last_success_at": "2026-11-01T06:21:54.027Z",
     "coverage_since": "2026-10-01T00:00:00-06:00",
     "revision": "acf544fe03dfed3f1668",
     "repositories_checked": 8,
-    "records_checked": 156
+    "records_checked": 9
   }
 }
