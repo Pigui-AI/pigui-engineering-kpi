@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "as_of": "2026-11-01T14:12:33.405Z",
+  "as_of": "2026-11-01T14:24:44.782Z",
   "timezone": "America/Mexico_City",
   "since": "2026-10-01T00:00:00-06:00",
-  "until": "2026-11-01T14:12:33.405Z",
+  "until": "2026-11-01T14:24:44.782Z",
   "period_label": "1–15 nov 2026",
   "scope": "Actividad de los repositorios conectados, con descubrimiento automático y métricas por PR.",
   "method": "Merge + archivos modificados + aprobación externa vigente sobre el head consultado. Los checks se informan aparte y no se vuelven a ejecutar. La tasa de aprobación no representa avance de objetivos ni calificación personal.",
@@ -92,7 +92,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T14:12:33.405Z"
+      "checked_at": "2026-11-01T14:24:44.782Z"
     },
     {
       "key": "Pigui-AI/front-b2b#750",
@@ -137,7 +137,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T14:12:33.405Z"
+      "checked_at": "2026-11-01T14:24:44.782Z"
     },
     {
       "key": "Pigui-AI/Motor-chats#72",
@@ -161,7 +161,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T14:12:33.405Z"
+      "checked_at": "2026-11-01T14:24:44.782Z"
     },
     {
       "key": "Pigui-AI/Motor-chats#71",
@@ -185,7 +185,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T14:12:33.405Z",
+      "checked_at": "2026-11-01T14:24:44.782Z",
       "code_lines": {
         "additions": 5466,
         "deletions": 54,
@@ -241,7 +241,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T14:12:33.405Z",
+      "checked_at": "2026-11-01T14:24:44.782Z",
       "code_lines": {
         "additions": 566,
         "deletions": 310,
@@ -6751,7 +6751,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T14:12:33.405Z"
+      "checked_at": "2026-11-01T14:24:44.782Z"
     },
     {
       "key": "Pigui-AI/app-pigui-scanapp#287",
@@ -7386,7 +7386,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T14:12:33.405Z"
+      "checked_at": "2026-11-01T14:24:44.782Z"
     },
     {
       "key": "Pigui-AI/app-pigui-scanapp#281",
@@ -7932,7 +7932,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T14:12:33.405Z"
+      "checked_at": "2026-11-01T14:24:44.782Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#607",
@@ -10039,7 +10039,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T14:12:33.405Z"
+      "checked_at": "2026-11-01T14:24:44.782Z"
     },
     {
       "key": "Pigui-AI/front-b2b#706",
@@ -16024,7 +16024,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T14:12:33.405Z"
+      "checked_at": "2026-11-01T14:24:44.782Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#544",
@@ -16184,7 +16184,7 @@
     "deduplication": "Un solo responsable por PR, sin duplicados en totales."
   },
   "code_lines_method": {
-    "checked_at": "2026-11-01T14:12:33.405Z",
+    "checked_at": "2026-11-01T14:24:44.782Z",
     "source": "GitHub file metadata; cached only when the PR head and file count match.",
     "scope": "Sólo PR fusionados; código y pruebas. Excluye dependencias, generados, documentación y formatos de datos/configuración. Clasificación determinista en code-lines.js.",
     "net": "Añadidas menos eliminadas.",
@@ -16195,7 +16195,7 @@
     "mode": "github-actions",
     "interval_minutes": 15,
     "frontend_poll_seconds": 60,
-    "last_success_at": "2026-11-01T14:12:33.405Z",
+    "last_success_at": "2026-11-01T14:24:44.782Z",
     "coverage_since": "2026-10-01T00:00:00-06:00",
     "revision": "38eb3e440d6ef4b86700",
     "repositories_checked": 8,
