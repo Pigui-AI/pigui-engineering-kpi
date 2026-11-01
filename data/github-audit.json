@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "as_of": "2026-11-01T20:54:30.665Z",
+  "as_of": "2026-11-01T21:12:37.030Z",
   "timezone": "America/Mexico_City",
   "since": "2026-10-01T00:00:00-06:00",
-  "until": "2026-11-01T20:54:30.665Z",
+  "until": "2026-11-01T21:12:37.030Z",
   "period_label": "1–15 nov 2026",
   "scope": "Actividad de los repositorios conectados, con descubrimiento automático y métricas por PR.",
   "method": "Merge + archivos modificados + aprobación externa vigente sobre el head consultado. Los checks se informan aparte y no se vuelven a ejecutar. La tasa de aprobación no representa avance de objetivos ni calificación personal.",
@@ -17,11 +17,11 @@
       "title": "feat(041): Pigui settings — preferencias del usuario para hablar con Pigui",
       "author": "ricardogallardo-pigui",
       "responsible": "Ricardo",
-      "state": "OPEN",
+      "state": "MERGED",
       "created_at": "2026-11-01T06:59:37Z",
-      "updated_at": "2026-11-01T07:03:25Z",
-      "merged_at": null,
-      "closed_at": null,
+      "updated_at": "2026-11-01T21:02:15Z",
+      "merged_at": "2026-11-01T21:02:14Z",
+      "closed_at": "2026-11-01T21:02:14Z",
       "head_sha": "49b34238874547361af1d301b8a218c02cee25a9",
       "changed_files": 38,
       "additions": 2521,
@@ -92,7 +92,18 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T20:54:30.665Z"
+      "checked_at": "2026-11-01T21:12:37.030Z",
+      "code_lines": {
+        "additions": 2132,
+        "deletions": 24,
+        "net": 2108,
+        "changed": 2156,
+        "source_files": 34,
+        "excluded_files": 4,
+        "measured_files": 38,
+        "status": "complete",
+        "method_version": 1
+      }
     },
     {
       "key": "Pigui-AI/front-b2b#750",
@@ -137,7 +148,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T20:54:30.665Z"
+      "checked_at": "2026-11-01T21:12:37.030Z"
     },
     {
       "key": "Pigui-AI/Motor-chats#72",
@@ -161,7 +172,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T20:54:30.665Z"
+      "checked_at": "2026-11-01T21:12:37.030Z"
     },
     {
       "key": "Pigui-AI/Motor-chats#71",
@@ -185,7 +196,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T20:54:30.665Z",
+      "checked_at": "2026-11-01T21:12:37.030Z",
       "code_lines": {
         "additions": 5466,
         "deletions": 54,
@@ -241,7 +252,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T20:54:30.665Z",
+      "checked_at": "2026-11-01T21:12:37.030Z",
       "code_lines": {
         "additions": 566,
         "deletions": 310,
@@ -6751,7 +6762,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T20:54:30.665Z"
+      "checked_at": "2026-11-01T21:12:37.030Z"
     },
     {
       "key": "Pigui-AI/app-pigui-scanapp#287",
@@ -7386,7 +7397,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T20:54:30.665Z"
+      "checked_at": "2026-11-01T21:12:37.030Z"
     },
     {
       "key": "Pigui-AI/app-pigui-scanapp#281",
@@ -7932,7 +7943,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T20:54:30.665Z"
+      "checked_at": "2026-11-01T21:12:37.030Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#607",
@@ -10039,7 +10050,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T20:54:30.665Z"
+      "checked_at": "2026-11-01T21:12:37.030Z"
     },
     {
       "key": "Pigui-AI/front-b2b#706",
@@ -16024,7 +16035,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T20:54:30.665Z"
+      "checked_at": "2026-11-01T21:12:37.030Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#544",
@@ -16184,7 +16195,7 @@
     "deduplication": "Un solo responsable por PR, sin duplicados en totales."
   },
   "code_lines_method": {
-    "checked_at": "2026-11-01T20:54:30.665Z",
+    "checked_at": "2026-11-01T21:12:37.030Z",
     "source": "GitHub file metadata; cached only when the PR head and file count match.",
     "scope": "Sólo PR fusionados; código y pruebas. Excluye dependencias, generados, documentación y formatos de datos/configuración. Clasificación determinista en code-lines.js.",
     "net": "Añadidas menos eliminadas.",
@@ -16195,9 +16206,9 @@
     "mode": "github-actions",
     "interval_minutes": 15,
     "frontend_poll_seconds": 60,
-    "last_success_at": "2026-11-01T20:54:30.665Z",
+    "last_success_at": "2026-11-01T21:12:37.030Z",
     "coverage_since": "2026-10-01T00:00:00-06:00",
-    "revision": "38eb3e440d6ef4b86700",
+    "revision": "5095a3777b6b7a58dabb",
     "repositories_checked": 8,
     "records_checked": 10
   }
