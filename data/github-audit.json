@@ -1,14 +1,83 @@
 {
   "schema_version": 2,
-  "as_of": "2026-11-01T00:41:39.650Z",
+  "as_of": "2026-11-01T00:58:43.296Z",
   "timezone": "America/Mexico_City",
   "since": "2026-10-01T00:00:00-06:00",
-  "until": "2026-11-01T00:41:39.650Z",
+  "until": "2026-11-01T00:58:43.296Z",
   "period_label": "16–31 oct 2026",
   "scope": "Actividad de los repositorios conectados, con descubrimiento automático y métricas por PR.",
   "method": "Merge + archivos modificados + aprobación externa vigente sobre el head consultado. Los checks se informan aparte y no se vuelven a ejecutar. La tasa de aprobación no representa avance de objetivos ni calificación personal.",
   "qa_status": "Sin reportes QA atribuibles a Yestzanetli en GitHub. Las menciones QA de los títulos no se le atribuyen.",
   "records": [
+    {
+      "key": "Pigui-AI/front-b2b#750",
+      "repo": "Pigui-AI/front-b2b",
+      "number": 750,
+      "url": "https://github.com/Pigui-AI/front-b2b/pull/750",
+      "title": "feat(041): Pigui settings editable (detrás de VITE_PIGUI_SETTINGS_EDITABLE)",
+      "author": "ricardogallardo-pigui",
+      "responsible": "Ricardo",
+      "state": "OPEN",
+      "created_at": "2026-11-01T00:45:35Z",
+      "updated_at": "2026-11-01T00:45:35Z",
+      "merged_at": null,
+      "closed_at": null,
+      "head_sha": "7f5d6486bed5544985ce202d99c150cce59f51a3",
+      "changed_files": 16,
+      "additions": 2135,
+      "deletions": 15,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Analyze (javascript-typescript)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "qa-ui-flow-suite",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Semgrep Scan",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "ui-e2e-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze (python)",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false,
+      "checked_at": "2026-11-01T00:58:43.296Z"
+    },
+    {
+      "key": "Pigui-AI/Motor-chats#72",
+      "repo": "Pigui-AI/Motor-chats",
+      "number": 72,
+      "url": "https://github.com/Pigui-AI/Motor-chats/pull/72",
+      "title": "feat(041): Pigui settings — la forma cambia, los hechos no",
+      "author": "ricardogallardo-pigui",
+      "responsible": "Ricardo",
+      "state": "OPEN",
+      "created_at": "2026-11-01T00:45:33Z",
+      "updated_at": "2026-11-01T00:45:33Z",
+      "merged_at": null,
+      "closed_at": null,
+      "head_sha": "c47c62250c158c0b40cdb0921ac9b2718e2ccc19",
+      "changed_files": 31,
+      "additions": 2129,
+      "deletions": 21,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "MISSING",
+      "technical_checks": [],
+      "excluded": false,
+      "checked_at": "2026-11-01T00:58:43.296Z"
+    },
     {
       "key": "Pigui-AI/Motor-chats#71",
       "repo": "Pigui-AI/Motor-chats",
@@ -31,7 +100,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 5466,
         "deletions": 54,
@@ -87,7 +156,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 566,
         "deletions": 310,
@@ -122,7 +191,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 2898,
         "deletions": 16,
@@ -182,7 +251,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 1347,
         "deletions": 1187,
@@ -234,7 +303,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 109,
         "deletions": 20,
@@ -286,7 +355,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 1198,
         "deletions": 529,
@@ -321,7 +390,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 2898,
         "deletions": 16,
@@ -356,7 +425,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 266,
         "deletions": 28,
@@ -452,7 +521,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 1133,
         "deletions": 111,
@@ -548,7 +617,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 83,
         "deletions": 1,
@@ -652,7 +721,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 221,
         "deletions": 296,
@@ -756,7 +825,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 1391,
         "deletions": 2401,
@@ -791,7 +860,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 8,
         "deletions": 0,
@@ -887,7 +956,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 1191,
         "deletions": 67,
@@ -991,7 +1060,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 6136,
         "deletions": 4232,
@@ -1047,7 +1116,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 548,
         "deletions": 124,
@@ -1143,7 +1212,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 109,
         "deletions": 2,
@@ -1239,7 +1308,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 521,
         "deletions": 9,
@@ -1274,7 +1343,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 3833,
         "deletions": 18,
@@ -1370,7 +1439,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 172,
         "deletions": 88,
@@ -1466,7 +1535,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 0,
         "deletions": 0,
@@ -1562,7 +1631,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 611,
         "deletions": 9,
@@ -1597,7 +1666,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 5570,
         "deletions": 78,
@@ -1701,7 +1770,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 8177,
         "deletions": 6172,
@@ -1797,7 +1866,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 73,
         "deletions": 10,
@@ -1893,7 +1962,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 11762,
         "deletions": 141,
@@ -1949,7 +2018,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 466,
         "deletions": 124,
@@ -1984,7 +2053,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 274,
         "deletions": 2,
@@ -2019,7 +2088,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 17,
         "deletions": 4,
@@ -2115,7 +2184,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 0,
         "deletions": 0,
@@ -2211,7 +2280,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 3541,
         "deletions": 9,
@@ -2307,7 +2376,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 28,
         "deletions": 71,
@@ -2403,7 +2472,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 6399,
         "deletions": 62,
@@ -2499,7 +2568,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 2560,
         "deletions": 62,
@@ -2595,7 +2664,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 0,
         "deletions": 0,
@@ -2691,7 +2760,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 4548,
         "deletions": 21,
@@ -2795,7 +2864,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 290,
         "deletions": 21,
@@ -2899,7 +2968,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 7507,
         "deletions": 6281,
@@ -2995,7 +3064,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 647,
         "deletions": 18,
@@ -3091,7 +3160,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 2424,
         "deletions": 4,
@@ -3135,7 +3204,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 101592,
         "deletions": 0,
@@ -3169,7 +3238,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 15,
         "deletions": 0,
@@ -3258,7 +3327,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 2505,
         "deletions": 34,
@@ -3351,7 +3420,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 1854,
         "deletions": 22,
@@ -3440,7 +3509,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 3238,
         "deletions": 52,
@@ -3529,7 +3598,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 1097,
         "deletions": 180,
@@ -3626,7 +3695,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 1577,
         "deletions": 769,
@@ -3723,7 +3792,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 1434,
         "deletions": 872,
@@ -3812,7 +3881,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 541,
         "deletions": 260,
@@ -3905,7 +3974,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 4443,
         "deletions": 241,
@@ -3994,7 +4063,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 2249,
         "deletions": 28,
@@ -4083,7 +4152,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 14246,
         "deletions": 14,
@@ -4172,7 +4241,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 702,
         "deletions": 17,
@@ -4206,7 +4275,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 32,
         "deletions": 16,
@@ -4240,7 +4309,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 136,
         "deletions": 346,
@@ -4327,7 +4396,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 75,
         "deletions": 3,
@@ -4382,7 +4451,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 39,
         "deletions": 17,
@@ -4437,7 +4506,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 125,
         "deletions": 7,
@@ -4484,7 +4553,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 23,
         "deletions": 6,
@@ -4527,7 +4596,7 @@
         }
       ],
       "excluded": true,
-      "checked_at": "2026-11-01T00:41:39.650Z"
+      "checked_at": "2026-11-01T00:58:43.296Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#611",
@@ -4564,7 +4633,7 @@
         }
       ],
       "excluded": true,
-      "checked_at": "2026-11-01T00:41:39.650Z"
+      "checked_at": "2026-11-01T00:58:43.296Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#632",
@@ -4613,7 +4682,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 190,
         "deletions": 1,
@@ -4660,7 +4729,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 582,
         "deletions": 61,
@@ -4735,7 +4804,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 888,
         "deletions": 80919,
@@ -4782,7 +4851,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 376,
         "deletions": 9,
@@ -4829,7 +4898,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 17,
         "deletions": 3,
@@ -4876,7 +4945,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 3175,
         "deletions": 35,
@@ -4931,7 +5000,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 4756,
         "deletions": 116,
@@ -4965,7 +5034,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 12358,
         "deletions": 288,
@@ -4999,7 +5068,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 32,
         "deletions": 25,
@@ -5046,7 +5115,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 39,
         "deletions": 2,
@@ -5105,7 +5174,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 124,
         "deletions": 3,
@@ -5156,7 +5225,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 147,
         "deletions": 31,
@@ -5203,7 +5272,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 132,
         "deletions": 4,
@@ -5258,7 +5327,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 7479,
         "deletions": 5729,
@@ -5301,7 +5370,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 1959,
         "deletions": 1757,
@@ -5352,7 +5421,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 458,
         "deletions": 122,
@@ -5403,7 +5472,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 995,
         "deletions": 372,
@@ -5454,7 +5523,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 231,
         "deletions": 0,
@@ -5505,7 +5574,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 1178,
         "deletions": 1746,
@@ -5556,7 +5625,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 7514,
         "deletions": 52,
@@ -5603,7 +5672,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 1343,
         "deletions": 0,
@@ -5654,7 +5723,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 3216,
         "deletions": 77,
@@ -5688,7 +5757,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 28632,
         "deletions": 578,
@@ -5735,7 +5804,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 11792,
         "deletions": 160,
@@ -5786,7 +5855,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 3622,
         "deletions": 46,
@@ -5833,7 +5902,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 1445,
         "deletions": 132,
@@ -5884,7 +5953,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 2743,
         "deletions": 1374,
@@ -5927,7 +5996,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 1757,
         "deletions": 0,
@@ -5961,7 +6030,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 1365,
         "deletions": 951,
@@ -5995,7 +6064,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 1185,
         "deletions": 2,
@@ -6029,7 +6098,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 2386,
         "deletions": 105,
@@ -6063,7 +6132,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 234,
         "deletions": 23,
@@ -6097,7 +6166,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 485,
         "deletions": 0,
@@ -6131,7 +6200,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 255,
         "deletions": 26,
@@ -6165,7 +6234,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 714,
         "deletions": 585,
@@ -6200,7 +6269,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 188,
         "deletions": 0,
@@ -6250,7 +6319,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 302,
         "deletions": 1,
@@ -6304,7 +6373,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 506,
         "deletions": 266,
@@ -6366,7 +6435,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 209,
         "deletions": 1,
@@ -6414,7 +6483,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 46,
         "deletions": 45,
@@ -6466,7 +6535,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 217,
         "deletions": 7,
@@ -6514,7 +6583,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 308,
         "deletions": 11,
@@ -6562,7 +6631,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 75,
         "deletions": 56,
@@ -6597,7 +6666,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z"
+      "checked_at": "2026-11-01T00:58:43.296Z"
     },
     {
       "key": "Pigui-AI/app-pigui-scanapp#287",
@@ -6638,7 +6707,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 139,
         "deletions": 51,
@@ -6686,7 +6755,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 128,
         "deletions": 8,
@@ -6738,7 +6807,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 249,
         "deletions": 24,
@@ -6790,7 +6859,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 1912,
         "deletions": 3,
@@ -6825,7 +6894,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 10884,
         "deletions": 42,
@@ -6885,7 +6954,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 653,
         "deletions": 4,
@@ -6933,7 +7002,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 13469,
         "deletions": 140,
@@ -6987,7 +7056,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 25100,
         "deletions": 111,
@@ -7024,7 +7093,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 25299,
         "deletions": 660,
@@ -7074,7 +7143,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 3845,
         "deletions": 136,
@@ -7136,7 +7205,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 481,
         "deletions": 62,
@@ -7184,7 +7253,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 258,
         "deletions": 2,
@@ -7232,7 +7301,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z"
+      "checked_at": "2026-11-01T00:58:43.296Z"
     },
     {
       "key": "Pigui-AI/app-pigui-scanapp#281",
@@ -7273,7 +7342,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 0,
         "deletions": 0,
@@ -7325,7 +7394,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 354,
         "deletions": 18,
@@ -7377,7 +7446,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 569,
         "deletions": 59,
@@ -7429,7 +7498,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 24,
         "deletions": 1,
@@ -7491,7 +7560,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 474,
         "deletions": 122,
@@ -7539,7 +7608,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 17,
         "deletions": 0,
@@ -7591,7 +7660,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 586,
         "deletions": 38,
@@ -7643,7 +7712,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 717,
         "deletions": 204,
@@ -7691,7 +7760,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 88,
         "deletions": 11,
@@ -7743,7 +7812,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 351,
         "deletions": 85,
@@ -7778,7 +7847,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z"
+      "checked_at": "2026-11-01T00:58:43.296Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#607",
@@ -7815,7 +7884,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 51,
         "deletions": 4,
@@ -7867,7 +7936,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 234,
         "deletions": 36,
@@ -7927,7 +7996,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 111,
         "deletions": 61,
@@ -7979,7 +8048,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 133,
         "deletions": 29,
@@ -8027,7 +8096,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 397,
         "deletions": 91,
@@ -8075,7 +8144,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 10,
         "deletions": 3,
@@ -8131,7 +8200,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 10,
         "deletions": 3,
@@ -8183,7 +8252,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 39,
         "deletions": 30,
@@ -8235,7 +8304,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 50,
         "deletions": 26,
@@ -8287,7 +8356,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 4,
         "deletions": 5,
@@ -8339,7 +8408,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 632,
         "deletions": 167,
@@ -8399,7 +8468,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 616,
         "deletions": 52,
@@ -8451,7 +8520,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 0,
         "deletions": 0,
@@ -8503,7 +8572,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 12,
         "deletions": 2,
@@ -8555,7 +8624,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 16,
         "deletions": 10,
@@ -8607,7 +8676,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 31,
         "deletions": 31,
@@ -8642,7 +8711,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 17,
         "deletions": 30,
@@ -8694,7 +8763,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 46,
         "deletions": 8,
@@ -8748,7 +8817,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 401,
         "deletions": 27,
@@ -8798,7 +8867,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 92,
         "deletions": 5,
@@ -8852,7 +8921,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 1036,
         "deletions": 264,
@@ -8914,7 +8983,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 299,
         "deletions": 11,
@@ -8968,7 +9037,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z",
+      "checked_at": "2026-11-01T00:58:43.296Z",
       "code_lines": {
         "additions": 295,
         "deletions": 11,
@@ -9885,7 +9954,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z"
+      "checked_at": "2026-11-01T00:58:43.296Z"
     },
     {
       "key": "Pigui-AI/front-b2b#706",
@@ -15870,7 +15939,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-01T00:41:39.650Z"
+      "checked_at": "2026-11-01T00:58:43.296Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#544",
@@ -16030,7 +16099,7 @@
     "deduplication": "Un solo responsable por PR, sin duplicados en totales."
   },
   "code_lines_method": {
-    "checked_at": "2026-11-01T00:41:39.650Z",
+    "checked_at": "2026-11-01T00:58:43.296Z",
     "source": "GitHub file metadata; cached only when the PR head and file count match.",
     "scope": "Sólo PR fusionados; código y pruebas. Excluye dependencias, generados, documentación y formatos de datos/configuración. Clasificación determinista en code-lines.js.",
     "net": "Añadidas menos eliminadas.",
@@ -16041,10 +16110,10 @@
     "mode": "github-actions",
     "interval_minutes": 15,
     "frontend_poll_seconds": 60,
-    "last_success_at": "2026-11-01T00:41:39.650Z",
+    "last_success_at": "2026-11-01T00:58:43.296Z",
     "coverage_since": "2026-10-01T00:00:00-06:00",
-    "revision": "34b9977b30baeaa8df48",
+    "revision": "acf544fe03dfed3f1668",
     "repositories_checked": 8,
-    "records_checked": 154
+    "records_checked": 156
   }
 }
