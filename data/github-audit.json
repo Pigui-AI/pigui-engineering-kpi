@@ -1,14 +1,100 @@
 {
   "schema_version": 2,
-  "as_of": "2026-11-11T21:39:35.447Z",
+  "as_of": "2026-11-11T21:55:10.109Z",
   "timezone": "America/Mexico_City",
   "since": "2026-10-01T00:00:00-06:00",
-  "until": "2026-11-11T21:39:35.447Z",
+  "until": "2026-11-11T21:55:10.109Z",
   "period_label": "1–15 nov 2026",
   "scope": "Actividad de los repositorios conectados, con descubrimiento automático y métricas por PR.",
   "method": "Merge + archivos modificados + aprobación externa vigente sobre el head consultado. Los checks se informan aparte y no se vuelven a ejecutar. La tasa de aprobación no representa avance de objetivos ni calificación personal.",
   "qa_status": "Sin reportes QA atribuibles a Yestzanetli en GitHub. Las menciones QA de los títulos no se le atribuyen.",
   "records": [
+    {
+      "key": "Pigui-AI/app-pigui-scanapp#299",
+      "repo": "Pigui-AI/app-pigui-scanapp",
+      "number": 299,
+      "url": "https://github.com/Pigui-AI/app-pigui-scanapp/pull/299",
+      "title": "feat(pigui): nueva interfaz de voz y chat en el color de Pigui Scan",
+      "author": "ricardogallardo-pigui",
+      "responsible": "Ricardo",
+      "state": "OPEN",
+      "created_at": "2026-11-11T21:41:00Z",
+      "updated_at": "2026-11-11T21:42:58Z",
+      "merged_at": null,
+      "closed_at": null,
+      "head_sha": "56ae706edf84856b99fd1f4472aad1c0b9b1806f",
+      "changed_files": 15,
+      "additions": 765,
+      "deletions": 342,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze and test",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "qa-ui",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Autoria de los commits",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false,
+      "checked_at": "2026-11-11T21:55:10.109Z"
+    },
+    {
+      "key": "Pigui-AI/app-pigui-b2c#396",
+      "repo": "Pigui-AI/app-pigui-b2c",
+      "number": 396,
+      "url": "https://github.com/Pigui-AI/app-pigui-b2c/pull/396",
+      "title": "feat(pigui): nueva interfaz de voz y chat en naranja",
+      "author": "ricardogallardo-pigui",
+      "responsible": "Ricardo",
+      "state": "OPEN",
+      "created_at": "2026-11-11T21:40:55Z",
+      "updated_at": "2026-11-11T21:42:03Z",
+      "merged_at": null,
+      "closed_at": null,
+      "head_sha": "d779902ce4a59936922ae0a37054b06e753cc224",
+      "changed_files": 16,
+      "additions": 795,
+      "deletions": 362,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Analyze and test",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "qa-ui",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Semgrep Scan",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Autoria de los commits",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false,
+      "checked_at": "2026-11-11T21:55:10.109Z"
+    },
     {
       "key": "Pigui-AI/Motor-chats#78",
       "repo": "Pigui-AI/Motor-chats",
@@ -31,7 +117,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z"
+      "checked_at": "2026-11-11T21:55:10.109Z"
     },
     {
       "key": "Pigui-AI/front-b2b#755",
@@ -68,7 +154,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z"
+      "checked_at": "2026-11-11T21:55:10.109Z"
     },
     {
       "key": "Pigui-AI/front-b2b#754",
@@ -105,7 +191,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z",
+      "checked_at": "2026-11-11T21:55:10.109Z",
       "code_lines": {
         "additions": 171,
         "deletions": 9,
@@ -140,7 +226,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z",
+      "checked_at": "2026-11-11T21:55:10.109Z",
       "code_lines": {
         "additions": 101,
         "deletions": 14,
@@ -175,7 +261,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z",
+      "checked_at": "2026-11-11T21:55:10.109Z",
       "code_lines": {
         "additions": 124,
         "deletions": 4,
@@ -223,7 +309,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z",
+      "checked_at": "2026-11-11T21:55:10.109Z",
       "code_lines": {
         "additions": 1340,
         "deletions": 640,
@@ -258,7 +344,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z"
+      "checked_at": "2026-11-11T21:55:10.109Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#675",
@@ -339,7 +425,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z",
+      "checked_at": "2026-11-11T21:55:10.109Z",
       "code_lines": {
         "additions": 1184,
         "deletions": 0,
@@ -431,7 +517,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z"
+      "checked_at": "2026-11-11T21:55:10.109Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#673",
@@ -512,7 +598,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z",
+      "checked_at": "2026-11-11T21:55:10.109Z",
       "code_lines": {
         "additions": 56,
         "deletions": 2,
@@ -604,7 +690,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z",
+      "checked_at": "2026-11-11T21:55:10.109Z",
       "code_lines": {
         "additions": 23,
         "deletions": 14,
@@ -644,7 +730,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z",
+      "checked_at": "2026-11-11T21:55:10.109Z",
       "code_lines": {
         "additions": 3,
         "deletions": 1,
@@ -679,7 +765,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z",
+      "checked_at": "2026-11-11T21:55:10.109Z",
       "code_lines": {
         "additions": 1421,
         "deletions": 20,
@@ -735,7 +821,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z",
+      "checked_at": "2026-11-11T21:55:10.109Z",
       "code_lines": {
         "additions": 2132,
         "deletions": 15,
@@ -791,7 +877,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z",
+      "checked_at": "2026-11-11T21:55:10.109Z",
       "code_lines": {
         "additions": 130,
         "deletions": 1,
@@ -851,7 +937,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z",
+      "checked_at": "2026-11-11T21:55:10.109Z",
       "code_lines": {
         "additions": 1309,
         "deletions": 73,
@@ -947,7 +1033,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z",
+      "checked_at": "2026-11-11T21:55:10.109Z",
       "code_lines": {
         "additions": 2132,
         "deletions": 24,
@@ -7548,7 +7634,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z"
+      "checked_at": "2026-11-11T21:55:10.109Z"
     },
     {
       "key": "Pigui-AI/app-pigui-scanapp#287",
@@ -8183,7 +8269,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z"
+      "checked_at": "2026-11-11T21:55:10.109Z"
     },
     {
       "key": "Pigui-AI/app-pigui-scanapp#281",
@@ -8729,7 +8815,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z"
+      "checked_at": "2026-11-11T21:55:10.109Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#607",
@@ -10836,7 +10922,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z"
+      "checked_at": "2026-11-11T21:55:10.109Z"
     },
     {
       "key": "Pigui-AI/front-b2b#706",
@@ -16821,7 +16907,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-11T21:39:35.447Z"
+      "checked_at": "2026-11-11T21:55:10.109Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#544",
@@ -16981,7 +17067,7 @@
     "deduplication": "Un solo responsable por PR, sin duplicados en totales."
   },
   "code_lines_method": {
-    "checked_at": "2026-11-11T21:39:35.447Z",
+    "checked_at": "2026-11-11T21:55:10.109Z",
     "source": "GitHub file metadata; cached only when the PR head and file count match.",
     "scope": "Sólo PR fusionados; código y pruebas. Excluye dependencias, generados, documentación y formatos de datos/configuración. Clasificación determinista en code-lines.js.",
     "net": "Añadidas menos eliminadas.",
@@ -16992,10 +17078,10 @@
     "mode": "github-actions",
     "interval_minutes": 15,
     "frontend_poll_seconds": 60,
-    "last_success_at": "2026-11-11T21:39:35.447Z",
+    "last_success_at": "2026-11-11T21:55:10.109Z",
     "coverage_since": "2026-10-01T00:00:00-06:00",
-    "revision": "17c8e76b021185e6bd93",
+    "revision": "f8b369fbfd1aaa40cf02",
     "repositories_checked": 8,
-    "records_checked": 22
+    "records_checked": 24
   }
 }
