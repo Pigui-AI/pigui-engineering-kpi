@@ -1,38 +1,14 @@
 {
   "schema_version": 2,
-  "as_of": "2026-11-13T16:15:59.153Z",
+  "as_of": "2026-11-13T16:26:01.896Z",
   "timezone": "America/Mexico_City",
   "since": "2026-10-01T00:00:00-06:00",
-  "until": "2026-11-13T16:15:59.153Z",
+  "until": "2026-11-13T16:26:01.896Z",
   "period_label": "1–15 nov 2026",
   "scope": "Actividad de los repositorios conectados, con descubrimiento automático y métricas por PR.",
   "method": "Merge + archivos modificados + aprobación externa vigente sobre el head consultado. Los checks se informan aparte y no se vuelven a ejecutar. La tasa de aprobación no representa avance de objetivos ni calificación personal.",
   "qa_status": "Sin reportes QA atribuibles a Yestzanetli en GitHub. Las menciones QA de los títulos no se le atribuyen.",
   "records": [
-    {
-      "key": "Pigui-AI/Motor-chats#83",
-      "repo": "Pigui-AI/Motor-chats",
-      "number": 83,
-      "url": "https://github.com/Pigui-AI/Motor-chats/pull/83",
-      "title": "fix(branch): «qué sabes de mi negocio» es la identidad, no los totales del resumen",
-      "author": "ricardogallardo-pigui",
-      "responsible": "Ricardo",
-      "state": "OPEN",
-      "created_at": "2026-11-13T16:11:52Z",
-      "updated_at": "2026-11-13T16:11:52Z",
-      "merged_at": null,
-      "closed_at": null,
-      "head_sha": "6d4d6d207c4c682e169b94cdeb675632fd18a178",
-      "changed_files": 3,
-      "additions": 87,
-      "deletions": 0,
-      "external_approval": false,
-      "reviewers": [],
-      "ci": "MISSING",
-      "technical_checks": [],
-      "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z"
-    },
     {
       "key": "Pigui-AI/front-b2b#763",
       "repo": "Pigui-AI/front-b2b",
@@ -41,11 +17,11 @@
       "title": "fix(pigui): la voz ya no se queda en «Connecting…» + Pigui de sucursal abre en Voz y menú rediseñado",
       "author": "ricardogallardo-pigui",
       "responsible": "Ricardo",
-      "state": "OPEN",
+      "state": "MERGED",
       "created_at": "2026-11-13T16:11:37Z",
-      "updated_at": "2026-11-13T16:11:37Z",
-      "merged_at": null,
-      "closed_at": null,
+      "updated_at": "2026-11-13T16:19:14Z",
+      "merged_at": "2026-11-13T16:19:14Z",
+      "closed_at": "2026-11-13T16:19:14Z",
       "head_sha": "f6c5060e2e40f143f696a59114c82e9a0e55ff56",
       "changed_files": 16,
       "additions": 406,
@@ -68,7 +44,53 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z"
+      "checked_at": "2026-11-13T16:26:01.896Z",
+      "code_lines": {
+        "additions": 406,
+        "deletions": 72,
+        "net": 334,
+        "changed": 478,
+        "source_files": 16,
+        "excluded_files": 0,
+        "measured_files": 16,
+        "status": "complete",
+        "method_version": 1
+      }
+    },
+    {
+      "key": "Pigui-AI/Motor-chats#83",
+      "repo": "Pigui-AI/Motor-chats",
+      "number": 83,
+      "url": "https://github.com/Pigui-AI/Motor-chats/pull/83",
+      "title": "fix(branch): «qué sabes de mi negocio» es la identidad, no los totales del resumen",
+      "author": "ricardogallardo-pigui",
+      "responsible": "Ricardo",
+      "state": "MERGED",
+      "created_at": "2026-11-13T16:11:52Z",
+      "updated_at": "2026-11-13T16:18:51Z",
+      "merged_at": "2026-11-13T16:18:51Z",
+      "closed_at": "2026-11-13T16:18:51Z",
+      "head_sha": "6d4d6d207c4c682e169b94cdeb675632fd18a178",
+      "changed_files": 3,
+      "additions": 87,
+      "deletions": 0,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "MISSING",
+      "technical_checks": [],
+      "excluded": false,
+      "checked_at": "2026-11-13T16:26:01.896Z",
+      "code_lines": {
+        "additions": 87,
+        "deletions": 0,
+        "net": 87,
+        "changed": 87,
+        "source_files": 3,
+        "excluded_files": 0,
+        "measured_files": 3,
+        "status": "complete",
+        "method_version": 1
+      }
     },
     {
       "key": "Pigui-AI/front-b2b#760",
@@ -97,7 +119,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 0,
         "deletions": 0,
@@ -145,7 +167,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 5666,
         "deletions": 4,
@@ -237,7 +259,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 4451,
         "deletions": 2,
@@ -329,7 +351,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 5,
         "deletions": 4,
@@ -421,7 +443,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 81,
         "deletions": 2,
@@ -456,7 +478,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 7262,
         "deletions": 11,
@@ -504,7 +526,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 349,
         "deletions": 3,
@@ -596,7 +618,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 1629,
         "deletions": 10,
@@ -631,7 +653,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 417,
         "deletions": 1,
@@ -679,7 +701,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 435,
         "deletions": 9,
@@ -771,7 +793,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 290,
         "deletions": 7,
@@ -806,7 +828,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 869,
         "deletions": 47,
@@ -854,7 +876,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z"
+      "checked_at": "2026-11-13T16:26:01.896Z"
     },
     {
       "key": "Pigui-AI/front-b2b#756",
@@ -891,7 +913,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 332,
         "deletions": 1,
@@ -926,7 +948,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 1934,
         "deletions": 8,
@@ -974,7 +996,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 1164,
         "deletions": 430,
@@ -1009,7 +1031,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 111,
         "deletions": 11,
@@ -1065,7 +1087,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 795,
         "deletions": 362,
@@ -1117,7 +1139,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 755,
         "deletions": 342,
@@ -1165,7 +1187,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 171,
         "deletions": 9,
@@ -1200,7 +1222,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 101,
         "deletions": 14,
@@ -1235,7 +1257,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 124,
         "deletions": 4,
@@ -1283,7 +1305,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 1340,
         "deletions": 640,
@@ -1318,7 +1340,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z"
+      "checked_at": "2026-11-13T16:26:01.896Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#675",
@@ -1399,7 +1421,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 1184,
         "deletions": 0,
@@ -1491,7 +1513,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z"
+      "checked_at": "2026-11-13T16:26:01.896Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#673",
@@ -1572,7 +1594,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 56,
         "deletions": 2,
@@ -1664,7 +1686,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 23,
         "deletions": 14,
@@ -1704,7 +1726,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 3,
         "deletions": 1,
@@ -1739,7 +1761,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 1421,
         "deletions": 20,
@@ -1795,7 +1817,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 2132,
         "deletions": 15,
@@ -1851,7 +1873,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 130,
         "deletions": 1,
@@ -1911,7 +1933,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 1309,
         "deletions": 73,
@@ -2007,7 +2029,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z",
+      "checked_at": "2026-11-13T16:26:01.896Z",
       "code_lines": {
         "additions": 2132,
         "deletions": 24,
@@ -8608,7 +8630,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z"
+      "checked_at": "2026-11-13T16:26:01.896Z"
     },
     {
       "key": "Pigui-AI/app-pigui-scanapp#287",
@@ -9243,7 +9265,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z"
+      "checked_at": "2026-11-13T16:26:01.896Z"
     },
     {
       "key": "Pigui-AI/app-pigui-scanapp#281",
@@ -9789,7 +9811,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z"
+      "checked_at": "2026-11-13T16:26:01.896Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#607",
@@ -11896,7 +11918,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z"
+      "checked_at": "2026-11-13T16:26:01.896Z"
     },
     {
       "key": "Pigui-AI/front-b2b#706",
@@ -17881,7 +17903,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-13T16:15:59.153Z"
+      "checked_at": "2026-11-13T16:26:01.896Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#544",
@@ -18041,7 +18063,7 @@
     "deduplication": "Un solo responsable por PR, sin duplicados en totales."
   },
   "code_lines_method": {
-    "checked_at": "2026-11-13T16:15:59.153Z",
+    "checked_at": "2026-11-13T16:26:01.896Z",
     "source": "GitHub file metadata; cached only when the PR head and file count match.",
     "scope": "Sólo PR fusionados; código y pruebas. Excluye dependencias, generados, documentación y formatos de datos/configuración. Clasificación determinista en code-lines.js.",
     "net": "Añadidas menos eliminadas.",
@@ -18052,9 +18074,9 @@
     "mode": "github-actions",
     "interval_minutes": 15,
     "frontend_poll_seconds": 60,
-    "last_success_at": "2026-11-13T16:15:59.153Z",
+    "last_success_at": "2026-11-13T16:26:01.896Z",
     "coverage_since": "2026-10-01T00:00:00-06:00",
-    "revision": "fa859c9ca6bedcb3ec4e",
+    "revision": "72fbf0dae1d3449936c1",
     "repositories_checked": 8,
     "records_checked": 41
   }
