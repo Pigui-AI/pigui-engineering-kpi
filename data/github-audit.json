@@ -1,14 +1,156 @@
 {
   "schema_version": 2,
-  "as_of": "2026-11-16T16:16:54.516Z",
+  "as_of": "2026-11-16T16:27:54.669Z",
   "timezone": "America/Mexico_City",
   "since": "2026-10-01T00:00:00-06:00",
-  "until": "2026-11-16T16:16:54.516Z",
+  "until": "2026-11-16T16:27:54.669Z",
   "period_label": "16–30 nov 2026",
   "scope": "Actividad de los repositorios conectados, con descubrimiento automático y métricas por PR.",
   "method": "Merge + archivos modificados + aprobación externa vigente sobre el head consultado. Los checks se informan aparte y no se vuelven a ejecutar. La tasa de aprobación no representa avance de objetivos ni calificación personal.",
   "qa_status": "Sin reportes QA atribuibles a Yestzanetli en GitHub. Las menciones QA de los títulos no se le atribuyen.",
   "records": [
+    {
+      "key": "Pigui-AI/front-b2b#767",
+      "repo": "Pigui-AI/front-b2b",
+      "number": 767,
+      "url": "https://github.com/Pigui-AI/front-b2b/pull/767",
+      "title": "feat(pigui): catálogo resumido, promociones con su modalidad y la voz ya no se corta a media palabra",
+      "author": "ricardogallardo-pigui",
+      "responsible": "Ricardo",
+      "state": "OPEN",
+      "created_at": "2026-11-16T16:24:19Z",
+      "updated_at": "2026-11-16T16:24:19Z",
+      "merged_at": null,
+      "closed_at": null,
+      "head_sha": "9387c3f20d7594f515ed9b6e3d4ca9bdcb06d923",
+      "changed_files": 15,
+      "additions": 589,
+      "deletions": 82,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "qa-ui-flow-suite",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Semgrep Scan",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "ui-e2e-tests",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false,
+      "checked_at": "2026-11-16T16:27:54.669Z"
+    },
+    {
+      "key": "Pigui-AI/api-pigui-backend#684",
+      "repo": "Pigui-AI/api-pigui-backend",
+      "number": 684,
+      "url": "https://github.com/Pigui-AI/api-pigui-backend/pull/684",
+      "title": "feat(brain): perfil personal del dueño y categorías del catálogo en las lecturas del Brain",
+      "author": "ricardogallardo-pigui",
+      "responsible": "Ricardo",
+      "state": "OPEN",
+      "created_at": "2026-11-16T16:24:13Z",
+      "updated_at": "2026-11-16T16:24:13Z",
+      "merged_at": null,
+      "closed_at": null,
+      "head_sha": "053abce1157f50cce332769eae2ee5b43b2191c3",
+      "changed_files": 9,
+      "additions": 308,
+      "deletions": 9,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "FAILURE",
+      "technical_checks": [
+        {
+          "name": "Suite completa",
+          "state": "IN_PROGRESS"
+        },
+        {
+          "name": "autofix",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "contract-verification-and-tests",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "PostgreSQL real (15 + PostGIS)",
+          "state": "IN_PROGRESS"
+        },
+        {
+          "name": "docker-build (ai-service, services/ai-service/Dockerfile, ., ai_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (auth-service, services/auth-service/Dockerfile, ., auth_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2o-service, services/b2o-service/Dockerfile, ., b2o_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2c-service, services/b2c-service/Dockerfile, ., b2c_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (b2b-service, services/b2b-service/Dockerfile, ., b2b_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (public-service, services/public-service/Dockerfile, ., public_service.main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (notifications-service, services/notifications-service/Dockerfile, ., notifications_...",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (gateway, gateway/Dockerfile, gateway, main)",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "docker-build (help-center-service, services/help-center-service/Dockerfile, ., help_center_servic...",
+          "state": "SUCCESS"
+        },
+        {
+          "name": "Contratos y capas",
+          "state": "SUCCESS"
+        }
+      ],
+      "excluded": false,
+      "checked_at": "2026-11-16T16:27:54.669Z"
+    },
+    {
+      "key": "Pigui-AI/Motor-chats#86",
+      "repo": "Pigui-AI/Motor-chats",
+      "number": 86,
+      "url": "https://github.com/Pigui-AI/Motor-chats/pull/86",
+      "title": "feat(branch): perfil del dueño, catálogo resumido, promociones creables y respuestas cortas",
+      "author": "ricardogallardo-pigui",
+      "responsible": "Ricardo",
+      "state": "OPEN",
+      "created_at": "2026-11-16T16:24:08Z",
+      "updated_at": "2026-11-16T16:24:08Z",
+      "merged_at": null,
+      "closed_at": null,
+      "head_sha": "befe1a09089d50ae5e9a44dd27b1fadf11d273a5",
+      "changed_files": 21,
+      "additions": 2610,
+      "deletions": 118,
+      "external_approval": false,
+      "reviewers": [],
+      "ci": "MISSING",
+      "technical_checks": [],
+      "excluded": false,
+      "checked_at": "2026-11-16T16:27:54.669Z"
+    },
     {
       "key": "Pigui-AI/api-pigui-backend#683",
       "repo": "Pigui-AI/api-pigui-backend",
@@ -88,7 +230,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-16T16:16:54.516Z"
+      "checked_at": "2026-11-16T16:27:54.669Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#682",
@@ -1355,7 +1497,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-16T16:16:54.516Z"
+      "checked_at": "2026-11-16T16:27:54.669Z"
     },
     {
       "key": "Pigui-AI/front-b2b#756",
@@ -1819,7 +1961,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-16T16:16:54.516Z"
+      "checked_at": "2026-11-16T16:27:54.669Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#675",
@@ -1992,7 +2134,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-16T16:16:54.516Z"
+      "checked_at": "2026-11-16T16:27:54.669Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#673",
@@ -9109,7 +9251,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-16T16:16:54.516Z"
+      "checked_at": "2026-11-16T16:27:54.669Z"
     },
     {
       "key": "Pigui-AI/app-pigui-scanapp#287",
@@ -9744,7 +9886,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-16T16:16:54.516Z"
+      "checked_at": "2026-11-16T16:27:54.669Z"
     },
     {
       "key": "Pigui-AI/app-pigui-scanapp#281",
@@ -10290,7 +10432,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-16T16:16:54.516Z"
+      "checked_at": "2026-11-16T16:27:54.669Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#607",
@@ -12397,7 +12539,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-16T16:16:54.516Z"
+      "checked_at": "2026-11-16T16:27:54.669Z"
     },
     {
       "key": "Pigui-AI/front-b2b#706",
@@ -18382,7 +18524,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-16T16:16:54.516Z"
+      "checked_at": "2026-11-16T16:27:54.669Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#544",
@@ -18542,7 +18684,7 @@
     "deduplication": "Un solo responsable por PR, sin duplicados en totales."
   },
   "code_lines_method": {
-    "checked_at": "2026-11-16T16:16:54.516Z",
+    "checked_at": "2026-11-16T16:27:54.669Z",
     "source": "GitHub file metadata; cached only when the PR head and file count match.",
     "scope": "Sólo PR fusionados; código y pruebas. Excluye dependencias, generados, documentación y formatos de datos/configuración. Clasificación determinista en code-lines.js.",
     "net": "Añadidas menos eliminadas.",
@@ -18553,10 +18695,10 @@
     "mode": "github-actions",
     "interval_minutes": 15,
     "frontend_poll_seconds": 60,
-    "last_success_at": "2026-11-16T16:16:54.516Z",
+    "last_success_at": "2026-11-16T16:27:54.669Z",
     "coverage_since": "2026-10-01T00:00:00-06:00",
-    "revision": "d292540761ef9423c4a4",
+    "revision": "555dde2599460eb426bb",
     "repositories_checked": 8,
-    "records_checked": 9
+    "records_checked": 12
   }
 }
