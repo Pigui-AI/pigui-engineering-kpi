@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "as_of": "2026-11-24T18:54:54.896Z",
+  "as_of": "2026-11-24T19:12:06.949Z",
   "timezone": "America/Mexico_City",
   "since": "2026-10-01T00:00:00-06:00",
-  "until": "2026-11-24T18:54:54.896Z",
+  "until": "2026-11-24T19:12:06.949Z",
   "period_label": "16–30 nov 2026",
   "scope": "Actividad de los repositorios conectados, con descubrimiento automático y métricas por PR.",
   "method": "Merge + archivos modificados + aprobación externa vigente sobre el head consultado. Los checks se informan aparte y no se vuelven a ejecutar. La tasa de aprobación no representa avance de objetivos ni calificación personal.",
@@ -13,7 +13,7 @@
       "key": "Pigui-AI/app-pigui-scanapp#302",
       "repo": "Pigui-AI/app-pigui-scanapp",
       "number": 302,
-      "url": "https://github.com/Pigui-AI/app-pigui-scanapp/pull/302",
+      "url": "https://github.com/Pigui-AI/scan-app/pull/302",
       "title": "Scan web: servicio Cloud Run independiente",
       "author": "americabalderas-del",
       "responsible": "América",
@@ -48,7 +48,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-24T18:54:54.896Z"
+      "checked_at": "2026-11-24T19:12:06.949Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#685",
@@ -129,7 +129,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-24T18:54:54.896Z",
+      "checked_at": "2026-11-24T19:12:06.949Z",
       "code_lines": {
         "additions": 24,
         "deletions": 0,
@@ -146,7 +146,7 @@
       "key": "Pigui-AI/front-b2b#772",
       "repo": "Pigui-AI/front-b2b",
       "number": 772,
-      "url": "https://github.com/Pigui-AI/front-b2b/pull/772",
+      "url": "https://github.com/Pigui-AI/business-web/pull/772",
       "title": "fix(voz): el indicador de captura va dentro de la caja y la frase atorada se envía sola",
       "author": "ricardogallardo-pigui",
       "responsible": "Ricardo",
@@ -177,7 +177,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-24T18:54:54.896Z",
+      "checked_at": "2026-11-24T19:12:06.949Z",
       "code_lines": {
         "additions": 106,
         "deletions": 3,
@@ -194,7 +194,7 @@
       "key": "Pigui-AI/front-b2b#771",
       "repo": "Pigui-AI/front-b2b",
       "number": 771,
-      "url": "https://github.com/Pigui-AI/front-b2b/pull/771",
+      "url": "https://github.com/Pigui-AI/business-web/pull/771",
       "title": "feat(voz): que se vea que Pigui sí está captando lo que dices",
       "author": "ricardogallardo-pigui",
       "responsible": "Ricardo",
@@ -225,7 +225,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-24T18:54:54.896Z",
+      "checked_at": "2026-11-24T19:12:06.949Z",
       "code_lines": {
         "additions": 343,
         "deletions": 4,
@@ -242,7 +242,7 @@
       "key": "Pigui-AI/front-b2b#770",
       "repo": "Pigui-AI/front-b2b",
       "number": 770,
-      "url": "https://github.com/Pigui-AI/front-b2b/pull/770",
+      "url": "https://github.com/Pigui-AI/business-web/pull/770",
       "title": "fix(voz): Pigui ya no se calla a media respuesta (caída del micrófono y tramos)",
       "author": "ricardogallardo-pigui",
       "responsible": "Ricardo",
@@ -273,7 +273,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-24T18:54:54.896Z",
+      "checked_at": "2026-11-24T19:12:06.949Z",
       "code_lines": {
         "additions": 117,
         "deletions": 26,
@@ -290,7 +290,7 @@
       "key": "Pigui-AI/front-b2b#769",
       "repo": "Pigui-AI/front-b2b",
       "number": 769,
-      "url": "https://github.com/Pigui-AI/front-b2b/pull/769",
+      "url": "https://github.com/Pigui-AI/business-web/pull/769",
       "title": "fix(lint): prefer-const en la prueba de segmentos de voz",
       "author": "ricardogallardo-pigui",
       "responsible": "Ricardo",
@@ -321,13 +321,13 @@
         }
       ],
       "excluded": true,
-      "checked_at": "2026-11-24T18:54:54.896Z"
+      "checked_at": "2026-11-24T19:12:06.949Z"
     },
     {
       "key": "Pigui-AI/front-b2b#768",
       "repo": "Pigui-AI/front-b2b",
       "number": 768,
-      "url": "https://github.com/Pigui-AI/front-b2b/pull/768",
+      "url": "https://github.com/Pigui-AI/business-web/pull/768",
       "title": "feat(onboarding): Meet Pigui lleva directo al inicio sin pasar por el Pigui de baseline",
       "author": "ricardogallardo-pigui",
       "responsible": "Ricardo",
@@ -358,7 +358,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-24T18:54:54.896Z",
+      "checked_at": "2026-11-24T19:12:06.949Z",
       "code_lines": {
         "additions": 34,
         "deletions": 4,
@@ -393,7 +393,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-24T18:54:54.896Z",
+      "checked_at": "2026-11-24T19:12:06.949Z",
       "code_lines": {
         "additions": 2610,
         "deletions": 118,
@@ -485,7 +485,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-24T18:54:54.896Z",
+      "checked_at": "2026-11-24T19:12:06.949Z",
       "code_lines": {
         "additions": 308,
         "deletions": 9,
@@ -502,7 +502,7 @@
       "key": "Pigui-AI/front-b2b#767",
       "repo": "Pigui-AI/front-b2b",
       "number": 767,
-      "url": "https://github.com/Pigui-AI/front-b2b/pull/767",
+      "url": "https://github.com/Pigui-AI/business-web/pull/767",
       "title": "feat(pigui): catálogo resumido, promociones con su modalidad y la voz ya no se corta a media palabra",
       "author": "ricardogallardo-pigui",
       "responsible": "Ricardo",
@@ -533,7 +533,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-24T18:54:54.896Z",
+      "checked_at": "2026-11-24T19:12:06.949Z",
       "code_lines": {
         "additions": 589,
         "deletions": 82,
@@ -625,7 +625,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-24T18:54:54.896Z"
+      "checked_at": "2026-11-24T19:12:06.949Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#682",
@@ -1861,7 +1861,7 @@
       "key": "Pigui-AI/front-b2b#757",
       "repo": "Pigui-AI/front-b2b",
       "number": 757,
-      "url": "https://github.com/Pigui-AI/front-b2b/pull/757",
+      "url": "https://github.com/Pigui-AI/business-web/pull/757",
       "title": "feat(flutter): web de Flutter al día con main hasta #756",
       "author": "americabalderas-del",
       "responsible": "América",
@@ -1892,7 +1892,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-24T18:54:54.896Z"
+      "checked_at": "2026-11-24T19:12:06.949Z"
     },
     {
       "key": "Pigui-AI/front-b2b#756",
@@ -2356,7 +2356,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-24T18:54:54.896Z"
+      "checked_at": "2026-11-24T19:12:06.949Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#675",
@@ -2529,7 +2529,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-24T18:54:54.896Z"
+      "checked_at": "2026-11-24T19:12:06.949Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#673",
@@ -9646,7 +9646,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-24T18:54:54.896Z"
+      "checked_at": "2026-11-24T19:12:06.949Z"
     },
     {
       "key": "Pigui-AI/app-pigui-scanapp#287",
@@ -10250,7 +10250,7 @@
       "key": "Pigui-AI/app-pigui-scanapp#283",
       "repo": "Pigui-AI/app-pigui-scanapp",
       "number": 283,
-      "url": "https://github.com/Pigui-AI/app-pigui-scanapp/pull/283",
+      "url": "https://github.com/Pigui-AI/scan-app/pull/283",
       "title": "ci: workflow manual para reenviar el aviso de una build a los testers",
       "author": "americabalderas-del",
       "responsible": "América",
@@ -10281,7 +10281,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-24T18:54:54.896Z"
+      "checked_at": "2026-11-24T19:12:06.949Z"
     },
     {
       "key": "Pigui-AI/app-pigui-scanapp#281",
@@ -10827,7 +10827,7 @@
       "ci": "MISSING",
       "technical_checks": [],
       "excluded": false,
-      "checked_at": "2026-11-24T18:54:54.896Z"
+      "checked_at": "2026-11-24T19:12:06.949Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#607",
@@ -12899,7 +12899,7 @@
       "key": "Pigui-AI/front-b2b#707",
       "repo": "Pigui-AI/front-b2b",
       "number": 707,
-      "url": "https://github.com/Pigui-AI/front-b2b/pull/707",
+      "url": "https://github.com/Pigui-AI/business-web/pull/707",
       "title": "feat(sucursal): pestaña Loyalty con el prototipo de Pigui Loyalty en un modal",
       "author": "SergiorCode",
       "responsible": "Ever",
@@ -12934,7 +12934,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-24T18:54:54.896Z"
+      "checked_at": "2026-11-24T19:12:06.949Z"
     },
     {
       "key": "Pigui-AI/front-b2b#706",
@@ -18884,7 +18884,7 @@
       "key": "Pigui-AI/front-b2b#681",
       "repo": "Pigui-AI/front-b2b",
       "number": 681,
-      "url": "https://github.com/Pigui-AI/front-b2b/pull/681",
+      "url": "https://github.com/Pigui-AI/business-web/pull/681",
       "title": "fix: el video de \"3 steps to launch your first reward\" arranca con sonido al abrir el modal",
       "author": "ricardogallardo-pigui",
       "responsible": "Ricardo",
@@ -18919,7 +18919,7 @@
         }
       ],
       "excluded": false,
-      "checked_at": "2026-11-24T18:54:54.896Z"
+      "checked_at": "2026-11-24T19:12:06.949Z"
     },
     {
       "key": "Pigui-AI/api-pigui-backend#544",
@@ -19079,7 +19079,7 @@
     "deduplication": "Un solo responsable por PR, sin duplicados en totales."
   },
   "code_lines_method": {
-    "checked_at": "2026-11-24T18:54:54.896Z",
+    "checked_at": "2026-11-24T19:12:06.949Z",
     "source": "GitHub file metadata; cached only when the PR head and file count match.",
     "scope": "Sólo PR fusionados; código y pruebas. Excluye dependencias, generados, documentación y formatos de datos/configuración. Clasificación determinista en code-lines.js.",
     "net": "Añadidas menos eliminadas.",
@@ -19090,9 +19090,9 @@
     "mode": "github-actions",
     "interval_minutes": 15,
     "frontend_poll_seconds": 60,
-    "last_success_at": "2026-11-24T18:54:54.896Z",
+    "last_success_at": "2026-11-24T19:12:06.949Z",
     "coverage_since": "2026-10-01T00:00:00-06:00",
-    "revision": "ab2fc4e7e24d0d5d39a0",
+    "revision": "3b2a5da6e393d55516fe",
     "repositories_checked": 8,
     "records_checked": 19
   }
